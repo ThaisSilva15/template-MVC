@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+
+<html
     <head>
         <meta charset="UTF-8">
         <title></title>
@@ -12,8 +8,8 @@ and open the template in the editor.
     <body>
         <form action="" method="POST">
             
-            nome: <input type="text" name="Nome do produto">
-            codigo: <input type="text" name="código">
+            nome: <input type="text" name="nomeProduto">
+            codigo: <input type="text" name="codigo">
             valor: <input type="text" name="valor">
             
             <button>Enviar</button>

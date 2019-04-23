@@ -9,8 +9,8 @@ function visualizar(){
 }
 function adicionar(){
     if (ehPost()){
-        $nome= $_POST ["Nome do produto"];
-        $código= $_POST ["código"];
+        $nome= $_POST ["nomeProduto"];
+        $código= $_POST ["codigo"];
         $valor= $_POST ["valor"];
         
       print_r($_POST);
