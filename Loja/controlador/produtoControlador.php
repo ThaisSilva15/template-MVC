@@ -1,4 +1,7 @@
 <?php
+
+require_once 'servico/validarServico.php';
+
 function visualizar(){
     $dados= array();
     $dados["Nome"]= "Base Ruby Rose ";
@@ -13,7 +16,9 @@ function adicionar(){
         $código= $_POST ["codigo"];
         $valor= $_POST ["valor"];
         
-      print_r($_POST);
+        echo valida_nao_vazio($nome);
+        echo valida_tipoEspe ($código);
+        echo valida_nao_vazio ($valor);
    }else{
        exibir("produto/formulario");
    }
