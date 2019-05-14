@@ -23,3 +23,6 @@ function adicionar(){
        exibir("produto/formulario");
    }
 }
+function validar_email(){
+    
+}

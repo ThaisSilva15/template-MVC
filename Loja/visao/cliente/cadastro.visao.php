@@ -15,8 +15,8 @@
             Confirmar Senha: <input type="password" name="confirmarSenha"><br><br>
             CPF: <input type="text" name="CPF"><br><br>
             Sexo: 
-		Feminino<input  type="radio" name="sexo"  value="option1" >
-		Masculino<input type="radio" name="sexo" value="option2"><br><br>
+            Feminino<input  type="radio" name="sexo"  value="F" checked="checked" >
+		Masculino<input type="radio" name="sexo" value="M"><br><br>
                 
             Data de Nacimento: <input type="text" name="dataNascimento"><br><br>
             
