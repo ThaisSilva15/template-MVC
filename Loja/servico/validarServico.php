@@ -12,7 +12,7 @@ if ($input['valor'] == FALSE) {
 
 }
 function  validar_email ($email){
-    $imput ['email']= filter_var($email, FILTER_VALIDATE_INT); 
+    $imput ['email']= filter_var($email, FILTER_VALIDATE_EMAIL); 
     if ($imput ['email']== FALSE){
         return 'Informe um e-mail válido.<br>';
     }

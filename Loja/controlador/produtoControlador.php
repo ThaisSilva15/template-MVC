@@ -1,5 +1,5 @@
 <?php
-
+require_once 'modelo/produtoModelo.php';
 require_once 'servico/validarServico.php';
 
 function visualizar(){
@@ -13,16 +13,15 @@ function visualizar(){
 function adicionar(){
     if (ehPost()){
         $nome= $_POST ["nomeProduto"];
-        $código= $_POST ["codigo"];
+        $codigo= $_POST ["codigo"];
         $valor= $_POST ["valor"];
         
         echo valida_nao_vazio($nome);
-        echo valida_tipoEspe ($código);
+        echo valida_tipoEspe ($codigo);
         echo valida_nao_vazio ($valor);
+        $msg = adicionarProduto ($nome, $codigo, $valor);
+        echo $msg;
    }else{
        exibir("produto/formulario");
    }
-}
-function validar_email(){
-    
 }

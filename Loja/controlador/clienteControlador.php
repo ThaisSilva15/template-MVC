@@ -12,30 +12,26 @@ require_once 'modelo/clienteModelo.php';
         $cpf= $_POST["CPF"];
         $sexo= $_POST["sexo"];
         $datadeNascimento= $_POST["dataNascimento"];
-    }else{
-        //aqui não existem dados submetidos'
-    }
-    exibir("cliente/formulario");
-        
-        
+    
         
         echo valida_tipoEspe($nome);
         echo valida_tipoEspe ($sobrenome);
         echo validar_email ($email);
-        echo validar_email($senha);
+        echo validar_nao_vazio($senha);
         echo valida_tipoEspe ($confirmarsenha);
         echo valida_nao_vazio ($cpf);
         echo valida_nao_vazio($sexo);
         echo valida_tipoEspe ($datadeNascimento);
          
-        
+        $msg = adicionarCliente ($nome,$sobrenome, $email,$senha,$confirmarsenha,$cpf,$sexo,$datadeNascimento);
+        echo $msg;
       print_r($_POST);
    }else{
        exibir("cliente/cadastro");
-   }
+   
 }     
 
-    function contato(){
+function contato(){
     if (ehPost()){
         $nome= $_POST ["nomeCliente"];
         $email= $_POST ["email"];
