@@ -2,7 +2,7 @@
 require_once 'servico/validarServico.php';
 require_once 'modelo/clienteModelo.php';
 
-   function cadastro(){
+function cadastro(){
     if (ehPost()){
         $nome= $_POST ["nomeCliente"];
         $sobrenome= $_POST ["sobrenome"];
@@ -29,7 +29,8 @@ require_once 'modelo/clienteModelo.php';
    }else{
        exibir("cliente/cadastro");
    
-}     
+    }
+}
 
 function contato(){
     if (ehPost()){
@@ -51,11 +52,10 @@ function contato(){
        exibir("cliente/contato");
    }
 } 
-
-
-
-
-
-
+function listarClientes(){
+    $dados = array ();
+    $dados["clientes"] = pegarTodosClientes();
+    exibir ("cliente/listar", $dados);
+ }
 ?>
     
