@@ -9,16 +9,20 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>DESCRICAO</th>   
+                    <th>NOME</th>
+                    <th>CODIGO</th>
+                    <th>VALOR</th>
                 </tr>
             </thead>
             <?php foreach ($categoria as $categoria): ?>
             <tr>
-                <td><?=$categoria['idCategoria']?></td>
-                <td><?=$categoria['descricao']?></td>
+                <td><?=$categoria['idproduto']?></td>
+                <td><?=$categoria['nome']?></td>
+                <td><?=$categoria['codigo']?></td>
+                <td><?=$categoria['valor']?></td>
             </tr>
             <?php endforeach; ?>
         </table>
-        <a href="./categoria/descricao" class="btn btn-primary"> Nova categoria</a>
+        <a href="./produto/descricao" class="btn btn-primary"> Nova categoria</a>
     </body>
 </html>

@@ -7,7 +7,7 @@
      return 'Produto cadastrado com sucesso!';    
  }
  function pegarTodosProduto(){
-     $sql = "SELECT * FROM cliente";
+     $sql = "SELECT * FROM produto";
      $resultado = mysqli_query(conn(), $sql);
      $produto = array();
      while ($linha = mysqli_fetch_assoc($resultado)){
