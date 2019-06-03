@@ -6,10 +6,10 @@
             return NULL;
      }
      }
-    function valida_tipoEspe($valor){
+    function valida_tipoEspe($valor,$tipo){
         $input['valor'] = filter_var($valor, FILTER_VALIDATE_INT);
         if ($input['valor'] == FALSE) {
-        return 'Informe um valor valido.<br>';
+        return "Informe um $tipo válido.<br>";
 }else{
     return NULL;
 }
