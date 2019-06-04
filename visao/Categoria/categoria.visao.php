@@ -1,4 +1,10 @@
-
+<?php
+    if(ehPost()){
+        foreach ($errors as $erro){
+            echo "$erro<br>";
+        }
+    }
+  ?>
 <html>
     <head>
         <meta charset="UTF-8">

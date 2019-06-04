@@ -30,6 +30,7 @@
                 <td><?=$cliente['cpf']?></td>
                 <td><?=$cliente['sexo']?></td>
                 <td><?=$cliente['datadeNascimento']?></td>
+                <td><a href="./cliente/ver/<?=$cliente['idcliente']?>">Ver</a></td>
             </tr>
             <?php endforeach; ?>
         </table>

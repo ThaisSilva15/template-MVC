@@ -23,7 +23,6 @@ function  validar_email ($email){
         return NULL;
     }
 }
-
  ?>
   
     

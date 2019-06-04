@@ -16,17 +16,35 @@ function adicionar(){
         $codigo= $_POST ["codigo"];
         $valor= $_POST ["valor"];
         
-        echo valida_nao_vazio($nome);
-        echo valida_tipoEspe ($codigo);
-        echo valida_nao_vazio ($valor);
-        $msg = adicionarProduto ($nome, $codigo, $valor);
+        $errors = array();
+        if (valida_nao_vazio($nome, "nomeProduto") != NULL) {
+            $errors[] = valida_nao_vazio($nome, "nomeProduto");
+        }
+        if ( valida_tipoEspe ($codigo, "codigo") != NULL) {
+            $errors[] =  valida_tipoEspe ($codigo, "codigo");
+        }
+        if (valida_nao_vazio($valor, "valor") != NULL) {
+            $errors[] = valida_nao_vazio($valor, "valor");
+        } 
+        if (count($errors) > 0) {
+            $dados = array();
+            $dados["errors"] = $errors;
+            exibir("produto/formulario", $dados);
+        } else {
+            $msg = adicionarProduto ($nome, $codigo, $valor);
         echo $msg;
-   }else{
-       exibir("produto/formulario");
-   }
-}
+            redirecionar("./produto/listarProduto");
+        }
+    } else {
+        exibir("produto/formulario");
+    }
+}     
 function listarProduto(){
     $dados = array ();
     $dados["produto"] = pegarTodosProduto();
     exibir ("produto/listar", $dados);
  }
+ function ver($idproduto){
+    $dados ["produto"] = pegarProdutoPorId($idproduto);
+    exibir ("produto/visualizar", $dados);
+}

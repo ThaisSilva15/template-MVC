@@ -1,18 +1,27 @@
  <?php
-    require_once 'modelo/categoriaModelo.php'; 
+    require_once 'modelo/categoriaModelo.php';
+    require_once 'servico/validarServico.php';
     function descricao(){
     if (ehPost()){
         $descricao= $_POST ["descricao"];
-    if (strlen(trim($descricao))==0){
-      $errors[] = ("Você deve inserir uma descrição.");
+        
+        $errors = array();
+        if (valida_nao_vazio($descricao, "Descrição") != NULL) {
+            $errors[] = valida_nao_vazio($descricao, "Descrição");
+        }
+        if (count($errors) > 0) {
+            $dados = array();
+            $dados["errors"] = $errors;
+            exibir("categoria/categoria", $dados);
+        } else {
+            $msg = adicionarCategoria ($descricao);
+        echo $msg;  
+            redirecionar("./categoria/listarCategoria");
+        }
+    } else {
+        exibir ("Categoria/categoria"); 
     }
-    $msg = adicionarCategoria ($descricao);
-        echo $msg;    
-    }else{
-       
-    }   
-     exibir ("Categoria/categoria");    
-  }      
+} 
     function listarCategoria(){
     $dados = array ();
     $dados["categoria"] = pegarTodasCategorias();

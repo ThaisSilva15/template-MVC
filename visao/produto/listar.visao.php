@@ -20,6 +20,7 @@
                 <td><?=$produto['nome']?></td>
                 <td><?=$produto['codigo']?></td>
                 <td><?=$produto['valor']?></td>
+                <td><a href="./produto/ver/<?=$cliente['idproduto']?>">Ver</a></td>
             </tr>
             <?php endforeach; ?>
         </table>

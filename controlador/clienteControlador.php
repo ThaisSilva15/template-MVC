@@ -21,22 +21,22 @@ function cadastro() {
             $errors[] = valida_nao_vazio($sobrenome, "Sobrenome");
         }
         if (validar_email($email, "email") != NULL) {
-            $errors[] = validar_email($email);
+            $errors[] = validar_email($email, "email");
         }
         if (valida_nao_vazio($senha, "senha") != NULL) {
-            $errors[] = valida_nao_vazio($senha);
+            $errors[] = valida_nao_vazio($senha, "senha");
         }
         if (valida_nao_vazio($confirmarsenha, "confirmarsenha") != NULL) {
-            $errors[] = valida_nao_vazio($confirmarsenha);
+            $errors[] = valida_nao_vazio($confirmarsenha, "confirmarsenha");
         }
         if (valida_tipoEspe($cpf, "cpf") != NULL) {
             $errors[] = valida_tipoEspe($cpf,"CPF");
         }
         if (valida_nao_vazio($sexo, "sexo") != NULL) {
-            $errors[] = valida_nao_vazio($sexo);
+            $errors[] = valida_nao_vazio($sexo, "sexo");
         }
         if (valida_nao_vazio($datadeNascimento, "datadeNascimento") != NULL) {
-            $errors[] = valida_nao_vazio($datadeNascimento);
+            $errors[] = valida_nao_vazio($datadeNascimento, "datadeNascimento");
         }
         if (count($errors) > 0) {
             $dados = array();
@@ -59,22 +59,7 @@ function cadastro() {
             $cpf = $_POST ["CPF"];
             $telefone = $_POST ["telefone"];
             $mensagem = $_POST ["mensagem"];
-            $errors = array();
-        if (valida_nao_vazio($nomeCliente, "nomeCliente") != NULL) {
-            $errors[] = valida_nao_vazio($nome, "nomeCliente");
-        }
-        if (valida_email($email, "email") != NULL) {
-            $errors[] = valida_email($nome, "email");
-        }
-        if (valida_nao_vazio($CPF, "CPF") != NULL) {
-            $errors[] = valida_nao_vazio($nome, "CPF");
-        }   
-        if (valida_nao_vazio($telefone, "telefone") != NULL) {
-            $errors[] = valida_nao_vazio($nome, "telefone");
-        }
-        if (valida_nao_vazio($mensagem, "mensagem") != NULL) {
-            $errors[] = valida_nao_vazio($nome, "mensagem");
-        }
+           
             echo valida_nao_vazio($nomeCliente);
             echo valida_email($email);
             echo valida_nao_vazio($CPF);
@@ -90,5 +75,10 @@ function cadastro() {
         $dados["clientes"] = pegarTodosClientes();
         exibir("cliente/listar", $dados);
     }
+  function ver($idcliente){
+    $dados ["cliente"] = pegarClientePorId($idcliente);
+    exibir ("cliente/visualizar", $dados);
+}
+
     ?>
     
