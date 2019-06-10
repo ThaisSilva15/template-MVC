@@ -12,10 +12,11 @@
                     <th>DESCRICAO</th>   
                 </tr>
             </thead>
-            <?php foreach ($categoria as $categoria): ?>
+            <?php foreach ($categoria as $cat): ?>
             <tr>
-                <td><?=$categoria['idCategoria']?></td>
-                <td><?=$categoria['descricao']?></td>
+                <td><?=$cat['idCategoria']?></td>
+                <td><?=$cat['descricao']?></td>
+                <td><a href="./categoria/ver/<?=$cat['idCategoria']?>">Ver</a></td>
             </tr>
             <?php endforeach; ?>
         </table>

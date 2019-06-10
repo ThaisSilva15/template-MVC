@@ -27,4 +27,8 @@
     $dados["categoria"] = pegarTodasCategorias();
     exibir ("categoria/listar", $dados);
  }
+  function ver($idcategoria){
+    $dados ["categoria"] = pegarCategoriaPorId($idcategoria);
+    exibir ("categoria/visualizar", $dados);
+}
 ?>

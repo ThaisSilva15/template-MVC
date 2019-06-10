@@ -16,7 +16,7 @@
      return $produto;
  }
  function pegarProdutoPorId($id){
-   $sql = "select * from cliente where idproduto= $id";
+   $sql = "select * from produto where idproduto= $id";
      $resultado = mysqli_query(conn(), $sql);
      $produto = mysqli_fetch_assoc($resultado);
      return $produto;

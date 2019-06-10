@@ -13,8 +13,8 @@ and open the template in the editor.
        <h2> Ver detalhes do cliente </h2>
         <p> Id: <?=$cliente ['idcliente']?> </p>
         <p>Nome: <?=$cliente ['nome']?> </p>
-        <p>Nome: <?=$cliente ['sobrenome']?> </p>
-        <p>Sobrenome: <?=$cliente ['email']?> </p>
+        <p>Sobrenome: <?=$cliente ['sobrenome']?> </p>
+        <p>Email: <?=$cliente ['email']?> </p>
         <p>Senha: <?=$cliente ['senha']?> </p>
         <p>Confirmar Senha: <?=$cliente ['confirmarsenha']?> </p>
         <p>CPF: <?=$cliente ['cpf']?> </p>

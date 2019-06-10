@@ -14,13 +14,13 @@
                     <th>VALOR</th>
                 </tr>
             </thead>
-            <?php foreach ($produto as $produto): ?>
+            <?php foreach ($produto as $produ): ?>
             <tr>
-                <td><?=$produto['idproduto']?></td>
-                <td><?=$produto['nome']?></td>
-                <td><?=$produto['codigo']?></td>
-                <td><?=$produto['valor']?></td>
-                <td><a href="./produto/ver/<?=$cliente['idproduto']?>">Ver</a></td>
+                <td><?=$produ['idproduto']?></td>
+                <td><?=$produ['nome']?></td>
+                <td><?=$produ['codigo']?></td>
+                <td><?=$produ['valor']?></td>
+                <td><a href="./produto/ver/<?=$produ['idproduto']?>">Ver</a></td>
             </tr>
             <?php endforeach; ?>
         </table>
