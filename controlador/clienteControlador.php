@@ -5,20 +5,16 @@ require_once 'modelo/clienteModelo.php';
 
 function cadastro() {
     if (ehPost()) {
-        $nome = $_POST ["nomeCliente"];
-        $sobrenome = $_POST ["sobrenome"];
+        $nomeUsuario = $_POST ["nomeUsuario"];
         $email = $_POST ["email"];
         $senha = $_POST ["senha"];
-        $confirmarsenha = $_POST ["confirmarSenha"];
         $cpf = $_POST["CPF"];
+        $datadenascimento = $_POST["datadenascimento"];
         $sexo = $_POST["sexo"];
-        $datadeNascimento = $_POST["dataNascimento"];
+        //$tipoUsuario = $_POST["tipoUsuario"];
         $errors = array();
-        if (valida_nao_vazio($nome, "nome") != NULL) {
-            $errors[] = valida_nao_vazio($nome, "nome");
-        }
-        if (valida_nao_vazio($sobrenome, "Sobrenome") != NULL) {
-            $errors[] = valida_nao_vazio($sobrenome, "Sobrenome");
+        if (valida_nao_vazio($nomeUsuario, "nomeUsuario") != NULL) {
+            $errors[] = valida_nao_vazio($nomeUsuario, "nomeUsuario");
         }
         if (validar_email($email, "email") != NULL) {
             $errors[] = validar_email($email, "email");
@@ -26,26 +22,26 @@ function cadastro() {
         if (valida_nao_vazio($senha, "senha") != NULL) {
             $errors[] = valida_nao_vazio($senha, "senha");
         }
-        if (valida_nao_vazio($confirmarsenha, "confirmarsenha") != NULL) {
-            $errors[] = valida_nao_vazio($confirmarsenha, "confirmarsenha");
-        }
         if (valida_tipoEspe($cpf, "cpf") != NULL) {
             $errors[] = valida_tipoEspe($cpf,"CPF");
+        }
+        if (valida_nao_vazio($datadenascimento, "datadenascimento") != NULL) {
+            $errors[] = valida_nao_vazio($datadenascimento, "datadenascimento");
         }
         if (valida_nao_vazio($sexo, "sexo") != NULL) {
             $errors[] = valida_nao_vazio($sexo, "sexo");
         }
-        if (valida_nao_vazio($datadeNascimento, "datadeNascimento") != NULL) {
-            $errors[] = valida_nao_vazio($datadeNascimento, "datadeNascimento");
-        }
+       // if (valida_nao_vazio($tipoUsuario, "tipoUsuario") != NULL) {
+       //     $errors[] = valida_nao_vazio($tipoUsuario, "tipoUsuario");
+        //}
         if (count($errors) > 0) {
             $dados = array();
             $dados["errors"] = $errors;
             exibir("cliente/cadastro", $dados);
         } else {
-            $msg = adicionarCliente($nome, $sobrenome, $email, $senha, $confirmarsenha, $cpf, $sexo, $datadeNascimento);
+            $msg = adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, 1);
             echo $msg;
-            redirecionar("cliente\listarClientes");
+            redirecionar("cliente/listarUsuarios");
         }
     } else {
         exibir("cliente/cadastro");
@@ -70,15 +66,20 @@ function cadastro() {
         }
     }
 
-    function listarClientes() {
+    function listarUsuarios() {
         $dados = array();
-        $dados["clientes"] = pegarTodosClientes();
+        $dados["clientes"] = pegarTodosUsuarios();
         exibir("cliente/listar", $dados);
     }
-  function ver($idcliente){
-    $dados ["cliente"] = pegarClientePorId($idcliente);
+  function ver($idusuario){
+    $dados ["clientes"] = pegarUsuarioPorId($idUsuario);
     exibir ("cliente/visualizar", $dados);
 }
+ function deletar($id){
+        $msg = deletarUsuario($id);
+        redirecionar("cliente/listarUsuarios");
+    }
+
 
     ?>
     

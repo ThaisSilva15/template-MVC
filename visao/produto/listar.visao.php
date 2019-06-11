@@ -4,7 +4,7 @@
         <title></title>
     </head>
     <body>
-        <h2>Listar Categorias</h2>
+        <h2>Listar Produtos</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -21,6 +21,7 @@
                 <td><?=$produ['codigo']?></td>
                 <td><?=$produ['valor']?></td>
                 <td><a href="./produto/ver/<?=$produ['idproduto']?>">Ver</a></td>
+                <td><a href="./produto/deletar/<?=$produ['idproduto']?>">Deletar</a></td>
             </tr>
             <?php endforeach; ?>
         </table>

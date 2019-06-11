@@ -5,10 +5,11 @@
         <title></title>
     </head>
     <body>
-        <h1>Produto </h1>
-        Nome: <?=$Nome?><br>
-        Código: <?=$Descrição?><br>
-        Valor: <?=$Preço?><br>
+        <h2> Ver detalhes do Produto </h2>
+        <p> Id: <?=$produto ['idproduto']?> </p>
+        <p>Nome: <?=$produto ['nome']?> </p>
+        <p>Código: <?=$produto ['codigo']?> </p>
+        <p>Valor: <?=$produto ['valor']?> </p>
     </body>
 </html>
 

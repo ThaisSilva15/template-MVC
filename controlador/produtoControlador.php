@@ -48,3 +48,7 @@ function listarProduto(){
     $dados ["produto"] = pegarProdutoPorId($idproduto);
     exibir ("produto/visualizar", $dados);
 }
+function deletar($id){
+        $msg = deletarProduto($id);
+        redirecionar("produto/listarProduto");
+    }
