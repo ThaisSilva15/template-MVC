@@ -32,7 +32,7 @@ function cadastro() {
             $errors[] = valida_nao_vazio($sexo, "sexo");
         }
         if (valida_nao_vazio($tipoUsuario, "tipoUsuario") != NULL) {
-           $errors[] = valida_nao_vazio($tipoUsuario, "tipoUsuario");
+            $errors[] = valida_nao_vazio($tipoUsuario, "tipoUsuario");
         }
         if (count($errors) > 0) {
             $dados = array();
@@ -48,38 +48,38 @@ function cadastro() {
     }
 }
 
-    function contato() {
-        if (ehPost()) {
-            $nome = $_POST ["nomeCliente"];
-            $email = $_POST ["email"];
-            $cpf = $_POST ["CPF"];
-            $telefone = $_POST ["telefone"];
-            $mensagem = $_POST ["mensagem"];
-           
-            echo valida_nao_vazio($nomeCliente);
-            echo valida_email($email);
-            echo valida_nao_vazio($CPF);
-            echo valida_nao_vazio($telefone);
-            echo valida_nao_vazio($mensagem);
-        } else {
-            exibir("cliente/contato");
-        }
+function contato() {
+    if (ehPost()) {
+        $nome = $_POST ["nomeCliente"];
+        $email = $_POST ["email"];
+        $cpf = $_POST ["CPF"];
+        $telefone = $_POST ["telefone"];
+        $mensagem = $_POST ["mensagem"];
+        
+        echo valida_nao_vazio($nomeCliente);
+        echo valida_email($email);
+        echo valida_nao_vazio($CPF);
+        echo valida_nao_vazio($telefone);
+        echo valida_nao_vazio($mensagem);
+    } else {
+        exibir("cliente/contato");
     }
+}
 
-    function listarUsuarios() {
-        $dados = array();
-        $dados["clientes"] = pegarTodosUsuarios();
-        exibir("cliente/listar", $dados);
-    }
-  function ver($idUsuario){
+function listarUsuarios() {
+    $dados = array();
+    $dados["clientes"] = pegarTodosUsuarios();
+    exibir("cliente/listar", $dados);
+}
+function ver($idUsuario){
     $dados ["cliente"] = pegarUsuarioPorId($idUsuario);
     exibir ("cliente/visualizar", $dados);
 }
- function deletar($id){
-        $msg = deletarUsuario($id);
-        redirecionar("cliente/listarUsuarios");
-    }
+function deletar($id){
+    $msg = deletarUsuario($id);
+    redirecionar("cliente/listarUsuarios");
+}
 
 
-    ?>
-    
+?>
+

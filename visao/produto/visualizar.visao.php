@@ -6,14 +6,14 @@
     </head>
     <body>
         <h2> Ver detalhes do Produto </h2>
-        <p> Id: <?=$produto ['idproduto']?> </p>
-        <p> Id: <?=$produto ['idcategoria']?> </p>
-        <p>preço: <?=$produto ['preco']?> </p>
-        <p>nomeproduto: <?=$produto ['nomeproduto']?> </p>
-        <p>descricao: <?=$produto ['descricao']?> </p>
-        <p>imagem: <?=$produto ['imagem']?> </p>
-        <p>estoque_minimo: <?=$produto ['estoque_minimo']?> </p>
-        <p>estoque_maximo: <?=$produto ['estoque_maximo']?> </p>
+        <p>Id: <?=$produto ['idproduto']?> </p>
+        <p>Categoria: <?=$produto ['idcategoria']?> </p>
+        <p>Preço: <?=$produto ['preco']?> </p>
+        <p>Nome: <?=$produto ['nomeproduto']?> </p>
+        <p>Descricao: <?=$produto ['descricao']?> </p>
+        <p>Imagem: <?=$produto ['imagem']?> </p>
+        <p>Estoque_minimo: <?=$produto ['estoque_minimo']?> </p>
+        <p>Estoque_maximo: <?=$produto ['estoque_maximo']?> </p>
     </body>
 </html>
 
