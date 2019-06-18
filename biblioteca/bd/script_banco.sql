@@ -124,7 +124,7 @@ idproduto INT(11) auto_increment NOT NULL,
 idpedido INT (11)  NOT NULL,
 quantidade INT(11) NOT NULL,
 FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY(idpedido) REFERENCES produtos(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
+FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 */

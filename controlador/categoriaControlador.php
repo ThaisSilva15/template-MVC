@@ -19,7 +19,7 @@
             redirecionar("./categoria/listarCategoria");
         }
     } else {
-        exibir ("Categoria/categoria"); 
+        exibir ("categoria/categoria"); 
     }
 } 
 
