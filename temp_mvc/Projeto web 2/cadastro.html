@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+    function verifica(){
+    senha = document.getElementById("senha").value;
+    forca = 0;
+    mostra = document.getElementById("mostra");
+    if((senha.length >= 4) && (senha.length <= 7)){
+      forca += 10;
+    }else if(senha.length>7){
+      forca += 25;
+    }
+    if(senha.length>14){
+      forca += 15;
+    }
+    if(senha.match(/[a-z]+/)){
+      forca += 20;
+    }
+    if(senha.match(/[A-Z]+/)){
+      forca += 20;
+    }
+    if(senha.match(/d+/)){
+      forca += 20;
+    }
+    if(senha.match(/W+/)){
+      forca += 25;
+    }
+    return mostra_res();
+  }
+  function mostra_res(){
+    if ((forca >= 1) && (forca < 40)){
+      mostra.innerHTML = '<tr><td bgcolor="red" width="'+forca+'"></td><td>Fraca </td></tr>';
+    }else if((forca >= 30) && (forca < 70)){
+      mostra.innerHTML = '<tr><td bgcolor="yellow" width="'+forca+'"></td><td>Boa </td></tr>';;
+    }else if((forca >= 60) && (forca < 100)){
+      mostra.innerHTML = '<tr><td bgcolor="green" width="'+forca+'"></td><td>Forte </td></tr>';
+    }else if (forca > 100){
+      mostra.innerHTML = '<tr><td bgcolor="black" width="'+forca+'"></td> <td>Excelente </td></tr>';
+    }
+  }
+  </script>
+
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+<div id="site">
+      <div id="lista"> 
+        <ul>
+          <li><a href="index.html" style="color: #dcced0">Home</a></li>
+          <li><a href="login.html" style="color: #dcced0">Login</a></li>
+          <li><a href="cadastro.html" style="color: #dcced0">Cadastro</a></li>
+          <li><a href="carrinho.html" style="color: #dcced0">Meu carrinho</a></li>
+        </ul>
+      </div>
+    <img id="logo" src="imagens/imagemfundo.png" alt="Descrição da imagem" />
+      <div id="divBusca">
+        <img id="lupa" src="imagens/lupanova.png" t="Buscar..."/>
+        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+        <button id="btnBusca">Buscar</button>
+      </div>
+
+    <div id="form">
+	  <form action="/pagina-processa-dados-do-form" method="post" id="x">
+      <div id="icone">
+        <img id="logo1" src="imagens/images.png" alt="" />
+        <h2 id="cliente">Cadastro</h2>
+      </div>
+      <div>
+        <label><strong>Nome:</strong></label>
+        <input type="nome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EX:João ">
+      </div>
+      
+      <div>
+        <label><strong>Sobrenome:</strong></label>
+        <input type="sobrenome" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EX:Silva ">
+      </div>
+      <div>
+        <p><label for="email"><strong>E-mail:</strong></label></p>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EX:joãodasilva@gmail.com">
+      </div>
+      
+      <div>
+          <p><label for="Senha"><strong>Senha:</strong></label></p>
+          <input type="password" class="form-control" id="senha" placeholder="EX:12345joao" onkeyup="javascript:verifica()">
+          <table id="mostra"></table>
+      </div>
+	    <div>
+        <p><label for="senha" style="width: 45%"><strong>Confirmar senha:</strong></label></p>
+          <input type="password" class="form-control" id="senha" placeholder="EX:12345joao">
+      </div>
+      
+      <div>
+        <p><label><strong>CPF:</strong></label></p>
+        <input type="CPF" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="EX:528.625.402-00">
+      </div>
+	  <div class="form-check">
+		<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+		<label class="form-check-label" for="exampleRadios1">
+		<strong>Feminino</strong>
+		</label>
+		</div>
+		<div class="form-check">
+		<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+		<label class="form-check-label" for="exampleRadios2">
+		<strong>Masculino</strong>
+	</label>
+		</div>
+      
+      <div>
+        <label style="width: 50%"><strong>Data de Nascimento:</strong></label>
+      </div>
+      <div align="left">
+        <input type="date" name="bdaytime">
+      </div>
+      <div class="button">
+        <button type="submit" id="button">Cadastrar</button>
+      </div>
+    </form>
+  </div>
+  <div id="rodape1">
+        <div id="extrema-esquerda">
+          <h3 id="lorem-rodape">Quem somos nós?</h3> 
+          <p id="parag-rodape">Camilly e Thais</p>
+          <p id="parag-rodape">Estudantes do IFSP Itapetininga</p>
+          <p id="parag-rodape"> 1° ano Inormática.</p>
+          <p id="parag-rodape">Para encerrar o ano, tivemos de montar essa página</p>
+          <p id="parag-rodape">Espero que gostem foi feito, em muitas madrugadas,<br> enquanto muitos estavam tendo uma ótima noite de sono!!!</p>
+        </div>
+        <div id="esquerda">
+          <h3 id="lorem-rodape">Agradecimentos:</h3>
+          <p id="parag-rodape"> Danilo </p>
+          <p id="parag-rodape"> Thamires </p>
+          <p id="parag-rodape"> Eline </p>
+          <p id="parag-rodape"> Amiguinhos SZ</p>
+          <p id="parag-rodape">Novembro 2018 </p>
+        </div>
+        <div id="direita">
+          <h3 id="lorem-rodape">Para maiores informações:</h3>
+          <p id="parag-rodape">(15)999999999/ Thais <br>
+          (15)999999999/ Camilly</p>
+          <p id="parag-rodape">camillybeatrizsoaresramos@gmail.com</p>
+          <p id="parag-rodape">thaisgoncalvesdasilva7527@gmail.com</p>
+          <p id="parag-rodape">Horário de atendimento:</p>
+          <p id="parag-rodape"> segunda à sexta: das 8:00 às 18:00</p>	
+        </div>
+        <div id="extrema-direita">
+          <h3 id="lorem-rodape">Aceitamos cartões:</h3>
+          <p id="parag-rodape">Crédito</p>
+          <p id="parag-rodape">Débito</p>
+          <p id="parag-rodape">Boletos</p>
+          <p id="parag-rodape">Cheques</p>
+          <p id="parag-rodape">Nas compras acima de R$ 50,00  dividimos.</p>
+        </div>
+        <div id="p-rodap">
+          <p id="p1">Endereço: Av. João Olímpio de Oliveira, 1561 - Vila Asem, Itapetininga - SP, 18202-000</p> 
+
+        </div>
+        <div id="simbolo">
+
+          <div id="instagram">
+            <a href="https://www.instagram.com/"
+               target="_blank"><img id="ista" src="imagens/instagram.jpg" style="margin-top: 1%"></a>
+
+          </div>
+          <div id="googleplus">
+            <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+               target="_blank"><center><img src="imagens/gplus.svg" style="margin-top: 15%"></center></a>
+
+          </div>
+          <div id="twitter">
+            <a href="https://twitter.com/login?lang=pt"
+               target="_blank">
+              <center><img src="imagens/twitter.svg" style="margin-top: 15%"></center></a>
+          </div>
+
+          <div id="facebook">
+            <a href="https://pt-br.facebook.com/"
+               target="_blank"> <center><img src="imagens/facebook.svg" style="margin-top: 15%"></center></a>
+          </div>
+
+        </div>
+  </div>
+</div>  
+<!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
+     

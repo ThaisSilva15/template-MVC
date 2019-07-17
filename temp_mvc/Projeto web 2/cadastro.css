@@ -1,0 +1,238 @@
+body{
+  background-color: #72F0E5;
+}
+
+#lista{
+  background-color:#383b43;
+}
+
+#lista ul{
+  padding-right:5%;
+  list-style:none; 
+  color: #dcced0; 
+  margin-left:25%;
+  width: 60%;
+  height:30%;
+}
+#lista li{
+  color: #dcced0;
+  display:inline;
+  margin-left:2%;
+  margin-right:2%;
+  font-size:30px;
+  margin-top: 0%;
+  width: 60%;
+  height:30%;
+}
+#site{
+  width:100%;
+  padding:0%;
+}
+#form{
+  margin-top: 10%;
+  padding-bottom:5%;
+}
+#logo{
+  height: 200px;
+  width: 250px;
+  float: left;
+}
+#divBusca{
+  background-color:#E0EEEE;
+  border:solid 2px #5F9EA0;
+  border-radius:10px;
+  width:300px;
+  height:32px;
+  float: center;
+  justify-content: center;
+  text-align:left;
+  float: right;
+  margin: right;
+}
+
+#txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:5px; 
+  font-size:18px;
+  border:none;
+  height:32px;
+  width:191px;
+  border-bottom-color: #dcced0;
+}
+#btnBusca{
+  border:none;
+  float:left;
+  height:29px;
+  border-radius:0 7px 7px 0;
+  margin-left: 0%;
+  margin-top: 0%;
+  width:77px;
+  font-weight:bold;
+  background-color:#383b43;
+  color: #dcced0;
+}
+#divBusca img{
+  float:left;
+}
+#lupa {
+  width:28px;
+  height:28px;
+}
+#logo1{
+  height: 40px;
+  width: 40px;
+  margin-top: 6%;
+  margin-left: 15%;
+  float: left;
+}
+#rodape1{
+  width: 100%;
+  background-color: #383b43;
+  height: 500px;
+}
+#extrema-esquerda{
+  font-size: 14px;
+  float: left;
+  margin-left:1%;
+  color:#cdced0;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  margin-left: 14%;
+}
+#esquerda{
+  font-size: 14px;
+  float: left;
+  margin-left:3%;
+  color:#cdced0;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+#direita{
+  font-size: 14px;
+  float: left;
+  margin-left:3%;
+  color:#cdced0;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+#extrema-direita{
+  font-size: 14px;
+  float: left;
+  margin-left:3%;
+  color:#cdced0;
+  margin-top: 4%;
+  margin-bottom: 3%;
+
+}
+#parag-rodape{
+  color: #dcced0;
+}
+#p-rodap{
+  margin-left: 6%;
+  clear:both;
+  border:solid;
+  border-width: 2px 0 0 0;
+  margin-right: 5%; 
+  border-color:rgba(144,144,144,0.25); 
+  color: #858585;
+  font-size: 16px;
+}
+#p1{
+  margin-top: 4%;
+  float: left;
+  margin-right: 20px;
+}
+#facebook{
+  margin-top: 1%;
+  background-color: #39599f;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+#twitter{
+  margin-top: 1%;
+  background-color: #2daae4;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+}
+#googleplus{
+  margin-top: 1%;
+  background-color: #c91e1f;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+}
+#simbolo{
+  margin-right: 5%;
+}
+#ista{
+  width: 50px;
+  height: 50px;
+  margin-top: 3%;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: right;
+  margin-right: 2%;
+}
+#cliente{
+  padding-top: 6%;
+  padding-left: 25%;
+  width: 100%;
+  float:auto;
+
+}
+button {
+  margin-left: .5em;
+  background-color:#597183;
+}
+.button {
+  padding-left: 90px;
+ }
+input, textarea {
+  font: 1em sans-serif;
+  width: 300px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+label {
+  display: inline-block;
+  width: 90px;
+  margin-left: 5%;
+}
+form div + div {
+  margin-top: 1em;
+}
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+#x {
+	border: solid 7px black;
+}
+#button {
+  border-radius: 20px;
+}
+a:link 
+{ 
+text-decoration:none; 
+} 

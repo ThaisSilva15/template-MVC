@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Pagina principal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+      <div id="lista"> 
+        <ul>
+          <li><a href="/index.html" style="color: #dcced0">Home</a></li>
+          <li><a href="/login.html" style="color: #dcced0">Login</a></li>
+          <li><a href="/cadastro.html" style="color: #dcced0">Cadastro</a></li>
+          <li><a href="/carrinho.html" style="color: #dcced0">Meu carrinho</a></li>
+        </ul>
+      </div>
+    <img id="logo" src="imagens/imagemfundo.png" alt="Descrição da imagem" />
+      <div id="divBusca">
+        <img id="lupa" src="imagens/lupanova.png" t="Buscar..."/>
+        <input type="text" id="txtBusca" placeholder="Buscar..."/>
+        <button id="btnBusca">Buscar</button>
+      </div>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+      .mySlides {display:none;}
+    </style>
+    <body>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <style>
+        .mySlides {display:none;}
+      </style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+        
+       
+        <div class="w3-content w3-display-container" style="margin-bottom: 6%">
+          <img class="mySlides" src="imagens/roda1.jpg" style="width:100%">
+          <img class="mySlides" src="imagens/roda2.jpg" style="width:100%">
+          <img class="mySlides" src="imagens/roda3.jpg" style="width:100%">
+          <img class="mySlides" src="imagens/roda4.jpg" style="width:100%">
+
+          <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+
+        <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+          }
+        </script>
+        
+      <div="imagem1">
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/rub%20rosy.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          
+           <p>RUBY ROSE</p>
+          <p><strong>R$15,00</strong></p>
+           <p>Fixador de maquiagem, marca Ruby Rose</p>
+          <button id="btn"><a href="Produtos/Fixador/fixador.html">ver mais</a></button>
+        </figure>
+        </div>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/base.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>RUBY ROSE</p>
+          <p><strong>R$8,99</strong></p>
+          <p>Base de alta cobertura, marca Ruby Rose</p>
+          <button id="btn"><a href="Produtos/Base Ruby rose/ruby.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">        
+          <img class="img-make" id="tamanho" src="imagens/pó.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>MAC</p>
+          <p><strong>R$29,99</strong></p>
+          <p> Pó translucido, marca MAC</p>
+          <button id="btn"><a href="Produtos/po MAC/poMac.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/produto%20de%20vendaa.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+         <p>SEREIA</p> 
+          <p><strong>R$69,99</strong></p>
+         <p>Pincel Sereia, ótima qualidade, marca própria</p>
+          <button id="btn"><a href="Produtos/pincel/pincel2.html">ver mais</a></button>
+        </figure>
+        
+
+        <figure class="imagens-make">    
+          <img class="img-make" id="unica" src="imagens/corretivo.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>TRACTA</p>
+          <p><strong>R$19,99</strong></p>
+          <p>Corretivo de alta cobertura, marca Tracta</p>
+          <button id="btn"><a href="Produtos/corretivo/corretivo.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">  
+          <img class="img-make" id="unica" src="imagens/uni.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>KOLOSS</p>
+          <p><strong>R$27,99</strong></p>
+          <p>Lágrimas de unicórnio, marca própria</p>
+          <button id="btn"><a href="Produtos/kloos unicornio/kloos.html">ver mais</a></button>
+        </figure>
+        
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/pincel3.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>PÍNCEL</p>
+          <p><strong>R$35,99</strong></p>
+          <p>Píncel para viajem, marca própria</p>
+          <button id="btn"><a href="Produtos/pincéis/pincel1.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/batom.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>BATOM BRUNA TAVARES</p>
+          <p><strong>R$14,99</strong></p>
+          <p>Batom refrescante,exclusividade Bruna Tavares</p>
+          <button id="btn"><a href="Produtos/Batom/batom.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/po%202%20web.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>PÓ MAC</p>
+          <p><strong>R$24,99</strong></p>
+          <p>Pó simples, todas tonalidades, marca Mac</p>
+          <button id="btn"><a href="Produtos/pó MAC/poMac2.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="tamanho" src="imagens/po%203%20web.png" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>RUBY ROSE</p>
+          <p><strong>R$9,99</strong></p>
+          <p>Pó para selagem, marca Ruby Rose </p>
+          <button id="btn"><a href="Produtos/pó rubyy rose/poruby.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="unica" src="imagens/po%20web.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>QUEM DISSE BERENICE</p>
+          <p><strong>R$29,99</strong></p>
+          <p>Pó para selagem, marca Quem Disse Berenice</p>
+          <button id="btn"><a href="Produtos/pó normal/ponormal.html">ver mais</a></button>
+        </figure>
+
+        <figure class="imagens-make">
+          <img class="img-make" id="unica" src="imagens/paleta%20make.jpg" alt="imagem">
+          <img id="estrela" src="imagens/estrela2.png" alt="Descrição da imagem" />
+          <p>FENZZA </p>
+          <p><strong>R$14,99</strong></p>
+          <p>Paleta de cores, neutra, marca Fenezza</p>
+          <button id="btn"><a href="Produtos/maleta de make/paleta.html">ver mais</a></button>
+        </figure>
+    </div="imagem1">
+        <br>
+        <img id= "tom" src="imagens/tom.jpg" alt="imagem" style="margin-top: 5%; margin-bottom: 5%">  
+        <br>
+        
+    <div id="rodape1">
+        <div id="extrema-esquerda">
+          <h3 id="lorem-rodape">Quem somos nós?</h3> 
+          <p id="parag-rodape">Camilly e Thais</p>
+          <p id="parag-rodape">Estudantes do IFSP Itapetininga</p>
+          <p id="parag-rodape"> 1° ano Inormática.</p>
+          <p id="parag-rodape">Para encerrar o ano, tivemos de montar essa página</p>
+          <p id="parag-rodape">Espero que gostem foi feito, em muitas madrugadas,<br> enquanto muitos estavam tendo uma ótima noite de sono!!!</p>
+        </div>
+        <div id="esquerda">
+          <h3 id="lorem-rodape">Agradecimentos:</h3>
+          <p id="parag-rodape"> Danilo </p>
+          <p id="parag-rodape"> Thamires </p>
+          <p id="parag-rodape"> Eline </p>
+          <p id="parag-rodape"> Amiguinhos SZ</p>
+          <p id="parag-rodape">Novembro 2018 </p>
+        </div>
+        <div id="direita">
+          <h3 id="lorem-rodape">Para maiores informações:</h3>
+          <p id="parag-rodape">(15)999999999/ Thais <br>
+          (15)999999999/ Camilly</p>
+          <p id="parag-rodape">camillybeatrizsoaresramos@gmail.com</p>
+          <p id="parag-rodape">thaisgoncalvesdasilva7527@gmail.com</p>
+          <p id="parag-rodape">Horário de atendimento:</p>
+          <p id="parag-rodape"> segunda à sexta: das 8:00 às 18:00</p>	
+        </div>
+        <div id="extrema-direita">
+          <h3 id="lorem-rodape">Aceitamos cartões:</h3>
+          <p id="parag-rodape">Crédito</p>
+          <p id="parag-rodape">Débito</p>
+          <p id="parag-rodape">Boletos</p>
+          <p id="parag-rodape">Cheques</p>
+          <p id="parag-rodape">Nas compras acima de R$ 50,00  dividimos.</p>
+        </div>
+        <div id="p-rodap">
+          <p id="p1">Endereço: Av. João Olímpio de Oliveira, 1561 - Vila Asem, Itapetininga - SP, 18202-000</p> 
+
+        </div>
+        <div id="simbolo">
+
+          <div id="instagram">
+            <a href="https://www.instagram.com/"
+               target="_blank"><img id="ista" src="imagens/instagram.jpg" style="margin-top: 1%"></a>
+
+          </div>
+          <div id="googleplus">
+            <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+               target="_blank"><center><img src="imagens/gplus.svg" style="margin-top: 15%"></center></a>
+
+          </div>
+          <div id="twitter">
+            <a href="https://twitter.com/login?lang=pt"
+               target="_blank">
+              <center><img src="imagens/twitter.svg" style="margin-top: 15%"></center></a>
+          </div>
+
+          <div id="facebook">
+            <a href="https://pt-br.facebook.com/"
+               target="_blank"> <center><img src="imagens/facebook.svg" style="margin-top: 15%"></center></a>
+          </div>
+
+        </div>
+    </div>
+<!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
+	</html>
+     
