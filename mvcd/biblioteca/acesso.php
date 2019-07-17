@@ -35,3 +35,5 @@ function acessoPegarUsuarioLogado() {
         return $_SESSION["acesso"]["email"];
     }   
 }
+
+?>

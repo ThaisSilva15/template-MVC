@@ -1,7 +1,10 @@
 <?php
 
 function conn() {
-    $cnx = mysqli_connect("localhost", "mysql", "qwe123", "mvcd");
-    if (!$cnx) die('Deu errado a conexao!');
-    return $cnx;
+	//$cnx = mysqli_connect("localhost", "id10000745_lojacamithamake", "thaiscamilly", "id10000745_lojacamithamake");
+	$cnx = mysqli_connect("localhost", "root", "", "lojacamithamake");
+	if (!$cnx) die('Deu errado a conexao!');
+	return $cnx;
 }
+
+?>
