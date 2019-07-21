@@ -1,0 +1,84 @@
+DROP DATABASE IF EXISTS lojacamithamake;
+CREATE DATABASE lojacamithamake;
+
+USE lojacamithamake;
+
+CREATE TABLE IF NOT EXISTS cliente (
+	idCliente INT(11) NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(20) NOT NULL,
+	email VARCHAR(20) NOT NULL,
+	senha VARCHAR(16) NOT NULL,
+	cpf INT(11) NOT NULL,
+	nascimento DATE NOT NULL,
+	sexo VARCHAR(1) NOT NULL,
+	tipoCliente VARCHAR(3) NOT NULL,
+	PRIMARY KEY(idCliente)
+);
+CREATE TABLE IF NOT EXISTS categoria (
+	idCategoria INT(11) NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(15) NOT NULL,
+	PRIMARY KEY(idCategoria)
+);
+CREATE TABLE IF NOT EXISTS cupom (
+	idCupom INT(11) NOT NULL,
+	nome VARCHAR(20) NOT NULL,
+	desconto INT(5) NOT NULL,
+	PRIMARY KEY(idCupom)
+);
+CREATE TABLE IF NOT EXISTS log_produto (
+	idLog INT(11) NOT NULL,
+	tabela VARCHAR(20) NOT NULL,
+	cliente VARCHAR(20) NOT NULL,
+	data_hora DATETIME NOT NULL,
+	acao VARCHAR(20) NOT NULL,
+	dados VARCHAR(1000) NOT NULL,
+	PRIMARY KEY(idLog)
+);
+CREATE TABLE IF NOT EXISTS produto (
+	idProduto INT(11) NOT NULL AUTO_INCREMENT,
+	idCategoria INT(11) NOT NULL,
+	nome VARCHAR(20) NOT NULL,
+	preco DOUBLE NOT NULL,
+	descricao VARCHAR(200) NOT NULL,
+	imagem VARCHAR(50) NOT NULL,
+	est_min INT(11) NOT NULL,
+	est_max INT(11) NOT NULL,
+	PRIMARY KEY(idProduto),
+	FOREIGN KEY (idCategoria) REFERENCES categoria(idCategoria) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS estoque (
+	idEstoque INT(11) NOT NULL,
+	idProduto INT(11) NOT NULL,
+	quantidade INT(11) NOT NULL,
+	PRIMARY KEY(idEstoque),
+	FOREIGN KEY (idProduto) REFERENCES produto(idProduto) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS endereco (
+	idEndereco INT(11) NOT NULL,
+	idCliente INT(11) NOT NULL,
+	logradouro VARCHAR(60) NOT NULL,
+	numero VARCHAR(7) NOT NULL,
+	complemento VARCHAR(50),
+	bairro VARCHAR(30) NOT NULL,
+	cidade VARCHAR(30) NOT NULL,
+	cep INT(8) NOT NULL,
+	PRIMARY KEY(idEndereco),
+	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS pedido (
+	idPedido INT(11) NOT NULL,
+	idCliente INT(11) NOT NULL,
+	idEndereco INT(11) NOT NULL,
+	dataCompra DATE NOT NULL,
+	PRIMARY KEY(idPedido),
+	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (idEndereco) REFERENCES endereco(idEndereco) ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE TABLE IF NOT EXISTS pedido_produto (
+	idProduto INT(11) NOT NULL,
+	idPedido INT(11) NOT NULL,
+	quantidade INT(11) NOT NULL,
+	PRIMARY KEY(idProduto, idPedido),
+	FOREIGN KEY (idProduto) REFERENCES produto(idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (idPedido) REFERENCES pedido(idPedido) ON DELETE CASCADE ON UPDATE CASCADE
+);
