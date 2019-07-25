@@ -1,9 +1,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-
 		<title>CamiThaMake Store</title>
+
 		<base href="<?= URL_BASE ?>">
+		<link rel="shortcut icon" type="image/x-png" href="">
 
 		<link rel="stylesheet" href="publico/css/app.css">
 		<script src="publico/js/script.js"></script>

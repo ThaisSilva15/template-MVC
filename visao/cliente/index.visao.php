@@ -3,6 +3,8 @@
 		<tr>
 			<th>ID</th>
 			<th>NOME</th>
+            <th>EMAIL</th>
+            <th>CPF</th>
 			<th>VIEW</th>
 			<th>EDIT</th>
 			<th>DELETE</th>
@@ -12,6 +14,8 @@
 		<tr>
 			<td><?=$cliente["idCliente"]?></td>
 			<td><?=$cliente["nome"]?></td>
+            <td><?=$cliente["email"]?></td>
+            <td><?=$cliente["cpf"]?></td>
 			<td><a href="cliente/visualizar/<?=$cliente["idCliente"]?>">VIEW</a></td>
 			<td><a href="cliente/editar/<?=$cliente["idCliente"]?>">EDIT</a></td>
 			<td><a href="cliente/deletar/<?=$cliente["idCliente"]?>">DELETE</a></td>

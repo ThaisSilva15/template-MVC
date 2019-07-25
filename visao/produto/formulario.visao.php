@@ -1,5 +1,5 @@
 <div>
-	<form action="" method="POST">
+	<form action="" method="POST" enctype="multipart/form-data">
 
 		Nome<input type="text" name="nome"><br>
 		Preco<input type="number" name="preco"><br>

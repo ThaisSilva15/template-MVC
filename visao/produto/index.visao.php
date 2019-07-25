@@ -1,6 +1,7 @@
 <table>
 	<thead>
 		<tr>
+			<th></th>
 			<th>ID</th>
 			<th>NOME</th>
 			<th>VIEW</th>
@@ -10,6 +11,7 @@
 	</thead>
 	<?php foreach ($produtos as $produto):?>
 		<tr>
+			<td><img src="<?=$produto["imagem"]?>" style="width:40px; heigth:40px;"></td>
 			<td><?=$produto["idProduto"]?></td>
 			<td><?=$produto["nome"]?></td>
 			<td><a href="produto/visualizar/<?=$produto["idProduto"]?>">VIEW</a></td>

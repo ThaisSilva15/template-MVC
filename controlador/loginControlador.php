@@ -1,12 +1,12 @@
 <?php
 
-require_once "modelo/usuarioModelo.php";
+require_once "modelo/clienteModelo.php";
 
 /** anon */
 function index() {
     if (ehPost()) {
         extract($_POST);
-        $usuario = pegarUsuarioPorEmailSenha($email, $senha);
+        $usuario = pegarClienteviaEmailSenha($email, $senha);
         
         if (acessoLogar($usuario)) {
             alert("bem vindo" . $login);

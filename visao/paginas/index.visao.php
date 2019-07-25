@@ -1,5 +1,10 @@
-<h1>Aplicação Web com o MVCd</h1>
-
-<p>Este é um projeto desenvolvido com propósito educacional e não deve ser usado em projetos reais. A ideia geral do projeto é apresentar as ideias e conceitos de arquitetura, modelos e framework para alunos que ainda não conhecem a orientação a objetos.</p> 
-
-<p>O framework utiliza o padrão arquitetural MVC, logo sua estrutura básica apresenta os três principais objetos da arquitetura, representados pelas pastas <code>modelo<code>, <code>controlador</code> e <code>visao</code>. </p>
+<div style="width:100%; min-heigth:500px; padding:10px;">
+	<?php foreach ($produtos as $produto):?>
+	<div>
+		<img src="<?=$produto["imagem"]?>" style="width:40px; heigth:40px;">
+		<p><?=$produto["idProduto"]?></p>
+		<p><?=$produto["nome"]?></p>
+		<p><a href="produto/visualizar/<?=$produto["idProduto"]?>">Ver detalhes</a></p>
+	</div>
+	<?php endforeach;?>
+</div>

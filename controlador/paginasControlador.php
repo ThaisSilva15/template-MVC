@@ -1,7 +1,11 @@
 <?php
 
+require_once "modelo/produtoModelo.php";
+
 function index() {
-    exibir("paginas/index");
+    $dados=array();
+    $dados['produtos'] = listarProdutos();
+    exibir("paginas/index",$dados);
 }
 
 ?>

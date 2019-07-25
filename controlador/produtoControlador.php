@@ -18,13 +18,26 @@ function adicionar(){
 		$nome = $_POST['nome'];
 		$preco = $_POST['preco'];
 		$descricao = $_POST['descricao'];
-		$imagem = $_POST['imagem'];
 		$est_min = $_POST['est_min'];
 		$est_max = $_POST['est_max'];
 
-		$msg = adicionarProduto($categoria, $nome, $preco, $descricao, $imagem, $est_min, $est_max);
+		$imagem_temp_name = $_FILES['imagem']['tmp_name'];
+		$name_imagem = $_FILES['imagem']['name'];
+		$imagem = uploadImagem($imagem_temp_name,$name_imagem);
 
-		redirecionar("produto/index");
+		$errors = array();
+
+		// validação virá aqui
+
+		if (count($errors) > 0) {
+			$dados = array();
+			$dados["erros"] = $errors;
+			$dados["categorias"] = listarCategorias();
+			exibir("produtos/formulario", $dados);
+		} else {
+			$msg = adicionarProduto($categoria, $nome, $preco, $descricao, $imagem, $est_min, $est_max);
+			redirecionar("produto/index");
+		}
 	} else {
 		$dados = array();
 		$dados["categorias"] = listarCategorias();
@@ -38,13 +51,26 @@ function editar($id){
 		$nome = $_POST['nome'];
 		$preco = $_POST['preco'];
 		$descricao = $_POST['descricao'];
-		$imagem = $_POST['imagem'];
 		$est_min = $_POST['est_min'];
 		$est_max = $_POST['est_max'];
-		
-		$msg = editarProduto($id,$categoria, $nome, $preco, $descricao, $imagem, $est_min, $est_max);
 
-		redirecionar("produto/index");
+		$imagem_temp_name = $_FILES['imagem']['tmp_name'];
+		$name_imagem = $_FILES['imagem']['name'];
+		$imagem = uploadImagem($imagem_temp_name,$name_imagem);
+
+		$errors = array();
+
+		// validação virá aqui
+
+		if (count($errors) > 0) {
+			$dados = array();
+			$dados["erros"] = $errors;
+			$dados["categorias"] = listarCategorias();
+			exibir("produtos/formulario", $dados);
+		} else {
+			$msg = editarProduto($id,$categoria, $nome, $preco, $descricao, $imagem, $est_min, $est_max);
+			redirecionar("produto/index");
+		}
 	} else {
 		$dados = array();
 		$dados["categorias"] = listarCategorias();
@@ -53,6 +79,7 @@ function editar($id){
 }
 
 function visualizar($id){
+	$dados = array();
 	$dados["produto"] = visualizarProduto($id);
 	exibir("produto/visualizar",$dados);
 }

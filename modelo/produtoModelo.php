@@ -14,7 +14,7 @@ function adicionarProduto($categoria, $nome, $preco, $descricao, $imagem, $est_m
 			)";
 	$resultado = mysqli_query(conn(), $sql);
 	if (!$resultado) {
-		die('Erro ao cadastrar produto. Erro: '.mysqli_error($sql));
+		die('Erro ao cadastrar produto. Erro: '.mysqli_error(conn()));
 	}
 	return 'Produto cadastrado com sucesso!';
 }
@@ -32,7 +32,7 @@ function editarProduto($id, $categoria, $nome, $preco, $descricao, $imagem, $est
 			";
 	$resultado = mysqli_query(conn(), $sql);
 	if (!$resultado) {
-		die('Erro ao alterar produto. Erro: '.mysqli_error($sql));
+		die('Erro ao alterar produto. Erro: '.mysqli_error(conn()));
 	}
 	return 'Produto alterado com sucesso!';
 }
@@ -41,7 +41,7 @@ function deletarProduto($id){
 	$sql = "DELETE FROM produto WHERE idProduto='$id'";
 	$resultado = mysqli_query(conn(), $sql);
 	if (!$resultado) {
-		die('Erro ao remover produto. Erro: '.mysqli_error($sql));
+		die('Erro ao remover produto. Erro: '.mysqli_error(conn()));
 	}
 	return 'Produto removido com sucesso!';
 }

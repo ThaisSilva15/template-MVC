@@ -63,4 +63,11 @@ function listarClientes(){
 	return $clientes;
 }
 
+function pegarClienteviaEmailSenha($email, $senha){
+	$sql = "SELECT * FROM cliente WHERE email='$email' AND senha='$senha'";
+	$resultado = mysqli_query(conn(),$sql);
+	$cliente = mysqli_fetch_assoc($resultado);
+	return $cliente;
+}
+
 ?>
