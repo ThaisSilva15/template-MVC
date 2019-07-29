@@ -31,6 +31,13 @@ function deletarUsuario ($id){
     }
     return 'usuario deletado com sucesso!';
 }
+function editarUsuario ($id, $nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario){
+    $sql = "UPDATE cliente SET nome= '$email' WHERE idUsuario = $id";
+    $resultado = mysqli_query ($cnx = conn(), $sql);
+    if(!$resultado){ die('Erro ao deletar usuario' . mysqli_error($cnx));
+    }
+    return 'Usuario deletado com sucesso!';
+}
 
 
 ?>

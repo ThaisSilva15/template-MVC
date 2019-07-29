@@ -79,6 +79,23 @@ function deletar($id){
     $msg = deletarUsuario($id);
     redirecionar("cliente/listarUsuarios");
 }
+function editar($id) {
+    if(ehPost()) {
+        $nomeUsuario = $_POST ["nomeUsuario"];
+        $email = $_POST ["email"];
+        $senha = $_POST ["senha"];
+        $cpf = $_POST["CPF"];
+        $datadenascimento = $_POST["datadenascimento"];
+        $sexo = $_POST["sexo"];
+        $tipoUsuario = $_POST["tipoUsuario"];
+        editarUsuario($id, $nomeUsuario, $email, $senha, $cpf, $datadenascimento, $sexo, $tipoUsuario);
+        redirecionar ("cliente/listar");
+    }else{
+        $dados["cliente"] = pegarUsuarioPorId($id);
+        exibir ("cliente/formulario", $dados);
+    }
+}
+
 
 
 ?>
