@@ -14,8 +14,7 @@ function exibir($view, $data = array()) {
 
 function redirecionar($path) {
     $finalPath = URL_BASE . $path;
-    //header("location: $finalPath");
-    echo"<script>window.location.href = '$finalPath'</script>";
+    header("location: $finalPath");
     die();
 }
 

@@ -43,5 +43,3 @@ function alertComponentRender() {
 }
 
 alertInit();
-
-?>

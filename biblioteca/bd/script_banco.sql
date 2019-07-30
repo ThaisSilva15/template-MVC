@@ -1,84 +1,126 @@
-DROP DATABASE IF EXISTS lojacamithamake;
-CREATE DATABASE lojacamithamake;
+DROP DATABASE IF EXISTS loja;
+CREATE DATABASE loja;
+USE loja;
 
-USE lojacamithamake;
+CREATE TABLE usuario (
+idUsuario INT(11) NOT NULL AUTO_INCREMENT,
+nomeUsuario VARCHAR(60) NOT NULL,
+email VARCHAR(60) NOT NULL,
+senha VARCHAR(60) NOT NULL,
+cpf VARCHAR(60) NOT NULL,
+datadenascimento VARCHAR(10) NOT NULL,
+sexo VARCHAR(60) NOT NULL,
+tipoUsuario VARCHAR(5) NOT NULL,
+PRIMARY KEY (idUsuario)
+);
 
-CREATE TABLE IF NOT EXISTS cliente (
-	idCliente INT(11) NOT NULL AUTO_INCREMENT,
-	nome VARCHAR(20) NOT NULL,
-	email VARCHAR(20) NOT NULL,
-	senha VARCHAR(16) NOT NULL,
-	cpf INT(11) NOT NULL,
-	nascimento DATE NOT NULL,
-	sexo VARCHAR(1) NOT NULL,
-	tipoCliente VARCHAR(3) NOT NULL,
-	PRIMARY KEY(idCliente)
+CREATE TABLE categoria(
+idcategoria INT(11) AUTO_INCREMENT  NOT NULL,
+descricao VARCHAR(50) NOT NULL,
+PRIMARY KEY(idcategoria)
 );
-CREATE TABLE IF NOT EXISTS categoria (
-	idCategoria INT(11) NOT NULL AUTO_INCREMENT,
-	nome VARCHAR(20) NOT NULL,
-	PRIMARY KEY(idCategoria)
+
+CREATE TABLE produtos (
+idproduto INT(11) AUTO_INCREMENT NOT NULL,
+idcategoria INT  NOT NULL,
+preco double NOT NULL,
+nomeproduto VARCHAR(30) NOT NULL,
+descricao VARCHAR(60) NOT NULL,
+imagem VARCHAR(60) NOT NULL,
+estoque_minimo INT(11) NOT NULL,
+estoque_maximo INT(11) NOT NULL,
+PRIMARY KEY (idproduto),
+FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON DELETE CASCADE ON UPDATE CASCADE
+) ;
+/*
+
+
+CREATE TABLE usuario (
+idUsuario INT(11) NOT NULL AUTO_INCREMENT,
+nomeUsuario VARCHAR(60) NOT NULL,
+email VARCHAR(60) NOT NULL,
+senha VARCHAR(60) NOT NULL,
+cpf VARCHAR(60) NOT NULL,
+datadenascimento VARCHAR(10) NOT NULL,
+sexo VARCHAR(60) NOT NULL,
+tipoUsuario VARCHAR(5) NOT NULL,
+PRIMARY KEY (idUsuario)
 );
-CREATE TABLE IF NOT EXISTS cupom (
-	idCupom INT(11) NOT NULL,
-	nome VARCHAR(20) NOT NULL,
-	desconto INT(5) NOT NULL,
-	PRIMARY KEY(idCupom)
+
+CREATE TABLE log_produto(
+id_Log INT (11) auto_increment  NOT NULL,
+Tabela VARCHAR (45) NOT NULL,
+Usuario VARCHAR (45) NOT NULL,
+Data_Hora Datetime NOT NULL,
+Acao VARCHAR (45) NOT NULL,
+Dados VARCHAR (100) NOT NULL,
+PRIMARY KEY (id_Log)
 );
-CREATE TABLE IF NOT EXISTS log_produto (
-	idLog INT(11) NOT NULL,
-	tabela VARCHAR(20) NOT NULL,
-	cliente VARCHAR(20) NOT NULL,
-	data_hora DATETIME NOT NULL,
-	acao VARCHAR(20) NOT NULL,
-	dados VARCHAR(1000) NOT NULL,
-	PRIMARY KEY(idLog)
+
+CREATE TABLE cupom(
+idcupom INT (11) auto_increment  NOT NULL,
+nomecupom VARCHAR (60) NOT NULL,
+desconto INT (11) NOT NULL,
+PRIMARY KEY (idcupom)
 );
-CREATE TABLE IF NOT EXISTS produto (
-	idProduto INT(11) NOT NULL AUTO_INCREMENT,
-	idCategoria INT(11) NOT NULL,
-	nome VARCHAR(20) NOT NULL,
-	preco DOUBLE NOT NULL,
-	descricao VARCHAR(200) NOT NULL,
-	imagem VARCHAR(100) NOT NULL,
-	est_min INT(11) NOT NULL,
-	est_max INT(11) NOT NULL,
-	PRIMARY KEY(idProduto),
-	FOREIGN KEY (idCategoria) REFERENCES categoria(idCategoria) ON DELETE CASCADE ON UPDATE CASCADE
+
+CREATE TABLE categoria(
+idcategoria INT auto_increment  NOT NULL,
+descricao VARCHAR (50) NOT NULL,
+PRIMARY KEY (idcategoria)
 );
-CREATE TABLE IF NOT EXISTS estoque (
-	idEstoque INT(11) NOT NULL,
-	idProduto INT(11) NOT NULL,
-	quantidade INT(11) NOT NULL,
-	PRIMARY KEY(idEstoque),
-	FOREIGN KEY (idProduto) REFERENCES produto(idProduto) ON DELETE CASCADE ON UPDATE CASCADE
+
+CREATE TABLE endereco(
+idendereco INT(11) NOT NULL auto_increment,
+idusuario INT(11) NOT NULL,
+logradouro VARCHAR(60) NOT NULL,
+numero VARCHAR(7) NOT NULL,
+complemento VARCHAR(60) NOT NULL,
+bairro VARCHAR(60) NOT NULL,
+cidade VARCHAR(60) NOT NULL,
+cep VARCHAR(60) NOT NULL,
+PRIMARY KEY(idendereco),
+FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE IF NOT EXISTS endereco (
-	idEndereco INT(11) NOT NULL,
-	idCliente INT(11) NOT NULL,
-	logradouro VARCHAR(60) NOT NULL,
-	numero VARCHAR(7) NOT NULL,
-	complemento VARCHAR(50),
-	bairro VARCHAR(30) NOT NULL,
-	cidade VARCHAR(30) NOT NULL,
-	cep INT(8) NOT NULL,
-	PRIMARY KEY(idEndereco),
-	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente) ON DELETE CASCADE ON UPDATE CASCADE
+
+CREATE TABLE estoque(
+idestoque INT (11) auto_increment  NOT NULL,
+idproduto INT (11) NOT NULL,
+qtde INT (11) NOT NULL,
+PRIMARY KEY (idestoque),
+FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE
+
 );
-CREATE TABLE IF NOT EXISTS pedido (
-	idPedido INT(11) NOT NULL,
-	idCliente INT(11) NOT NULL,
-	idEndereco INT(11) NOT NULL,
-	dataCompra DATE NOT NULL,
-	PRIMARY KEY(idPedido),
-	FOREIGN KEY (idCliente) REFERENCES cliente(idCliente) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idEndereco) REFERENCES endereco(idEndereco) ON DELETE CASCADE ON UPDATE CASCADE
+
+CREATE TABLE pedido (
+idPedido INT (11) auto_increment  NOT NULL,
+idUsuario INT(11) NOT NULL,
+idendereco INT(11) NOT NULL,
+datacompra date NOT NULL,
+PRIMARY KEY (idPedido),
+FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE
 );
-CREATE TABLE IF NOT EXISTS pedido_produto (
-	idProduto INT(11) NOT NULL,
-	idPedido INT(11) NOT NULL,
-	quantidade INT(11) NOT NULL,
-	PRIMARY KEY(idProduto, idPedido),
-	FOREIGN KEY (idProduto) REFERENCES produto(idProduto) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (idPedido) REFERENCES pedido(idPedido) ON DELETE CASCADE ON UPDATE CASCADE
+
+CREATE TABLE produtos (
+idproduto INT(11) auto_increment NOT NULL,
+idcategoria INT  NOT NULL,
+preco double NOT NULL,
+nomeproduto VARCHAR(30) NOT NULL,
+descricao VARCHAR(60) NOT NULL,
+imagem VARCHAR(60) NOT NULL,
+estoque_minimo INT(11) NOT NULL,
+estoque_maximo INT(11) NOT NULL,
+PRIMARY KEY (idproduto),
+FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria)) ;
+
+
+CREATE TABLE pedido_produto (
+idproduto INT(11) auto_increment NOT NULL,
+idpedido INT (11)  NOT NULL,
+quantidade INT(11) NOT NULL,
+FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+*/

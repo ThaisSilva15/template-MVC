@@ -1,22 +1,20 @@
-<div>
-	<form action="" method="POST" enctype="multipart/form-data">
+<?php
+if(ehPost()){
+	foreach ($errors as $erro){
+		echo "$erro<br>";
+	}
+}
+?>
 
-		Nome<input type="text" name="nome"><br>
-		Preco<input type="number" name="preco"><br>
+<h1> Cadastro do produto</h1>
+<form action="" method="POST">
+    Nome do Produto: <input type="text" name="nome" value="<?=@$cliente['nomeproduto']?>">
+    Preco: <input type="text" name="nome" value="<?=@$cliente['preco']?>">
+    Descricão:  <input type="text" name="nome" value="<?=@$cliente['descricao']?>">
+    Imagem: <input type="text" name="nome" value="<?=@$cliente['imagem']?>">
+    Estoque Minimo: <input type="text" name="nome" value="<?=@$cliente['estoque_minimo']?>">
+    Estoque Maximo: <input type="text" name="nome" value="<?=@$cliente['estoque_maximo']?>">
+	<button>Enviar</button>
+</form>
 
-		<select name="categoria">
-			<option value="default">Selecione uma categoria</option>
-		<?php foreach ($categorias as $categoria):?>
-			<option value="<?=$categoria["idCategoria"]?>"><?=$categoria["nome"]?></option>
-		<?php endforeach;?>
-		</select><br>
 
-		<textarea name="descricao" cols="10" rows="10">Descricao</textarea><br>
-		Imagem<input type="file" name="imagem"><br>
-
-		Estoque minimo<input type="number" name="est_min"><br>
-		Estoque maximo<input type="number" name="est_max"><br>
-
-		<button type="submit">Cadastrar Produto</button>
-	</form>
-</div>

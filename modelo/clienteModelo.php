@@ -1,73 +1,45 @@
-<?php
-
-function adicionarCliente($nome,$email,$senha,$cpf,$nascimento,$sexo,$tipoCliente){
-	$sql = "INSERT INTO cliente 
-			VALUES(
-				NULL,
-				'$nome',
-				'$email',
-				'$senha',
-				'$cpf',
-				'$nascimento',
-				'$sexo',
-				'$tipoCliente'
-			)";
-	$resultado = mysqli_query(conn(), $sql);
-	if (!$resultado) {
-		die('Erro ao cadastrar produto. Erro: '.mysqli_error(conn()));
-	}
-	return 'Produto cadastrado com sucesso!';
+ <?php
+ 
+ function adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario){
+    $sql ="INSERT INTO usuario (nomeUsuario, email, senha, cpf,datadenascimento, sexo, tipoUsuario) 
+            VALUES ('$nomeUsuario', '$email', '$senha', '$cpf','$datadenascimento', '$sexo', $tipoUsuario)";
+    $resultado = mysqli_query ($cnx = conn(), $sql);
+    if (!$resultado) { die('Erro ao cadastrar usuario' . mysqli_error ($cnx));}
+    return 'Usuario cadastrado com sucesso!';    
 }
 
-function editarCliente($id,$nome,$email,$senha,$cpf,$nascimento,$sexo,$tipoCliente){
-	$sql = "UPDATE cliente 
-			SET nome='$nome',
-				email='$email',
-				senha='$senha',
-				cpf='$cpf',
-				nascimento='$nascimento',
-				sexo='$sexo',
-				tipoCliente='$tipoCliente' 
-			WHERE idCliente='$id'
-			";
-	$resultado = mysqli_query(conn(), $sql);
-	if (!$resultado) {
-		die('Erro ao alterar dados do cliente. Erro: '.mysqli_error(conn()));
-	}
-	return 'Dados alterados com sucesso!';
+function pegarTodosUsuarios(){
+    $sql = "SELECT * FROM usuario";
+    $resultado = mysqli_query(conn(), $sql);
+    $clientes = array();
+    while ($linha = mysqli_fetch_assoc($resultado)){
+        $clientes[]= $linha;
+    }
+    return $clientes;
+}
+function pegarUsuarioPorId($id){
+    $sql = "select * from usuario where idUsuario= $id";
+    $resultado = mysqli_query(conn(), $sql);
+    $clientes = mysqli_fetch_assoc($resultado);
+    return $clientes;
+}
+function deletarUsuario ($id){
+    $sql = "DELETE FROM usuario WHERE idUsuario = $id";
+    $resultado = mysqli_query ($cnx = conn(), $sql);
+    if(!$resultado){
+        die('Erro ao deletar usuario' . mysqli_error($cnx));
+    }
+    return 'usuario deletado com sucesso!';
+}
+function editarUsuario($id, $nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario){
+ $sql ="upadate usuario set nomeUsuario = '$nomeUsuario', email ='$email',senha ='$senha', cpf ='$cpf', datadenascimento ='$datadenascimento', sexo ='$sexo', tipoUsuario = '$tipoUsuario' where idUsuario";
+ $resultado = mysqli_query($cnx = conn (), $sql);
+ if (!$resultado) {die('Erro ao alterar produto'. mysqli_error($cnx)); }
+ return  'Produto alterado com sucesso!';
 }
 
-function deletarCliente($id){
-	$sql = "DELETE FROM cliente WHERE idCliente='$id'";
-	$resultado = mysqli_query(conn(), $sql);
-	if (!$resultado) {
-		die('Erro ao remover o cliente. Erro: '.mysqli_error(conn()));
-	}
-	return 'Cliente removido com sucesso!';
-}
-
-function visualizarCliente($id){
-	$sql = "SELECT * FROM cliente WHERE idCliente='$id'";
-	$resultado = mysqli_query(conn(),$sql);
-	$cliente = mysqli_fetch_assoc($resultado);
-	return $cliente;
-}
-
-function listarClientes(){
-	$sql = "SELECT * FROM cliente";
-	$resultado = mysqli_query(conn(),$sql);
-	$clientes = array();
-	while($linha = mysqli_fetch_assoc($resultado)){
-		$clientes[] = $linha;
-	}
-	return $clientes;
-}
-
-function pegarClienteviaEmailSenha($email, $senha){
-	$sql = "SELECT * FROM cliente WHERE email='$email' AND senha='$senha'";
-	$resultado = mysqli_query(conn(),$sql);
-	$cliente = mysqli_fetch_assoc($resultado);
-	return $cliente;
-}
 
 ?>
+
+
+

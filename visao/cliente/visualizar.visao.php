@@ -1,5 +1,10 @@
-<h1><?=$nomeCliente?></h1>
-<h4>Telefone: <?=$telCliente?></h4>
-<h4>CPF: <?=$cpfCliente?></h4>
-<h4>Email: <?=$emailCliente?></h4>
-<h4>Senha: <?=$senhaCliente?></h4>
+<h2> Ver detalhes do cliente </h2>
+<p>Id Usuário: <?=$cliente ['idUsuario']?> </p>
+<p>Nome: <?=$cliente ['nomeUsuario']?> </p>
+<p>Email: <?=$cliente ['email']?> </p>
+<p>Senha: <?=$cliente ['senha']?> </p>
+<p>CPF: <?=$cliente ['cpf']?> </p>
+<p>Data de Nascimento: <?=$cliente ['datadenascimento']?> </p>
+<p>CPF: <?=$cliente ['cpf']?> </p>
+<p>Sexo: <?=$cliente ['sexo']?> </p>
+<p>Tipo Usuário: <?=$cliente ['tipoUsuario']?> </p>

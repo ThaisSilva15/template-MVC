@@ -1,31 +1,9 @@
 /* :--:--:--:--:    TEMPLATE        :--:--:--:--: */
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:300&display=swap');
-*{
-	margin: 0;
-	padding: 0;
-	font-family: 'Comfortaa', sans-serif;
-}
-a{
-	text-decoration: none;
-	color: #000000;
-	font-weight: bold;
-}
-#content{/*Depois eu arrumo o css*/
-	padding: 40px 0px;
-}
-
 /* :--:--:--:--:    CABEÇALHO       :--:--:--:--: */
-
 /* :--:--:--:--:    INDEX           :--:--:--:--: */
-
 /* :--:--:--:--:    RODAPÉ          :--:--:--:--: */
-
-/* :--:--:--:--:    CLIENTE         :--:--:--:--: */
-
-/* :--:--:--:--:    PRODUTO         :--:--:--:--: */
-
-/* :--:--:--:--:    CATEGORIA       :--:--:--:--: */
-
+/* :--:--:--:--:    CADASTRO USR    :--:--:--:--: */
+/* :--:--:--:--:    CADASTRO PRD    :--:--:--:--: */
+/* :--:--:--:--:    CADASTRO CAT    :--:--:--:--: */
 /* :--:--:--:--:    LOGIN           :--:--:--:--: */
-
 /* :--:--:--:--:    OUTROS          :--:--:--:--: */

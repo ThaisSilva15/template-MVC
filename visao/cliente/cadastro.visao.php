@@ -7,12 +7,14 @@ if(ehPost()){
 ?>      
 <h1> Cadastro </h1>
 <form action="" method="POST">
+Nome: <input type="text" name=" nomeUsuario" value="<?=@$cliente['nomeUsuario']?>">
+E-mail: <input type="text" name="email" value="<?=@$cliente['email']?>">
+Senha: <input type="text" name="senha" value="<?=@$cliente['senha']?>">
+CPF: <input type="text" name="CPF" value="<?=@$cliente['cpf']?>">
+Data de Nacimento: <input type="text" name="datadenascimento" value="<?=@$cliente['datadenascimento']?>">
 
-Nome: <input type="text" name="nomeUsuario"><br><br>
-E-mail: <input type="text" name="email"><br><br>
-Senha: <input type="password" name="senha"><br><br>
-CPF: <input type="text" name="CPF"><br><br>
-Data de Nacimento: <input type="text" name="datadenascimento"><br><br>
+
+
 Sexo: 
 Feminino<input  type="radio" name="sexo"  value="F" checked="checked" >
 Masculino<input type="radio" name="sexo" value="M"><br><br>

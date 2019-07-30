@@ -26,6 +26,7 @@
 				<td><?=$cliente['tipoUsuario']?></td>
 				<td><a href="./cliente/ver/<?=$cliente['idUsuario']?>">Ver</a></td>
 				<td><a href="./cliente/deletar/<?=$cliente['idUsuario']?>">Deletar</a></td>
+                                <td><a href="./cliente/editar/<?=$cliente['idUsuario']?>">Alterar</a></td>
 			</tr>
 		<?php endforeach; ?>
 </table>
