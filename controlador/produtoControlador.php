@@ -67,13 +67,13 @@ function deletar($id){
     
     function editar($id) {
     if(ehPost()) {
-        $nome = $_POST ["nomeproduto"];
         $preco = $_POST ["preco"];
+        $nomeproduto = $_POST ["nomeproduto"];
         $descricao = $_POST ["descricao"];
         $imagem = $_POST["imagem"];
         $estoque_minimo = $_POST["estoque_minimo"];
         $estoque_maximo = $_POST["estoque_maximo"];
-        editarProduto($id, $nome, $preco, $descricao, $imagem, $estoque_minimo, $estoque_maximo);
+        editarProduto($id, $preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo);
         redirecionar ("produto/listarproduto");
     }else{
         $dados["produto"] = pegarProdutoPorId($id);

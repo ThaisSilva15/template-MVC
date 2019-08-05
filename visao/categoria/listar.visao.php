@@ -6,6 +6,7 @@
 			<th>DESCRICAO</th>
 			<th>VER</th>
 			<th>DELETAR</th>
+			<th>ALTERAR</th>
 		</tr>
 	</thead>
 	<?php foreach ($categoria as $dados): ?>
@@ -14,6 +15,7 @@
 			<td><?=$dados['descricao']?></td>
 			<td><a href="./categoria/ver/<?=$dados['idcategoria']?>">Ver</a></td>
 			<td><a href="./categoria/deletar/<?=$dados['idcategoria']?>">Deletar</a></td>
+			<td><a href="./categoria/editar/<?=$dados['idcategoria']?>">Alterar</a></td>
 		</tr>
 	<?php endforeach; ?>
 </table>

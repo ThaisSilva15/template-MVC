@@ -12,6 +12,7 @@
 			<th>TIPO USUARIO</th>
 			<th>VER</th>
 			<th>DELETAR</th>
+			<th>ALTERAR</th>
 		</tr>
 	</thead>
 		<?php foreach ($clientes as $cliente): ?>

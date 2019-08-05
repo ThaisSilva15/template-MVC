@@ -29,18 +29,32 @@
     exibir("categoria/listar", $dados);
  }
  
- 
- 
+  
   function ver($idcategoria){
     $dados ["categoria"] = pegarCategoriaPorId($idcategoria);
     exibir ("categoria/visualizar", $dados);
 }
 
 
-
-
 function deletar($id){
         $msg = deletarCategoria($id);
         redirecionar("categoria/listarCategoria");
     }
+
+
+    function editar($id) {
+        if(ehPost()) {
+            
+            $descricao = $_POST ["descricao"];
+            
+            editarCategoria($id, $descricao);
+            redirecionar ("categoria/listarCategoria");
+        }else{
+            $dados["categoria"] = pegarCategoriaPorId($id);
+            exibir ("categoria/categoria", $dados);
+        }
+    }
+    
+    
+
 ?>

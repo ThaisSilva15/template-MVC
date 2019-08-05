@@ -7,6 +7,6 @@ if (ehPost()) {
 ?>
 <h1> Categoria </h1>
 <form method="POST" action="">
-    Descrição: <input type="text" name="descricao"><br>
+    Descrição: <input type="text" name="descricao" value="<?=@$categoria['descricao']?>"><br>
     <button type="submit"> Enviar </button>
 </form>

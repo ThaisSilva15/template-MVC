@@ -25,7 +25,7 @@
 <!-- Projeto final -->
 <div class="header">
 	<div class="client-menu">
-		<a href="./cliente/listarUsuario">Usuário</a>
+		<a href="./cliente/listarUsuarios">Usuário</a>
 		<a href="./produto/listarproduto">Produtos</a>
 		<a href="./categoria/listarCategoria">Categoria</a>
 	</div>

@@ -29,5 +29,14 @@
      }
      return 'Categoria deletado com sucesso!';
  }
+
+ function editarCategoria($idCategoria, $descricao){
+    $sql ="update categoria set  descricao ='$descricao' where idCategoria='$idCategoria'";
+    $resultado = mysqli_query($cnx = conn (), $sql);
+    if (!$resultado) {die('Erro ao alterar categoria'. mysqli_error($cnx)); }
+    return  'Categoria alterado com sucesso!';
+}
+
+ 
  ?>
 
