@@ -25,9 +25,9 @@
 <!-- Projeto final -->
 <div class="header">
 	<div class="client-menu">
-		<a href="./cliente/">Usuário</a>
-		<a href="./produto/">Produtos</a>
-		<a href="./categoria/">Categoria</a>
+		<a href="./cliente/listarUsuario">Usuário</a>
+		<a href="./produto/listarproduto">Produtos</a>
+		<a href="./categoria/listarCategoria">Categoria</a>
 	</div>
 	<div>
 		<img src="" alt="">

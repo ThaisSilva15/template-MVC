@@ -64,19 +64,20 @@ function deletar($id){
         $msg = deletarProduto($id);
         redirecionar("produto/listarProduto");
     }
-
-    function editar($idProduto) {
-	if (ehPost()) {
-	$nome = $_POST["nome"];
-	$preco = $_POST["preco"];
-	$descricao = $_POST["descricao"];
-	$imagem = $_POST["imagem"];
-	$est_min = $_POST["est_min"];
-	$est_max = $_POST["est_max"];
-	editarProduto ($idProduto, $nome, $preco, $descricao, $imagem, $est_min, $est_max);
-	$dados["produto/listar"];
-	}else{
-	$dados["produto"] = pegarProdutoPorId($idProduto);
-	exibir("produto/formulario", $dados);
-	}
+    
+    function editar($id) {
+    if(ehPost()) {
+        $nome = $_POST ["nomeproduto"];
+        $preco = $_POST ["preco"];
+        $descricao = $_POST ["descricao"];
+        $imagem = $_POST["imagem"];
+        $estoque_minimo = $_POST["estoque_minimo"];
+        $estoque_maximo = $_POST["estoque_maximo"];
+        editarProduto($id, $nome, $preco, $descricao, $imagem, $estoque_minimo, $estoque_maximo);
+        redirecionar ("produto/listarproduto");
+    }else{
+        $dados["produto"] = pegarProdutoPorId($id);
+        exibir ("produto/formulario", $dados);
+    }
 }
+

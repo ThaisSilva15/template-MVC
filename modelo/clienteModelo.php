@@ -31,11 +31,12 @@ function deletarUsuario ($id){
     }
     return 'usuario deletado com sucesso!';
 }
-function editarUsuario($id, $nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario){
- $sql ="upadate usuario set nomeUsuario = '$nomeUsuario', email ='$email',senha ='$senha', cpf ='$cpf', datadenascimento ='$datadenascimento', sexo ='$sexo', tipoUsuario = '$tipoUsuario' where idUsuario";
+function editarUsuario($idUsuario, $nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario){
+ $sql ="update usuario set nomeUsuario = '$nomeUsuario', email ='$email',senha ='$senha', cpf ='$cpf', datadenascimento ='$datadenascimento', sexo ='$sexo', tipoUsuario = '$tipoUsuario' where idUsuario='$idUsuario'";
+ echo $sql;
  $resultado = mysqli_query($cnx = conn (), $sql);
- if (!$resultado) {die('Erro ao alterar produto'. mysqli_error($cnx)); }
- return  'Produto alterado com sucesso!';
+ if (!$resultado) {die('Erro ao alterar usuario'. mysqli_error($cnx)); }
+ return  'Usuario alterado com sucesso!';
 }
 
 

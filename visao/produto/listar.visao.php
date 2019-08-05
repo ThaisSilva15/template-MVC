@@ -26,7 +26,7 @@
 			<td><?=$produ['estoque_maximo']?></td>
 			<td><a href="./produto/ver/<?=$produ['idproduto']?>">Ver</a></td>
 			<td><a href="./produto/deletar/<?=$produ['idproduto']?>">Deletar</a></td>
-                        <td><a href="./produto/editar/<?=$produto ['idProduto']?>">Alterar</a></td>
+                        <td><a href="./produto/editar/<?=$produ ['idproduto']?>">Alterar</a></td>
 
 		</tr>
 	<?php endforeach; ?>

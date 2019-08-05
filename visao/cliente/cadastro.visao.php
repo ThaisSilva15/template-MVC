@@ -19,7 +19,7 @@ Sexo:
 Feminino<input  type="radio" name="sexo"  value="F" checked="checked" >
 Masculino<input type="radio" name="sexo" value="M"><br><br>
 Tipo Usuário: 
-Cliente <input  type="radio" name="tipoUsuario"  value="Cliente" checked="checked" >
+Cliente <input  type="radio" name="tipoUsuario"value="User" checked="checked" >
 Administrador<input type="radio" name="tipoUsuario" value="Adm"><br><br>
 
 

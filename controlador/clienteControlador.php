@@ -89,15 +89,12 @@ function editar($id) {
         $sexo = $_POST["sexo"];
         $tipoUsuario = $_POST["tipoUsuario"];
         editarUsuario($id, $nomeUsuario, $email, $senha, $cpf, $datadenascimento, $sexo, $tipoUsuario);
-        redirecionar ("cliente/listar");
+        redirecionar ("cliente/listarUsuarios");
     }else{
         $dados["cliente"] = pegarUsuarioPorId($id);
         exibir ("cliente/cadastro", $dados);
     }
 }
-
-
-
 
 ?>
 
