@@ -14,39 +14,6 @@ tipoUsuario VARCHAR(5) NOT NULL,
 PRIMARY KEY (idUsuario)
 );
 
-CREATE TABLE categoria(
-idcategoria INT(11) AUTO_INCREMENT  NOT NULL,
-descricao VARCHAR(50) NOT NULL,
-PRIMARY KEY(idcategoria)
-);
-
-CREATE TABLE produtos (
-idproduto INT(11) AUTO_INCREMENT NOT NULL,
-idcategoria INT  NOT NULL,
-preco double NOT NULL,
-nomeproduto VARCHAR(30) NOT NULL,
-descricao VARCHAR(60) NOT NULL,
-imagem VARCHAR(60) NOT NULL,
-estoque_minimo INT(11) NOT NULL,
-estoque_maximo INT(11) NOT NULL,
-PRIMARY KEY (idproduto),
-FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria) ON DELETE CASCADE ON UPDATE CASCADE
-) ;
-/*
-
-
-CREATE TABLE usuario (
-idUsuario INT(11) NOT NULL AUTO_INCREMENT,
-nomeUsuario VARCHAR(60) NOT NULL,
-email VARCHAR(60) NOT NULL,
-senha VARCHAR(60) NOT NULL,
-cpf VARCHAR(60) NOT NULL,
-datadenascimento VARCHAR(10) NOT NULL,
-sexo VARCHAR(60) NOT NULL,
-tipoUsuario VARCHAR(5) NOT NULL,
-PRIMARY KEY (idUsuario)
-);
-
 CREATE TABLE log_produto(
 id_Log INT (11) auto_increment  NOT NULL,
 Tabela VARCHAR (45) NOT NULL,
@@ -123,4 +90,4 @@ FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDAT
 FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-*/
+
