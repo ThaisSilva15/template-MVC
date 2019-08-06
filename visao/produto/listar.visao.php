@@ -4,8 +4,8 @@
 		<tr>
 			<th>ID</th>
 			<th>CATEGORIA</th>
-			<th>NOME</th>
-			<th>VALOR</th>
+                        <th>VALOR</th>
+                        <th>NOME</th>
 			<th>DESCRIÇÃO</th>
 			<th>IMAGEM</th>
 			<th>EST. MÍNIMO</th>
