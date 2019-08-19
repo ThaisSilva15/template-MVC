@@ -95,6 +95,17 @@ function editar($id) {
         exibir ("cliente/cadastro", $dados);
     }
 }
+function adicionar($idusuario) {
+    if (ehPost()) {       
+        $logradouro = strip_tags($_POST ["logradouro"]);
+        $numero =  strip_tags($_POST ["numero"]);
+        $complemento =  strip_tags($_POST ["complemento"]);
+        $bairro =  strip_tags($_POST ["bairro"]);
+        $cidade =  strip_tags($_POST ["cidade"]);
+        $cep =  strip_tags($_POST ["cep"]);
+        $errors = array();
+    }
+}
 
 ?>
 
