@@ -1,7 +1,7 @@
 <?php
 
 require_once 'servico/validarServico.php';
-require_once 'modelo/clienteModelo.php';
+require_once 'modelo/enderecoModelo.php';
 
 function cadastro() {
     if (ehPost()) {
@@ -16,13 +16,13 @@ function cadastro() {
             $errors[] = valida_nao_vazio($logradouro, "logradouro");
         }
         if (validar_email($numero, "numero") != NULL) {
-            $errors[] = validar_email($numero, "numero");
+            $errors[] = valida_nao_vazio($numero, "numero");
         }
-        if (valida_nao_vazio($complemento, "complemento") != NULL) {
-            $errors[] = valida_nao_vazio($complemento, "complemento");
-        }
-        if (valida_tipoEspe($bairro, "bairro") != NULL) {
-            $errors[] = valida_tipoEspe($bairro,"bairro");
+        //if (valida_nao_vazio($complemento, "complemento") != NULL) {
+           // $errors[] = valida_nao_vazio($complemento, "complemento");
+        //}
+        if (valida_nao_vazio($bairro, "bairro") != NULL) {
+            $errors[] = valida_nao_vazio($bairro,"bairro");
         }
         if (valida_nao_vazio($cidade, "cidade") != NULL) {
             $errors[] = valida_nao_vazio($cidade, "cidade");
@@ -40,7 +40,7 @@ function cadastro() {
             redirecionar("endereco/listarEndereco");
         }
     } else {
-        exibir("endereco/cadastro");
+        exibir("endereco/formulario");
     }
 }
 
@@ -83,11 +83,11 @@ function editar($id) {
         $bairro = $_POST["bairro"];
         $cidade = $_POST["cidade"];
         $cep = $_POST["cep"];
-        editarUsuario($id, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
+        editarEndereco($id, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
         redirecionar ("endereco/listarEndereco");
     }else{
-        $dados["endereco"] = pegarUsuarioPorId($id);
-        exibir ("endereco/cadastro", $dados);
+        $dados["endereco"] = pegarEnderecoPorId($id);
+        exibir ("endereco/formulario", $dados);
     }
 }
 function adicionar($idusuario) {
@@ -99,7 +99,19 @@ function adicionar($idusuario) {
         $cidade =  strip_tags($_POST ["cidade"]);
         $cep =  strip_tags($_POST ["cep"]);
         $errors = array();
+        if (count($errors) > 0) {
+            $dados = array();
+            $dados["errors"] = $errors;
+            exibir("endereco/formulario", $dados);
+        } else {
+            $msg = adicionarEndereco( $idusuario, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
+            echo $msg;
+            redirecionar("endereco/listarEndereco");
+        } 
+    } else {
+         $dados["endereco"] = pegarEnderecoPorId($idusuario);
+        exibir ("endereco/formulario", $dados);
     }
-}
+} 
 
 ?>

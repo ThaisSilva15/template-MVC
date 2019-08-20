@@ -16,18 +16,17 @@
 	</thead>
 		<?php foreach ($enderecos as $endereco): ?>
 			<tr>
-				<td><?=$cliente['idUsuario']?></td>
-				<td><?=$cliente['nomeUsuario']?></td>
-				<td><?=$cliente['email']?></td>
-				<td><?=$cliente['senha']?></td>
-				<td><?=$cliente['cpf']?></td>
-				<td><?=$cliente['datadenascimento']?></td>
-				<td><?=$cliente['sexo']?></td>
-				<td><?=$cliente['tipoUsuario']?></td>
-				<td><a href="./cliente/ver/<?=$cliente['idUsuario']?>">Ver</a></td>
-				<td><a href="./cliente/deletar/<?=$cliente['idUsuario']?>">Deletar</a></td>
-                                <td><a href="./cliente/editar/<?=$cliente['idUsuario']?>">Alterar</a></td>
+				<td><?=$endereco['idendereco']?></td>
+				<td><?=$endereco['logradouro']?></td>
+				<td><?=$endereco['numero']?></td>
+				<td><?=$endereco['complemento']?></td>
+				<td><?=$endereco['bairro']?></td>
+				<td><?=$endereco['cidade']?></td>
+				<td><?=$endereco['cep']?></td>
+				<td><a href="./endereco/ver/<?=$endereco['idendereco']?>">Ver</a></td>
+				<td><a href="./endereco/deletar/<?=$endereco['idendereco']?>">Deletar</a></td>
+                                <td><a href="./endereco/editar/<?=$endereco['idendereco']?>">Alterar</a></td>
 			</tr>
 		<?php endforeach; ?>
 </table>
-<a href="./endereco/cadastro" class="btn btn-primary"> Novo Endereco </a>        
+<a href="./endereco/cadastro" class="btn btn-primary"> Novo Endereço </a>        

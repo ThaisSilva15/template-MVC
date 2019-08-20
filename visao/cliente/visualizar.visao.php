@@ -10,5 +10,5 @@
 <p>Sexo: <?=$cliente ['sexo']?> </p>
 <p>Tipo Usuário: <?=$cliente ['tipoUsuario']?> </p>
 
-<h2> Endereços dos Clientes </h2>
+
 
