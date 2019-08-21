@@ -32,7 +32,7 @@ function deletarEndereco ($id){
     return 'Endereço deletado com sucesso!';
 }
 function editarEndereco($idendereco, $logradouro, $numero, $complemento, $bairro,$cidade, $cep){
-    $sql ="update endereco set logradouro = '$logradouro', numero ='$numero',complemento ='$complemento', bairro ='$bairro', cidade ='$cidade', cep ='$cep' where idUsuario='$idendereco'";
+    $sql ="update endereco set logradouro = '$logradouro', numero ='$numero',complemento ='$complemento', bairro ='$bairro', cidade ='$cidade', cep ='$cep' where idendereco='$idendereco'";
     echo $sql;
     $resultado = mysqli_query($cnx = conn (), $sql);
     if (!$resultado) {die('Erro ao alterar endereco'. mysqli_error($cnx)); }

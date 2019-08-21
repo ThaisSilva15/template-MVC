@@ -2,7 +2,7 @@
  
  function adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario){
     $sql ="INSERT INTO usuario (nomeUsuario, email, senha, cpf,datadenascimento, sexo, tipoUsuario) 
-            VALUES ('$nomeUsuario', '$email', '$senha', '$cpf','$datadenascimento', '$sexo', $tipoUsuario)";
+            VALUES ('$nomeUsuario', '$email', '$senha', '$cpf','$datadenascimento', '$sexo', '$tipoUsuario')";
     $resultado = mysqli_query ($cnx = conn(), $sql);
     if (!$resultado) { die('Erro ao cadastrar usuario' . mysqli_error ($cnx));}
     return 'Usuario cadastrado com sucesso!';    

@@ -7,7 +7,7 @@
     <input type="text" placeholder="Numero" name="numero" value="<?=@$endereco['numero']?>" required="">
    
     <label for="email"><b>Complemento:</b></label>
-    <input type="text" placeholder="Complemento" name="complemento" value="<?=@$complemento['complemento']?>" required="complemento">
+    <input type="text" placeholder="Complemento" name="complemento" value="<?=@$complemento['complemento']?>" >
     
     <label for="email"><b>Bairro:</b></label>
     <input type="text" placeholder="Bairro" name="bairro" value="<?=@$endereco['bairro']?>" required="">

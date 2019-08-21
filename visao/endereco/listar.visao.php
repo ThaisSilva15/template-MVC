@@ -1,4 +1,4 @@
-<h2>Listar Endereco</h2>
+<h2>Listar Endereço</h2>
 <table class="table" border="1">
 	<thead>
 		<tr>
@@ -8,7 +8,7 @@
 			<th>COMPLEMENTO</th>
 			<th>BAIRRO</th>
 			<th>CIDADE</th>
-			<th>CEP</th
+                        <th>CEP</th>
 			<th>VER</th>
 			<th>DELETAR</th>
 			<th>ALTERAR</th>

@@ -39,7 +39,7 @@ function cadastro() {
             $dados["errors"] = $errors;
             exibir("cliente/cadastro", $dados);
         } else {
-            $msg = adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, 1);
+            $msg = adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario);
             echo $msg;
             redirecionar("cliente/listarUsuarios");
         }
