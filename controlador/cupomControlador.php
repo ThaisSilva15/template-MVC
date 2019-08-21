@@ -11,15 +11,15 @@ function cadastro() {
         if (valida_nao_vazio($nomecupom, "nomecupom") != NULL) {
             $errors[] = valida_nao_vazio($nomecupom, "nomecupom");
         }
-        if (validar_email($desconto, "desconto") != NULL) {
-            $errors[] = valida_nao_vazio($desconto, "desconto");
+        if (valida_tipoEspe($desconto, "desconto") != NULL) {
+            $errors[] = valida_tipoEspe($desconto, "desconto");
         }
         if (count($errors) > 0) {
             $dados = array();
             $dados["errors"] = $errors;
             exibir("cupom/formulario", $dados);
         } else {
-            $msg = adicionarEndereco($nomecupom, $desconto);
+            $msg = adicionarCupom($nomecupom, $desconto);
             echo $msg;
             redirecionar("cupom/listarCupom");
         }
@@ -47,7 +47,7 @@ function cadastro() {
 
 function listarCupom() {
     $dados = array();
-    $dados["cupom"] = pegarTodosCupom();
+    $dados["cupoms"] = pegarTodosCupom();
     exibir("cupom/listar", $dados);
 }
 function ver($idcupom){
@@ -62,7 +62,7 @@ function editar($idcupom) {
     if(ehPost()) {
         $nomecupom = $_POST ["nomecupom"];
         $desconto = $_POST ["desconto"];
-        editarEndereco($idcupom, $nomecupom, $desconto);
+        editarCupom($idcupom, $nomecupom, $desconto);
         redirecionar ("cupom/listarCupom");
     }else{
         $dados["cupom"] = pegarCupomPorId($idcupom);

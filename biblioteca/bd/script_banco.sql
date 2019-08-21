@@ -59,14 +59,22 @@ FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDAT
 
 );
 
+CREATE TABLE formapagamento(
+idformapagamento BIGINT NOT NULL AUTO_INCREMENT,
+descricao VARCHAR(25) NOT NULL,
+PRIMARY KEY (idformapagamento)
+);
+
 CREATE TABLE pedido (
 idPedido INT (11) auto_increment  NOT NULL,
 idUsuario INT(11) NOT NULL,
 idendereco INT(11) NOT NULL,
+idformapagamento BIGINT NOT NULL,
 datacompra date NOT NULL,
 PRIMARY KEY (idPedido),
 FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE
+FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY(idformapagamento) REFERENCES formapagamento(idformapagamento) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE produtos (
@@ -81,7 +89,6 @@ estoque_maximo INT(11) NOT NULL,
 PRIMARY KEY (idproduto),
 FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria)) ;
 
-
 CREATE TABLE pedido_produto (
 idproduto INT(11) auto_increment NOT NULL,
 idpedido INT (11)  NOT NULL,
@@ -89,5 +96,3 @@ quantidade INT(11) NOT NULL,
 FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE,
 FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-
