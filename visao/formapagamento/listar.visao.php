@@ -11,12 +11,12 @@
 	</thead>
 	<?php foreach ($formapagamentos as $formapagamento): ?>
 		<tr>
-			<td><?=$formapagamento['idcategoria']?></td>
+			<td><?=$formapagamento['idformapagamento']?></td>
 			<td><?=$formapagamento['descricao']?></td>
-			<td><a href="./formapagamento/ver/<?=$formapagamento['idformapagamento']?>">Ver</a></td>
-			<td><a href="./formapagamento/deletar/<?=$formapagamento['idformapagamento']?>">Deletar</a></td>
-			<td><a href="./formapagamento/editar/<?=$formapagamento['idformapagamento']?>">Alterar</a></td>
+			<td><a href="formapagamento/ver/<?=$formapagamento['idformapagamento']?>">Ver</a></td>
+			<td><a href="formapagamento/deletar/<?=$formapagamento['idformapagamento']?>">Deletar</a></td>
+			<td><a href="formapagamento/editar/<?=$formapagamento['idformapagamento']?>">Alterar</a></td>
 		</tr>
 	<?php endforeach; ?>
 </table>
-<a href="./formapagamento/descricao" class="btn btn-primary"> Nova forma de pagamento</a>
+<a href="formapagamento/adicionar" class="btn btn-primary"> Nova forma de pagamento</a>

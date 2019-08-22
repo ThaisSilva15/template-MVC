@@ -3,9 +3,9 @@
 require_once 'modelo/formapagamentoModelo.php';
 require_once 'servico/validarServico.php';
 
-function formapagamento() {
+function adicionar() {
     if (ehPost()) {
-        $descricao = $_POST ["descricao"];
+        $descricao = $_POST["descricao"];
 
         $errors = array();
         if (valida_nao_vazio($descricao, "Descrição") != NULL) {
@@ -21,13 +21,13 @@ function formapagamento() {
             redirecionar("./formapagamento/listarFormapagamento");
         }
     } else {
-        exibir("formapagamento/formapagamento");
+        exibir("formapagamento/formulario");
     }
 }
 
 function listarFormapagamento() {
     $dados = array();
-    $dados["formapagamento"] = pegarTodasFormapagamento();
+    $dados["formapagamentos"] = pegarTodasFormapagamento();
     exibir("formapagamento/listar", $dados);
 }
 
@@ -49,8 +49,8 @@ function editar($id) {
         editarFormapagamento($id, $descricao);
         redirecionar("formapagamento/listarFormapagamento");
     } else {
-        $dados["formapagamento"] = pegarCategoriaPorId($id);
-        exibir("formapagamento/formapagamento", $dados);
+        $dados["formapagamento"] = pegarFormapagamentoPorId($id);
+        exibir("formapagamento/formulario", $dados);
     }
 }
 
