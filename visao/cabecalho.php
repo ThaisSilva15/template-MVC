@@ -1,38 +1,31 @@
 <!-- Cabeçalho original -->
 <!-- 
-<nav>
-	<ul>
-		<li><a href="./">Principal</a></li>
-		<li><a href="./usuario">Usuario</a></li>
-		<?php /*if (acessoUsuarioEstaLogado()): ?>
-			<li>Bem vindo <?= acessoPegarUsuarioLogado() ?></li>
-			<li><a href="./login/logout">Sair</a></li>
-		<?php else: ?>
-			<li><a href="./login">Entrar</a></li>
-		<?php endif;*/ ?>
-	</ul>
-</nav>
+	<nav>
+		<ul>
+			<li><a href="./">Principal</a></li>
+			<li><a href="./usuario">Usuario</a></li>
+			<?php //if (acessoUsuarioEstaLogado()): ?>
+				<li>Bem vindo <?php //echo acessoPegarUsuarioLogado(); ?></li>
+				<li><a href="./login/logout">Sair</a></li>
+			<?php //else: ?>
+				<li><a href="./login">Entrar</a></li>
+			<?php //endif;*/ ?>
+		</ul>
+	</nav>
 -->
 
-<!-- Apresentado no final do primeiro semestre -->
-<!-- 
-<h2>CABEÇALHO</h2>
-<a href="./cliente/">Usuário</a>
-<a href="./produto/">Produtos</a>
-<a href="./categoria/">Categoria</a>
--->
-
-<!-- Projeto final -->
+<!-- Cabeçalho Principal -->
 <div class="header">
-	<div class="client-menu">
-		<a href="./cliente/listarUsuarios">Usuário</a>
-		<a href="./produto/listarproduto">Produtos</a>
-		<a href="./categoria/listarCategoria">Categoria</a>
-                <a href="./cupom/listarCupom">Cupom</a>
-                <a href="./formapagamento/listarFormapagamento">Forma de Pagamento</a>
-                
+	<div class="logotype">
+		<a href="." class="logo-store">
+            <p class="title">CamiThaMake</p>
+			<!-- <img src="publico/header/logo.png" class="logo-store"> -->
+		</a>
 	</div>
-	<div>
-		<img src="" alt="">
+	<div class="client-menu">
+		<a class="link-menu" href="cliente/listarUsuarios">Usuário</a>
+		<a class="link-menu" href="login/">Login</a>
+		<a class="link-menu" href="cliente/cadastro">Cadastre-se</a>
+		<a class="link-menu" href="carrinho/exibir">Carrinho</a>
 	</div>
 </div>
