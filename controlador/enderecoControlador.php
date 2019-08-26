@@ -3,46 +3,7 @@
 require_once 'servico/validarServico.php';
 require_once 'modelo/enderecoModelo.php';
 
-function cadastro() {
-    if (ehPost()) {
-        $logradouro = $_POST ["logradouro"];
-        $numero = $_POST ["numero"];
-        $complemento = $_POST ["complemento"];
-        $bairro = $_POST["bairro"];
-        $cidade = $_POST["cidade"];
-        $cep = $_POST["cep"];
-        $errors = array();
-        if (valida_nao_vazio($logradouro, "logradouro") != NULL) {
-            $errors[] = valida_nao_vazio($logradouro, "logradouro");
-        }
-        if (validar_email($numero, "numero") != NULL) {
-            $errors[] = valida_nao_vazio($numero, "numero");
-        }
-        //if (valida_nao_vazio($complemento, "complemento") != NULL) {
-           // $errors[] = valida_nao_vazio($complemento, "complemento");
-        //}
-        if (valida_nao_vazio($bairro, "bairro") != NULL) {
-            $errors[] = valida_nao_vazio($bairro,"bairro");
-        }
-        if (valida_nao_vazio($cidade, "cidade") != NULL) {
-            $errors[] = valida_nao_vazio($cidade, "cidade");
-        }
-        if (valida_nao_vazio($cep, "cep") != NULL) {
-            $errors[] = valida_nao_vazio($cep, "cep");
-        }
-        if (count($errors) > 0) {
-            $dados = array();
-            $dados["errors"] = $errors;
-            exibir("endereco/cadastro", $dados);
-        } else {
-            $msg = adicionarEndereco($logradouro, $numero, $complemento, $bairro,$cidade, $cep, 1);
-            echo $msg;
-            redirecionar("endereco/listarEndereco");
-        }
-    } else {
-        exibir("endereco/formulario");
-    }
-}
+
 
 function contato() {
     if (ehPost()) {
@@ -106,7 +67,7 @@ function adicionar($idusuario) {
         } else {
             $msg = adicionarEndereco( $idusuario, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
             echo $msg;
-            redirecionar("endereco/listarEndereco");
+            redirecionar("cliente/ver/$idusuario");
         } 
     } else {
          $dados["endereco"] = pegarEnderecoPorId($idusuario);

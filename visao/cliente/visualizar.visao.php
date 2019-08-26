@@ -10,5 +10,10 @@
 <p>Sexo: <?=$cliente ['sexo']?> </p>
 <p>Tipo Usuário: <?=$cliente ['tipoUsuario']?> </p>
 
+<?php
+require_once 'visao/endereco/listar.visao.php';
+
+?>
+
 
 

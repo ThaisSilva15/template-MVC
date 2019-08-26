@@ -38,6 +38,15 @@ function editarEndereco($idendereco, $logradouro, $numero, $complemento, $bairro
     if (!$resultado) {die('Erro ao alterar endereco'. mysqli_error($cnx)); }
     return  'Endereço alterado com sucesso!';
 }
+function pegarEnderecosPorUsuario ($idUsuario){
+    $sql = "SELECT * FROM endereco WHERE idUsuario= $idUsuario";
+    $resultado = mysqli_query(conn(), $sql);
+    $endereco = array();
+    while ($linha = mysqli_fetch_assoc($resultado)){
+        $endereco[]= $linha;
+    }
+    return $endereco;
+}
 
 
 ?>

@@ -29,4 +29,4 @@
 			</tr>
 		<?php endforeach; ?>
 </table>
-<a href="./endereco/cadastro" class="btn btn-primary"> Novo Endereço </a>        
+   

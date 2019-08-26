@@ -2,6 +2,7 @@
 
 require_once 'servico/validarServico.php';
 require_once 'modelo/clienteModelo.php';
+require_once 'modelo/enderecoModelo.php';
 
 function cadastro() {
     if (ehPost()) {
@@ -73,6 +74,7 @@ function listarUsuarios() {
 }
 function ver($idUsuario){
     $dados ["cliente"] = pegarUsuarioPorId($idUsuario);
+    $dados ["enderecos"] = pegarEnderecosPorUsuario($idUsuario);
     exibir ("cliente/visualizar", $dados);
 }
 function deletar($id){
