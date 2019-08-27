@@ -32,11 +32,11 @@ function ver($idEndereco){
     $dados ["endereco"] = pegarEnderecoPorId($idEndereco);
     exibir ("endereco/visualizar", $dados);
 }
-function deletar($id){
+function deletar($id, $idUsuario){
     $msg = deletarEndereco($id);
-    redirecionar("endereco/listarEndereco");
+    redirecionar("cliente/ver/$idUsuario");
 }
-function editar($id) {
+function editar($idendereco, $idUsuario) {
     if(ehPost()) {
         $logradouro = $_POST ["logradouro"];
         $numero = $_POST ["numero"];
@@ -44,10 +44,10 @@ function editar($id) {
         $bairro = $_POST["bairro"];
         $cidade = $_POST["cidade"];
         $cep = $_POST["cep"];
-        editarEndereco($id, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
-        redirecionar ("endereco/listarEndereco");
+        editarEndereco($idendereco, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
+        redirecionar ("cliente/ver/$idUsuario");
     }else{
-        $dados["endereco"] = pegarEnderecoPorId($id);
+        $dados["endereco"] = pegarEnderecoPorId($idendereco);
         exibir ("endereco/formulario", $dados);
     }
 }

@@ -24,8 +24,8 @@
 				<td><?=$endereco['cidade']?></td>
 				<td><?=$endereco['cep']?></td>
 				<td><a href="./endereco/ver/<?=$endereco['idendereco']?>">Ver</a></td>
-				<td><a href="./endereco/deletar/<?=$endereco['idendereco']?>">Deletar</a></td>
-                                <td><a href="./endereco/editar/<?=$endereco['idendereco']?>">Alterar</a></td>
+				<td><a href="./endereco/deletar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Deletar</a></td>
+                                <td><a href="./endereco/editar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Alterar</a></td>
 			</tr>
 		<?php endforeach; ?>
 </table>
