@@ -25,7 +25,11 @@
 	<div class="client-menu">
 		<a class="link-menu" href="cliente/listarUsuarios">Usuário</a>
 		<a class="link-menu" href="login/">Login</a>
-		<a class="link-menu" href="cliente/cadastro">Cadastre-se</a>
+		<a class="link-menu" href="cliente/ListarClientes">Cadastre-se</a>
 		<a class="link-menu" href="carrinho/exibir">Carrinho</a>
+                <a class="link-menu" href="categoria/ListarCategorias">Categoria</a>
+                <a class="link-menu" href="produto/ListarProduto">Produto</a>
+                <a class="link-menu" href="cupom/ListarCupom">Cupom</a>
+                <a class="link-menu" href="formapagamento/ListarFormapagamento">Forma de Pagamento</a>
 	</div>
 </div>
