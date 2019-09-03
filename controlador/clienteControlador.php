@@ -79,6 +79,7 @@ function ver($idUsuario){
 }
 function deletar($id){
     $msg = deletarUsuario($id);
+    deletarEnderecoPorCliente($id);
     redirecionar("cliente/listarUsuarios");
 }
 function editar($id) {
