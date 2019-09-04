@@ -1,45 +1,15 @@
-    <meta charset="utf-8">
-<h2>Listar Produtos Carrinho</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <TH>IDPRODUTO</TH>
-            <th>NOME</th> 
-            <th>PREÇO</th>
-            <th>DELETE</th>
-        </tr>
-    </thead>
-    <?php 
-    if(isset($carrinho)) {
-        $total=0;
-        // $total=0;
-        // $defiDesconto=0;
-        foreach ($carrinho as $produto){ 
-    ?>
-
-    <tr>
-        <td><?=$produto['CodProduto']?></td>        
-        <td><?=$produto['NomeProd']?></td>
-        <td><?=$produto['Preco']?></td>
-        <?= 
-        $total=$total + $produto['Preco'];
-        ?>
-        <td><a href="./carrinho/deletar/<?=$produto['CodProduto']?>">del</a></td>
-    </tr>
-    <?php 
-        }
-    }else{
-        echo "<h1>Seu carrinho está vazio<h1>";
-    }
-    ?>
-  <?php
-   // $total = $total- $defiDesconto;
-   if (isset($carrinho)) {
-            echo "O Total e da sua compra em reais é: ". $total;
-            $pedido["PrecoTotal"]=$total;
-            echo "O Total e da sua compra com desconto é de: ". $totalcompra;
-    ?>
-    <a href="./pedido/comprar/<?=$pedido['PrecoTotal']?>">Comprar</a>
-<?php  
-}
-    ?>
+<div class="col-25">
+    <div class="container">
+        <h4 style="font-size:30px; color:black">Meu carrinho <span class="price" style="color:black"></span></h4>
+        <?php foreach ($produtos as $produto): ?>
+            <div class="produto-lista">
+                <p><a href="produto/ver/<?= $produto["idproduto"] ?>"><?= $produto["nomeproduto"] ?></a><span class="price">$<?= $produto["preco"] ?></span><a href="sacola/removerproduto/<?= $produto["idproduto"] ?>">X</a></p>
+            </div>
+            <br>
+        <?php endforeach; ?>
+        <hr>
+        <a href="sacola/limparCarrinho">Limpar Carrinho</a>
+        <a href="produto/listarProduto">Continuar Comprando</a>
+        <p>Total <span class="price" style="color:black"><b>R$ <?= $subtotal ?></b></span></p>
+    </div>
+</div>

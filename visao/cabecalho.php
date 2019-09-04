@@ -25,7 +25,7 @@
     <div class="client-menu">
         <a class="link-menu" href="cliente/cadastro">Cadastre-se</a>
         <a class="link-menu" href="login/">Login</a>
-        <a class="link-menu" href="carrinho/exibir">Carrinho</a>
+        <a class="link-menu" href="sacola/mostrar">Carrinho</a>
 
     </div>
 </div>
