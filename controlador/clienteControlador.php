@@ -40,7 +40,7 @@ function cadastro() {
             $dados["errors"] = $errors;
             exibir("cliente/cadastro", $dados);
         } else {
-            $msg = adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, $tipoUsuario);
+            $msg = adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, 'usr');
             echo $msg;
             redirecionar("cliente/listarUsuarios");
         }
@@ -48,25 +48,6 @@ function cadastro() {
         exibir("cliente/cadastro");
     }
 }
-
-function contato() {
-    if (ehPost()) {
-        $nome = $_POST ["nomeCliente"];
-        $email = $_POST ["email"];
-        $cpf = $_POST ["CPF"];
-        $telefone = $_POST ["telefone"];
-        $mensagem = $_POST ["mensagem"];
-        
-        echo valida_nao_vazio($nomeCliente);
-        echo valida_email($email);
-        echo valida_nao_vazio($CPF);
-        echo valida_nao_vazio($telefone);
-        echo valida_nao_vazio($mensagem);
-    } else {
-        exibir("cliente/contato");
-    }
-}
-
 function listarUsuarios() {
     $dados = array();
     $dados["clientes"] = pegarTodosUsuarios();
@@ -90,8 +71,7 @@ function editar($id) {
         $cpf = $_POST["CPF"];
         $datadenascimento = $_POST["datadenascimento"];
         $sexo = $_POST["sexo"];
-        $tipoUsuario = $_POST["tipoUsuario"];
-        editarUsuario($id, $nomeUsuario, $email, $senha, $cpf, $datadenascimento, $sexo, $tipoUsuario);
+        editarUsuario($id, $nomeUsuario, $email, $senha, $cpf, $datadenascimento, $sexo, 'usr');
         redirecionar ("cliente/listarUsuarios");
     }else{
         $dados["cliente"] = pegarUsuarioPorId($id);
