@@ -19,6 +19,16 @@ function pegarTodosProduto() {
     return $produto;
 }
 
+function BuscarProdutosPorNome($nome) {
+    $sql = "SELECT * FROM produtos WHERE nomeproduto LIKE '$nome'";
+    $resultado = mysqli_query(conn(), $sql);
+    $produto = array();
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $produto[] = $linha;
+    }
+    return $produto;
+}
+
 function pegarProdutoPorId($id) {
     $sql = "select * from produtos where idproduto= $id";
     $resultado = mysqli_query(conn(), $sql);
@@ -43,5 +53,3 @@ function editarProduto($idProduto, $preco, $nomeproduto, $descricao, $imagem, $e
     }
     return 'Produto alterado com sucesso!';
 }
-
-?>

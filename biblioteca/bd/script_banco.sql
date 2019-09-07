@@ -56,7 +56,6 @@ idproduto INT (11) NOT NULL,
 qtde INT (11) NOT NULL,
 PRIMARY KEY (idestoque),
 FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE
-
 );
 
 CREATE TABLE formapagamento(
@@ -96,3 +95,8 @@ quantidade INT(11) NOT NULL,
 FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE,
 FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+INSERT INTO categoria VALUES
+(NULL, "Base"),
+(NULL, "Pincel"),
+(NULL, "Estojo");

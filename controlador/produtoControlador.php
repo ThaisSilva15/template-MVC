@@ -12,7 +12,6 @@ function adicionar() {
         $descricao = $_POST ["descricao"];
 
         $imagem_temp_name = $_FILES["imagem"]["tmp_name"];
-        ;
         $name_imagem = $_FILES["imagem"]["name"];
         $imagem = uploadImagem($imagem_temp_name, $name_imagem);
 
@@ -47,17 +46,17 @@ function adicionar() {
         } else {
             $msg = adicionarProduto($preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo, $categoria);
             echo $msg;
-            redirecionar("./produto/listarProduto");
+            redirecionar("produto/listarProduto");
         }
     } else {
-        $dados = array();
+        $dados = [];
         $dados["categorias"] = pegarTodasCategorias();
         exibir("produto/formulario", $dados);
     }
 }
 
 function listarProduto() {
-    $dados = array();
+    $dados = [];
     $dados["produtos"] = pegarTodosProduto();
     exibir("produto/listar", $dados);
 }
@@ -95,4 +94,11 @@ function editar($id) {
     }
 }
 
-?>
+function buscar(){
+    if(ehPost()){
+        $nome = $_POST['busca'];
+        $dados['produtos'] = BuscarProdutosPorNome($nome);
+        $dados['categorias'] = pegarTodasCategorias();
+        exibir("produtos/listar",$dados);
+    }
+}
