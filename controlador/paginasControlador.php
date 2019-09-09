@@ -3,7 +3,9 @@
 require 'modelo/produtoModelo.php';
 
 function index() {
-    exibir("paginas/inicial");
+    $dados = [];
+    $dados['produtos'] = pegarTodosProduto();
+    exibir("paginas/inicial", $dados);
 }
 
 function contato() {

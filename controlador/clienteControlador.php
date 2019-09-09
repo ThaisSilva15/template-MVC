@@ -6,89 +6,99 @@ require_once 'modelo/enderecoModelo.php';
 
 function cadastro() {
     if (ehPost()) {
-        $nomeUsuario = $_POST ["nomeUsuario"];
-        $email = $_POST ["email"];
-        $senha = $_POST ["senha"];
+        $nomeUsuario = $_POST["nomeUsuario"];
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
         $cpf = $_POST["CPF"];
-        $datadenascimento = $_POST["datadenascimento"];
         $sexo = $_POST["sexo"];
-        $tipoUsuario = $_POST["tipoUsuario"];
-        $errors = array();
-        if (valida_nao_vazio($nomeUsuario, "nomeUsuario") != NULL) {
-            $errors[] = valida_nao_vazio($nomeUsuario, "nome Usuario");
-        }
-        if (validar_email($email, "email") != NULL) {
-            $errors[] = validar_email($email, "email");
-        }
-        if (valida_nao_vazio($senha, "senha") != NULL) {
-            $errors[] = valida_nao_vazio($senha, "senha");
-        }
-        if (valida_tipoEspe($cpf, "cpf") != NULL) {
-            $errors[] = valida_tipoEspe($cpf,"CPF");
-        }
-        if (valida_nao_vazio($datadenascimento, "datadenascimento") != NULL) {
-            $errors[] = valida_nao_vazio($datadenascimento, "data de nascimento");
-        }
-        if (valida_nao_vazio($sexo, "sexo") != NULL) {
-            $errors[] = valida_nao_vazio($sexo, "sexo");
-        }
-        if (valida_nao_vazio($tipoUsuario, "tipoUsuario") != NULL) {
-            $errors[] = valida_nao_vazio($tipoUsuario, "tipoUsuario");
-        }
+
+        $data = [];
+        $data[0] = $_POST["dia"];
+        $data[1] = $_POST["mes"];
+        $data[2] = $_POST["ano"];
+
+        $errors = [];
+
+        if (!valida_Nome($nomeUsuario)) {$errors['nome'] = "Nome inválido";}
+
+        if (!valida_Email($email)) {$errors['email'] = "Email inválido";}
+
+        if (!valida_Senha($senha)) {$errors['senha'] = "Senha não permitida";}
+
+        if (!valida_CPF($cpf)) {$errors['cpf'] = "CPF inválido";}
+
+        if (!valida_Data($data[0],$data[1],$data[2])) {$errors['data'] = "Data inválida";}
+
         if (count($errors) > 0) {
-            $dados = array();
+
+            $dados = [];
             $dados["errors"] = $errors;
             exibir("cliente/cadastro", $dados);
         } else {
-            $msg = adicionarUsuario($nomeUsuario, $email, $senha, $cpf,$datadenascimento, $sexo, 'usr');
-            echo $msg;
+            $nascimento = $data[2].'-'.$data[1].'-'.$data[0];
+            adicionarUsuario($nomeUsuario, $email, $senha, $cpf, $nascimento, $sexo, 'usr');
             redirecionar("cliente/listarUsuarios");
         }
     } else {
         exibir("cliente/cadastro");
     }
 }
+
 function listarUsuarios() {
     $dados = array();
     $dados["clientes"] = pegarTodosUsuarios();
     exibir("cliente/listar", $dados);
 }
-function ver($idUsuario){
+
+function ver($idUsuario) {
     $dados ["cliente"] = pegarUsuarioPorId($idUsuario);
     $dados ["enderecos"] = pegarEnderecosPorUsuario($idUsuario);
-    exibir ("cliente/visualizar", $dados);
+    exibir("cliente/visualizar", $dados);
 }
-function deletar($id){
+
+function deletar($id) {
     $msg = deletarUsuario($id);
     deletarEnderecoPorCliente($id);
     redirecionar("cliente/listarUsuarios");
 }
+
 function editar($id) {
-    if(ehPost()) {
+    if (ehPost()) {
         $nomeUsuario = $_POST ["nomeUsuario"];
         $email = $_POST ["email"];
         $senha = $_POST ["senha"];
         $cpf = $_POST["CPF"];
-        $datadenascimento = $_POST["datadenascimento"];
         $sexo = $_POST["sexo"];
-        editarUsuario($id, $nomeUsuario, $email, $senha, $cpf, $datadenascimento, $sexo, 'usr');
-        redirecionar ("cliente/listarUsuarios");
-    }else{
+
+        $nascimento = [];
+        $nascimento[0] = $_POST["dia"];
+        $nascimento[1] = $_POST["mes"];
+        $nascimento[2] = $_POST["ano"];
+
+        $errors = [];
+
+        if (valida_Nome($nomeUsuario) == false) {$errors['nome'] = "Nome inválido";}
+
+        if (valida_Email($email) == false) {$errors['email'] = "Email inválido";}
+
+        if (valida_Senha($senha) == false) {$errors['senha'] = "Senha não permitida";}
+
+        if (valida_CPF($cpf) == false) {$errors['cpf'] = "CPF inválido";}
+
+        if (valida_Data($nascimento[0],$nascimento[1],$nascimento[2]) == false) {$errors['data'] = "Data inválida";}
+
+        if (count($errors) > 0) {
+            $dados = [];
+            $dados["errors"] = $errors;
+            $dados["cliente"] = pegarUsuarioPorId($id);
+            exibir("cliente/editar", $dados);
+        } else {
+            $data_nascimento = $nascimento[2].'-'.$nascimento[1].'-'.$nascimento[0];
+            editarUsuario($id,$nomeUsuario, $email, $senha, $cpf, $data_nascimento, $sexo, 'usr');
+            redirecionar("cliente/listarUsuarios");
+        }
+    } else {
         $dados["cliente"] = pegarUsuarioPorId($id);
-        exibir ("cliente/cadastro", $dados);
+        exibir("cliente/editar", $dados);
     }
 }
-function adicionar($idusuario) {
-    if (ehPost()) {       
-        $logradouro = strip_tags($_POST ["logradouro"]);
-        $numero =  strip_tags($_POST ["numero"]);
-        $complemento =  strip_tags($_POST ["complemento"]);
-        $bairro =  strip_tags($_POST ["bairro"]);
-        $cidade =  strip_tags($_POST ["cidade"]);
-        $cep =  strip_tags($_POST ["cep"]);
-        $errors = array();
-    }
-}
-
-?>
-

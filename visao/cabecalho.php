@@ -5,13 +5,18 @@
         </a>
     </div>
     <div class="client-menu">
-        <!-- colocar a funcao no usuario modelo acessoPegarUsuarioLogado(); -->
-        <?php if (isset($_SESSION['usuario'])): ?>
+        <!-- acessoPegarUsuarioLogado(); -->
+        <?php 
+        function acessoPegarUsuarioLogado(){
+            return false;
+        }
+        // retirar essa função e colocar a original
+        if (acessoPegarUsuarioLogado()): ?>
             <a class="link-menu" href="cliente/ver/1">Usuario</a>
             <a class="link-menu" href="login/logout">Logout</a>
         <?php else: ?>
             <a class="link-menu" href="login/">Login</a>
-            <a class="link-menu" href="cliente/cadastro">Cadastre-se</a>
+            <a class="link-menu" href="cliente/cadastro">Cadastrar</a>
         <?php endif; ?>
         <a class="link-menu" href="sacola/mostrar">Carrinho</a>
     </div>
