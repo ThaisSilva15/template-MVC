@@ -10,7 +10,7 @@
         </a>
         <div class="telephone">
             <img class="img-footer" src="publico/img/footer/whatsapp.png">
-            <p class="text-footer">(15) 99999-9999</p>
+            <p class="text-footer">(15) 98118-4462</p>
         </div>
     </div>
     <div class="sub-menus-pages">
@@ -39,7 +39,7 @@
         </a>
         <div class="telephone">
             <img class="img-footer" src="publico/img/footer/whatsapp.png">
-            <p class="text-footer">(15) 99999-9999</p>
+            <p class="text-footer">(15) 99671-8479</p>
         </div>
     </div>
 </div>

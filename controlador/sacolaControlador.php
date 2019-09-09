@@ -42,33 +42,29 @@ function existeProdutoNoCarrinho($produtos, $idProduto) {
 }
 
 function mostrar() {
-    // se existir a session carrinho
-    if (isset($_SESSION["carrinho"])) {
-        // produtos recebe session carrinho, pega o conteúdo dela
+    $total = 0;
+    $todos = array();
+    if(isset($_SESSION["carrinho"])) {
+        
         $produtos = $_SESSION["carrinho"];
-        // session carrinho vai receber o array produtos
-        $_SESSION["carrinho"] = $produtos;
-        // se não existir a session carrinho
+        //print_r($produtos);
+        foreach ($produtos as $produto):
+            $prod =  pegarProdutoPorId($produto["idproduto"]);
+            $todos[] = $prod;
+            $total += $prod["preco"];
+        endforeach;
     } else {
-        // produtos recebe um array vazio
-        $produtos = [];
+        echo "Carrinho vazio!";
     }
-
-    // define os dados a serem passados de quantidade de produtos e total
-    $quantidadeProdutos = 0;
-    $subtotal = 0;
-    foreach ($produtos as $posicao => $valor) {
-        //$quantidadeProdutos += $valor["quantidade"];
-        //$subtotal += ($valor["preco"] * $valor["quantidade"]);
-    }
-
-    $dados['quantidadeProdutos'] = $quantidadeProdutos;
-    $dados['subtotal'] = $subtotal;
-    $dados['produtos'] = $produtos;
-
-    // exibe a página inicial junto aos dados dos produtos
-    exibir("carrinho/mostrar", $dados);
+    
+   $dados = array();
+   
+   $dados["produtos"] = $todos;
+   $dados["total"] = $total;
+   //print_r($dados);
+    exibir('carrinho/mostrar', $dados);
 }
+
 
 function limparCarrinho() {
     unset($_SESSION['carrinho']);

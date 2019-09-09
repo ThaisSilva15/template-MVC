@@ -20,23 +20,23 @@ function adicionar() {
         $estoque_maximo = $_POST ["estoque_maximo"];
 
         $errors = array();
-        if (valida_nao_vazio($preco, "preco") != NULL) {
-            $errors[] = valida_nao_vazio($preco, "preco");
+        if (valida_vazio($preco, "preco") != NULL) {
+            $errors[] = valida_vazio($preco, "preco");
         }
-        if (valida_nao_vazio($nomeproduto, "nomeproduto") != NULL) {
-            $errors[] = valida_nao_vazio($nomeproduto, "nomeproduto");
+        if (valida_vazio($nomeproduto, "nomeproduto") != NULL) {
+            $errors[] = valida_vazio($nomeproduto, "nomeproduto");
         }
-        if (valida_nao_vazio($descricao, "descricao") != NULL) {
-            $errors[] = valida_nao_vazio($descricao, "descricao");
+        if (valida_vazio($descricao, "descricao") != NULL) {
+            $errors[] = valida_vazio($descricao, "descricao");
         }
-        if (valida_nao_vazio($imagem, "imagem") != NULL) {
-            $errors[] = valida_nao_vazio($imagem, "imagem");
+        if (valida_vazio($imagem, "imagem") != NULL) {
+            $errors[] = valida_vazio($imagem, "imagem");
         }
-        if (valida_nao_vazio($estoque_minimo, "estoque_minimo") != NULL) {
-            $errors[] = valida_nao_vazio($estoque_minimo, "estoque_minimo");
+        if (valida_vazio($estoque_minimo, "estoque_minimo") != NULL) {
+            $errors[] = valida_vazio($estoque_minimo, "estoque_minimo");
         }
-        if (valida_nao_vazio($estoque_maximo, "estoque_maximo") != NULL) {
-            $errors[] = valida_nao_vazio($estoque_maximo, "estoque_maximo");
+        if (valida_vazio($estoque_maximo, "estoque_maximo") != NULL) {
+            $errors[] = valida_vazio($estoque_maximo, "estoque_maximo");
         }
         if (count($errors) > 0) {
             $dados = array();
