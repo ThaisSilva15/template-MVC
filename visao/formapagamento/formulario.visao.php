@@ -5,8 +5,8 @@ if (ehPost()) {
 	}
 }
 ?>
-<h1> Forma de Pagamento </h1>
+<h1> Forma de Pagamento </h1><br>
 <form method="POST" action="">
-	Descrição: <input type="text" name="descricao" value="<?=@$formapagamento['descricao']?>"><br>
-	<button type="submit"> Enviar </button>
+	<br>Descrição: <input type="text" name="descricao" value="<?=@$formapagamento['descricao']?>"><br>
+	<br><button type="submit"> Enviar </button><br>
 </form>

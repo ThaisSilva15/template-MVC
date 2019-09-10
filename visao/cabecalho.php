@@ -11,7 +11,14 @@
             return false;
         }
         // retirar essa função e colocar a original
-        if (acessoPegarUsuarioLogado()): ?>
+        ?>
+        <div id="busca">
+            <form action="./busca/pesquisar" method="POST" style="margin-right: 10px;">
+                <input type="text" name="pesquisar" id="txtBusca" placeholder="Buscar"/>
+            <a herf=""><button id="bntBusca">Busca</button></a>    
+            </form>
+        </div>
+        <?php if (acessoPegarUsuarioLogado()): ?>
             <a class="link-menu" href="cliente/ver/1">Usuario</a>
             <a class="link-menu" href="login/logout">Logout</a>
         <?php else: ?>

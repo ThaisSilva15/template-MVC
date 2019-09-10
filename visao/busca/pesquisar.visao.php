@@ -6,6 +6,9 @@
         <title></title>
     </head>
     <body>
+        <?php
+            echo $erros;
+        ?>
         <form action="" method="POST">
             
             <ul>

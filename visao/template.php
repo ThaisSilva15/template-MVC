@@ -8,12 +8,6 @@
         <script src="publico/js/script.js"></script>
     </head>
     <body class="container">
-        <div id="busca">
-            <form action="./busca/pesquisar" method="POST">
-                <input type="text" name="pesquisar" id="txtBusca" placeholder="Buscar"/>
-            <a herf=""><button id="bntBusca">Busca</button></a>    
-            </form>
-        </div>
 
         <?php
         if (
@@ -27,7 +21,7 @@
         }
         ?>
 
-        <main class="container" id="content">
+      <main class="container">
             <?php require $viewFilePath; ?>
         </main>
 

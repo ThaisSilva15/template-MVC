@@ -1,14 +1,16 @@
 <h2> Ver detalhes do cliente </h2>
+<br>
 <a href="./endereco/adicionar/<?=$cliente['idUsuario']?>"> Endereço </a>
-<p>Id Usuário: <?=$cliente ['idUsuario']?> </p>
-<p>Nome: <?=$cliente ['nomeUsuario']?> </p>
-<p>Email: <?=$cliente ['email']?> </p>
-<p>Senha: <?=$cliente ['senha']?> </p>
-<p>CPF: <?=$cliente ['cpf']?> </p>
-<p>Data de Nascimento: <?=$cliente ['datadenascimento']?> </p>
-<p>CPF: <?=$cliente ['cpf']?> </p>
-<p>Sexo: <?=$cliente ['sexo']?> </p>
-<p>Tipo Usuário: <?=$cliente ['tipoUsuario']?> </p>
+<br>
+<p>Id Usuário: <?=$cliente ['idUsuario']?> </p><br>
+<p>Nome: <?=$cliente ['nomeUsuario']?> </p><br>
+<p>Email: <?=$cliente ['email']?> </p><br>
+<p>Senha: <?=$cliente ['senha']?> </p><br>
+<p>CPF: <?=$cliente ['cpf']?> </p><br>
+<p>Data de Nascimento: <?=$cliente ['datadenascimento']?> </p><br>
+<p>CPF: <?=$cliente ['cpf']?> </p><br>
+<p>Sexo: <?=$cliente ['sexo']?> </p><br>
+<p>Tipo Usuário: <?=$cliente ['tipoUsuario']?> </p><br>
 
 <?php
 require_once 'visao/endereco/listar.visao.php';

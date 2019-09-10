@@ -6,10 +6,9 @@ require_once 'servico/validarServico.php';
 function adicionar() {
     if (ehPost()) {
         $descricao = $_POST["descricao"];
-
         $errors = array();
-        if (valida_nao_vazio($descricao, "Descrição") != NULL) {
-            $errors[] = valida_nao_vazio($descricao, "Descrição");
+        if (valida_vazio($descricao, "Descrição") != NULL) {
+            $errors[] = valida_vazio($descricao, "Descrição");
         }
         if (count($errors) > 0) {
             $dados = array();

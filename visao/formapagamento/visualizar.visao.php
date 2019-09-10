@@ -1,3 +1,3 @@
-<h2> Ver detalhes da forma de pagamento </h2>
-<p> Id: <?=$formapagamento ['idformapagamento']?> </p>
-<p>Descrição: <?=$formapagamento ['descricao']?> </p>
+<h2> Ver detalhes da forma de pagamento </h2><br>
+<p> Id: <?=$formapagamento ['idformapagamento']?> </p><br>
+<p>Descrição: <?=$formapagamento ['descricao']?> </p><br>

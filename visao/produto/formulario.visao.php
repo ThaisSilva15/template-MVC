@@ -6,12 +6,12 @@ if (ehPost()) {
 }
 ?>
 
-<h1> Cadastro do produto</h1>
+<h1> Cadastro do produto</h1><br>
 <form action="" method="POST" enctype="multipart/form-data">
-    Preco: <input type="text" name="preco" value="<?= @$produto['preco'] ?>">
-    <br>Nome do Produto: <input type="text" name="nomeproduto" value="<?= @$produto['nomeproduto'] ?>">
-    <br>Descricão:  <input type="text" name="descricao" value="<?= @$produto['descricao'] ?>">
-    <br>Imagem: <input type="file" name="imagem">
+    Preco: <input type="text" name="preco" value="<?= @$produto['preco'] ?>"> <br>
+    <br>Nome do Produto: <input type="text" name="nomeproduto" value="<?= @$produto['nomeproduto'] ?>"><br>
+    <br>Descricão:  <input type="text" name="descricao" value="<?= @$produto['descricao'] ?>"><br>
+    <br>Imagem: <input type="file" name="imagem"><br>
     <br>Categoria:
     <select name="categoria">
         <?php
@@ -26,8 +26,8 @@ if (ehPost()) {
             endif;
         endforeach;
         ?>
-    </select>
-    <br>Estoque Minimo: <input type="text" name="estoque_minimo" value="<?= @$produto['estoque_minimo'] ?>">
-    <br>Estoque Maximo: <input type="text" name="estoque_maximo" value="<?= @$produto['estoque_maximo'] ?>">
-    <br><button>Enviar</button>
+    </select><br>
+    <br>Estoque Minimo: <input type="text" name="estoque_minimo" value="<?= @$produto['estoque_minimo'] ?>"><br>
+    <br>Estoque Maximo: <input type="text" name="estoque_maximo" value="<?= @$produto['estoque_maximo'] ?>"><br>
+    <br><button>Enviar</button><br>
 </form>

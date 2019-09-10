@@ -5,10 +5,10 @@ if (ehPost()) {
     }
 }
 ?>
-<h1> Cupom </h1>
+<h1> Cupom </h1><br>
 <form method="POST" action="">
-    Nome do Cupom: <input type="text" name="nomecupom" value="<?=@$cupom['nomecupom']?>"><br>
-    Desconto: <input type="text" name="desconto" value="<?=@$cupom['desconto']?>"><br>
-    <button type="submit"> Enviar </button>
+    Nome do Cupom: <input type="text" name="nomecupom" value="<?=@$cupom['nomecupom']?>"> <br>
+    <br>Desconto: <input type="text" name="desconto" value="<?=@$cupom['desconto']?>"> <br>
+    <br><button type="submit"> Enviar </button><br>
 </form>
 
