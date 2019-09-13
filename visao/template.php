@@ -6,6 +6,7 @@
         <link rel="shortcut icon" type="image/x-png" href="./publico/img/user/user.png">
         <link rel="stylesheet" href="publico/css/app.css">
         <script src="publico/js/script.js"></script>
+        
     </head>
     <body class="container">
 
@@ -32,7 +33,9 @@
             require './visao/rodape.php';
         }
         ?>
-
+<html>
+    <head>
+        
 
     </body>
 </html>
