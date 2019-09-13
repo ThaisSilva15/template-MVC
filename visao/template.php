@@ -11,9 +11,8 @@
 
         <?php
         if (
-            $_SERVER['PHP_SELF'] != '/template-MVC/index.php/cliente/cadastro' &&
-            $_SERVER['PHP_SELF'] != '/template-MVC/index.php/login/'
-        // Colocar aqui as páginas que não precisarão do cabeçalho principal
+                $_SERVER['PHP_SELF'] != '/template-MVC/index.php/cliente/cadastro' &&
+                $_SERVER['PHP_SELF'] != '/template-MVC/index.php/login/'
         ) {
             require './visao/cabecalho.php';
         } else {
@@ -21,19 +20,19 @@
         }
         ?>
 
-      <main class="container">
+        <main class="container" id="content">
             <?php require $viewFilePath; ?>
         </main>
 
         <?php
         if (
-            $_SERVER['PHP_SELF'] != '/template-MVC/index.php/cliente/cadastro' &&
-            $_SERVER['PHP_SELF'] != '/template-MVC/index.php/login/'
+                $_SERVER['PHP_SELF'] != '/template-MVC/index.php/cliente/cadastro' &&
+                $_SERVER['PHP_SELF'] != '/template-MVC/index.php/login/'
         ) {
             require './visao/rodape.php';
         }
         ?>
-        
+
 
     </body>
 </html>

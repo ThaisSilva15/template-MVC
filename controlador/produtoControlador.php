@@ -90,15 +90,15 @@ function editar($id) {
     } else {
         $dados["categorias"] = pegarTodasCategorias();
         $dados["produto"] = pegarProdutoPorId($id);
-        exibir("produto/formulario", $dados);
+        exibir("produto/editar", $dados);
     }
 }
 
-function buscar(){
-    if(ehPost()){
+function buscar() {
+    if (ehPost()) {
         $nome = $_POST['busca'];
         $dados['produtos'] = BuscarProdutosPorNome($nome);
         $dados['categorias'] = pegarTodasCategorias();
-        exibir("produtos/listar",$dados);
+        exibir("produto/listar", $dados);
     }
 }

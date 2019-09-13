@@ -1,5 +1,6 @@
 <form action="" method="POST" class="formulario-usuario">
     <h1 align="center">Cadastre-se</h1>
+    
     <label class="formulario-label" for="nome">
         Nome Completo <?php if(isset($errors['nome'])): echo "(".$errors['nome'].")"; endif;?>
     </label>
@@ -15,8 +16,7 @@
     <label class="formulario-label" for="senha">
         Senha <?php if(isset($errors['senha'])): echo "(".$errors['senha'].")"; endif;?>
     </label>
-    <input class="formulario-input" id="senha" type="text" name="senha">
-    <!--<input class="formulario-input" id="senha" type="password" name="senha">-->
+    <input class="formulario-input" id="senha" type="password" name="senha">
 
 
     <label class="formulario-label" for="cpf">

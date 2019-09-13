@@ -20,7 +20,7 @@ function pegarTodosProduto() {
 }
 
 function BuscarProdutosPorNome($nome) {
-    $sql = "SELECT * FROM produtos WHERE nomeproduto LIKE '$nome'";
+    $sql = "SELECT * FROM produtos WHERE nomeproduto LIKE '%$nome%'";
     $resultado = mysqli_query(conn(), $sql);
     $produto = array();
     while ($linha = mysqli_fetch_assoc($resultado)) {

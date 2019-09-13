@@ -5,21 +5,16 @@
         </a>
     </div>
     <div class="client-menu">
-        <!-- acessoPegarUsuarioLogado(); -->
-        <?php 
-        function acessoPegarUsuarioLogado(){
-            return false;
-        }
-        // retirar essa função e colocar a original
-        ?>
-        <div id="busca">
-            <form action="./busca/pesquisar" method="POST" style="margin-right: 10px;">
-                <input type="text" name="pesquisar" id="txtBusca" placeholder="Buscar"/>
-            <a herf=""><button id="bntBusca">Busca</button></a>    
+        <div class="dropdown">
+            <button class="dropbtn">Buscar</button>
+            <form action="produto/buscar" method="POST" class="dropdown-content">
+                <input class="input-busca" type="text" name="busca" class="input-busca">
+                <button class="button-busca" type="submit" class="botao-busca">Buscar</button>
             </form>
         </div>
-        <?php if (acessoPegarUsuarioLogado()): ?>
-            <a class="link-menu" href="cliente/ver/1">Usuario</a>
+        <?php if (isset($_SESSION['usuario'])): ?>
+            <?php //if (acessoPegarUsuarioLogado()): ?>
+            <a class="link-menu" href="cliente/ver/<?= $usuario['idusuario'] ?>">Usuario</a>
             <a class="link-menu" href="login/logout">Logout</a>
         <?php else: ?>
             <a class="link-menu" href="login/">Login</a>
