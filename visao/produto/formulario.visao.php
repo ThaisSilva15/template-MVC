@@ -29,6 +29,11 @@
         Estoque Máximo <?php if(isset($errors['estoque_maximo'])): echo "(".$errors['estoque_maximo'].")"; endif;?>
     </label>
     <input class="formulario-input" id="est_max" type="number" name="estoque_maximo">
+    
+     <label class="formulario-label" for="quant_estoque">
+       Quantidade estoque <?php if(isset($errors['quant_estoque'])): echo "(".$errors['quant_estoque'].")"; endif;?>
+    </label>
+    <input class="formulario-input" id="quant_estoque" type="number" name="quant_estoque">
 
 
     <input class="formulario-input" id="imagem" type="file" name="imagem">

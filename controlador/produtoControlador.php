@@ -15,9 +15,10 @@ function adicionar() {
         $name_imagem = $_FILES["imagem"]["name"];
         $imagem = uploadImagem($imagem_temp_name, $name_imagem);
 
-        $categoria = $_POST["categoria"];
+        $categoria = $_POST ["categoria"];
         $estoque_minimo = $_POST ["estoque_minimo"];
         $estoque_maximo = $_POST ["estoque_maximo"];
+        $quant_estoque = $_POST ["quant_estoque"];
 
         $errors = array();
         if (valida_vazio($preco, "preco") != NULL) {
@@ -38,13 +39,16 @@ function adicionar() {
         if (valida_vazio($estoque_maximo, "estoque_maximo") != NULL) {
             $errors[] = valida_vazio($estoque_maximo, "estoque_maximo");
         }
+        if (valida_vazio($quant_estoque, "quant_estoque") != NULL) {
+            $errors[] = valida_vazio($quant_estoque, "quant_estoque");
+        }
         if (count($errors) > 0) {
             $dados = array();
             $dados["errors"] = $errors;
             $dados["categorias"] = pegarTodasCategorias();
             exibir("produto/formulario", $dados);
         } else {
-            $msg = adicionarProduto($preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo, $categoria);
+            $msg = adicionarProduto($preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo,$quant_estoque, $categoria);
             echo $msg;
             redirecionar("produto/listarProduto");
         }
@@ -85,7 +89,8 @@ function editar($id) {
         $categoria = $_POST["categoria"];
         $estoque_minimo = $_POST["estoque_minimo"];
         $estoque_maximo = $_POST["estoque_maximo"];
-        editarProduto($id, $preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo, $categoria);
+        $quant_estoque = $_POST ["quant_estoque"];
+        editarProduto($id, $preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo,$quant_estoque, $categoria);
         redirecionar("produto/listarproduto");
     } else {
         $dados["categorias"] = pegarTodasCategorias();

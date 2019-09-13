@@ -50,14 +50,6 @@ PRIMARY KEY(idendereco),
 FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE estoque(
-idestoque INT (11) auto_increment  NOT NULL,
-idproduto INT (11) NOT NULL,
-qtde INT (11) NOT NULL,
-PRIMARY KEY (idestoque),
-FOREIGN KEY(idproduto) REFERENCES produtos(idproduto) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 CREATE TABLE formapagamento(
 idformapagamento BIGINT NOT NULL AUTO_INCREMENT,
 descricao VARCHAR(25) NOT NULL,
@@ -85,6 +77,7 @@ descricao VARCHAR(60) NOT NULL,
 imagem VARCHAR(60) NOT NULL,
 estoque_minimo INT(11) NOT NULL,
 estoque_maximo INT(11) NOT NULL,
+quant_estoque integer NOT NULL,
 PRIMARY KEY (idproduto),
 FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria)) ;
 

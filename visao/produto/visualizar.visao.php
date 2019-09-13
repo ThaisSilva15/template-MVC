@@ -7,5 +7,6 @@
 <p>Descricao: <?=$produto ['descricao']?> </p><br>
 <p>Estoque_minimo: <?=$produto ['estoque_minimo']?> </p><br>
 <p>Estoque_maximo: <?=$produto ['estoque_maximo']?> </p><br>
+<p>quant_estoque: <?=$produto ['quant_estoque']?> </p><br>
 <a href="produto/listarProduto">Voltar</a><br><br>
 <a href="sacola/adicionar/<?= $produto['idproduto'] ?>">Comprar</a><br>
