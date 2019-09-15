@@ -11,14 +11,14 @@ function adicionar($idProduto) {
     }
     //verificar se existe o produto ja na lista de produtos!
     $chave = existeProdutoNoCarrinho($produtos, $idProduto);
-    //$produto["quantidade"] = 0; 
+    $produto["quantidade"] = 0; 
     if ($chave === false) {
         $produto = pegarProdutoPorId($idProduto);
-        //$produto["quantidade"] = 1;
+        $produto["quantidade"] = 1;
         $produtos[] = $produto;
     } else {
         $produto = $produtos[$chave];
-        //$produto["quantidade"]++;
+        $produto["quantidade"]++;
         $produtos[$chave] = $produto;
     }
     // produtos na posição dinâmica recebe o produto
@@ -69,4 +69,3 @@ function removerProduto($id) {
     $_SESSION['carrinho'] = $produtos;
     redirecionar("sacola/mostrar");
 }
-?>

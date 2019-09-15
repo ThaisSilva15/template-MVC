@@ -1,17 +1,23 @@
-<div class="col-25">
-    <div class="container">
-        <h4 style="font-size:30px; color:black">Meu carrinho <span class="price" style="color:black"></span></h4>
-        <?php foreach ($produtos as $produto): ?>
-            <div class="produto-lista">
-                <p><a href="produto/ver/<?= $produto["idproduto"] ?>"><?= $produto["nomeproduto"] ?></a><span class="price">$<?= $produto["preco"] ?></span><a href="sacola/removerproduto/<?= $produto["idproduto"] ?>"> X </a></p>
-            </div>
-            <br>
-        <?php endforeach; ?>
-        <hr>
-        <a href="sacola/limparCarrinho">Limpar Carrinho</a>
-        <a href="produto/listarProduto">Continuar Comprando</a>
-        <br>
-        <p>Total <span class="price" style="color:black"><b>R$ <?= $total ?></b></span></p><br>
-        <br>
-    </div>
+<div class="carrin">
+	<h4 class="titulo-carrin">Meu carrinho</h4>
+
+	<div class="pedido">
+		<?php foreach ($produtos as $produto): ?>
+			<div class="produto-lista">
+				<img src="<?=$produto['imagem']?>" class="img-carrin">
+				<a class="link-carrin" href="produto/ver/<?= $produto["idproduto"] ?>"><?= $produto["nomeproduto"] ?></a>
+				<p class="link-carrin">R$ <?= number_format($produto["preco"],2) ?></p>
+				<a class="link-carrin" href="sacola/removerProduto/<?= $produto["idproduto"] ?>">Remover</a>
+			</div>
+		<?php endforeach; ?>
+	</div>
+
+	<div class="operacoes-carrin">
+		<a href="sacola/limparCarrinho" class="link-carrin" style="margin-right: 50px;">Limpar Carrinho</a>
+		<a href="produto/listarProduto" class="link-carrin">Continuar Comprando</a>
+	</div>
+
+	<div class="total-carrin">
+		<p>Total</p> <p>R$ <?= number_format($total,2) ?></p>
+	</div>
 </div>

@@ -339,3 +339,54 @@ input[type="file"]{
     border-radius: 5px;
     border: 1px solid red;
 }
+
+/* :--:--:--:--:    CARRINHO        :--:--:--:--: */
+.carrin{
+    width: 80%;
+    margin: 0 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+}
+.titulo-carrin{
+    margin: 30px 0px;
+    font-size: 24px;
+}
+.pedido{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+.produto-lista{
+    margin: 20px 0px;
+    height: 80px;
+    display: flex;
+    width: 100%;
+    padding: 0px 5px 0px 0px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 1px solid #AAAAAA;
+}
+.img-carrin{
+    height: 100%;
+    width: 150px;
+}
+.link-carrin{
+    color: #000000;
+}
+.operacoes-carrin{
+    border-top: 1px solid #BFBFBF;
+    padding: 25px 5px 5px 5px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 0px 20px 0px;
+}
+.total-carrin{
+    margin: 20px 0px 0px 0px;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #AAAAAA;
+}
