@@ -45,8 +45,8 @@ function deletarProduto($id) {
     return 'Produto deletado com sucesso!';
 }
 
-function editarProduto($idProduto, $preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo, $categoria) {
-    $sql = "update produtos set  preco ='$preco', nomeproduto = '$nomeproduto', descricao ='$descricao', imagem ='$imagem', estoque_minimo ='$estoque_minimo', estoque_maximo ='$estoque_maximo', idcategoria ='$categoria' WHERE idProduto='$idProduto'";
+function editarProduto($idProduto, $preco, $nomeproduto, $descricao, $imagem, $estoque_minimo, $estoque_maximo,$quant_estoque, $categoria) {
+    $sql = "update produtos set  preco ='$preco', nomeproduto = '$nomeproduto', descricao ='$descricao', imagem ='$imagem', estoque_minimo ='$estoque_minimo', estoque_maximo ='$estoque_maximo',quant_estoque ='$quant_estoque', idcategoria ='$categoria' WHERE idProduto='$idProduto'";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if (!$resultado) {
         die('Erro ao alterar produto' . mysqli_error($cnx));

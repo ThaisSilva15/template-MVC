@@ -8,11 +8,11 @@ function cadastro() {
         $nomecupom = $_POST ["nomecupom"];
         $desconto = $_POST ["desconto"];
         $errors = array();
-        if (valida_nao_vazio($nomecupom, "nomecupom") != NULL) {
-            $errors[] = valida_nao_vazio($nomecupom, "nomecupom");
+        if (valida_vazio($nomecupom, "nomecupom") != NULL) {
+            $errors[] = valida_vazio($nomecupom, "nomecupom");
         }
-        if (valida_tipoEspe($desconto, "desconto") != NULL) {
-            $errors[] = valida_tipoEspe($desconto, "desconto");
+        if (valida_vazio($desconto, "desconto") != NULL) {
+            $errors[] = valida_vazio($desconto, "desconto");
         }
         if (count($errors) > 0) {
             $dados = array();
