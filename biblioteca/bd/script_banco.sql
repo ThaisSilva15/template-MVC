@@ -90,7 +90,3 @@ CREATE TABLE pedido_produto (
 	FOREIGN KEY(idpedido) REFERENCES pedido(idpedido) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO categoria VALUES
-(NULL, "Base"),
-(NULL, "Pincel"),
-(NULL, "Estojo");
