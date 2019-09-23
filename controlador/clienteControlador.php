@@ -11,6 +11,7 @@ function cadastro() {
         $senha = $_POST["senha"];
         $cpf = $_POST["CPF"];
         $sexo = $_POST["sexo"];
+        $tipoUsuario = $_POST["tipoUsuario"];
 
         $data = [];
         $data[0] = $_POST["dia"];
