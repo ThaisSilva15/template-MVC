@@ -68,6 +68,24 @@
         <label class="selecionar-sexo-usuario" for="woman">Feminino</label>
     </div>
     <?php endif; ?>
+    <label class="formulario-label">Tipo Usuário</label>
+    <?php if ($cliente["tipoUsuario"] == "M"): ?>
+    <div class="tipo-usuario">
+        <input type="radio" name="tipoUsuario" value="Adminstrador" id="man" checked="">
+        <label class="selecionar-tipo-usuario" for="Adminstrador">Adminstrador</label>
+
+        <input type="radio" name="tipoUsuario" value="Usuario" id="woman">
+        <label class="selecionar-tipo-usuario" for="Usuario">Usuario</label>
+    </div>
+    <?php else: ?>
+    <div class="sexo-usuario">
+        <input type="radio" name="tipoUsuario" value="adimistradorr" id="man">
+        <label class="selecionar-sexo-usuario" for="adimistrador">adimistrador</label>
+
+        <input type="radio" name="tipoUsuario" value="Usuario" id="woman" checked="">
+        <label class="selecionar-sexo-usuario" for="Usuario">Usuario</label>
+    </div>
+    <?php endif; ?>
 
     <button class="submit-button" type="submit">Atualizar</button>
     <p align="center">Já possui um cadastro? <a href="login/" style="color: #000000;">Entre</a></p>

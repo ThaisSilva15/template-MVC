@@ -58,6 +58,15 @@
         <input type="radio" name="sexo" value="F" id="woman">
         <label class="selecionar-sexo-usuario" for="woman">Feminino</label>
     </div>
+    
+    <label class="formulario-label">Tipo Usuário</label>
+    <div class="tipo-usuario">
+        <input type="radio" name="tipoUsuario" value="ADM" id="man" checked="">
+        <label class="selecionar-tipo-usuario" for="ADM">adimistrador</label>
+
+        <input type="radio" name="tipoUsuario" value="User" id="woman">
+        <label class="selecionar-tipo-usuario" for="user">Usuario</label>
+    </div>
 
     <button class="submit-button" type="submit">Cadastrar</button>
     <p align="center">Já possui um cadastro? <a href="login/" style="color: #000000;">Entre</a></p>

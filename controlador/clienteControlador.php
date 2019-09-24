@@ -37,7 +37,7 @@ function cadastro() {
             exibir("cliente/cadastro", $dados);
         } else {
             $nascimento = $data[2].'-'.$data[1].'-'.$data[0];
-            adicionarUsuario($nomeUsuario, $email, $senha, $cpf, $nascimento, $sexo, 'usr');
+            adicionarUsuario($nomeUsuario, $email, $senha, $cpf, $nascimento, $sexo, $tipoUsuario);
             redirecionar("cliente/listarUsuarios");
         }
     } else {
@@ -45,6 +45,7 @@ function cadastro() {
     }
 }
 
+/** usr */
 function listarUsuarios() {
     $dados = array();
     $dados["clientes"] = pegarTodosUsuarios();
@@ -95,7 +96,7 @@ function editar($id) {
             exibir("cliente/editar", $dados);
         } else {
             $data_nascimento = $nascimento[2].'-'.$nascimento[1].'-'.$nascimento[0];
-            editarUsuario($id,$nomeUsuario, $email, $senha, $cpf, $data_nascimento, $sexo, 'usr');
+            editarUsuario($id,$nomeUsuario, $email, $senha, $cpf, $data_nascimento, $sexo, $tipoUsuario);
             redirecionar("cliente/listarUsuarios");
         }
     } else {
