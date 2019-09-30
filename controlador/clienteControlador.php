@@ -4,6 +4,7 @@ require_once 'servico/validarServico.php';
 require_once 'modelo/clienteModelo.php';
 require_once 'modelo/enderecoModelo.php';
 
+/** anon */
 function cadastro() {
     if (ehPost()) {
         $nomeUsuario = $_POST["nomeUsuario"];
@@ -45,25 +46,28 @@ function cadastro() {
     }
 }
 
-/** usr */
+/** ADM */
 function listarUsuarios() {
     $dados = array();
     $dados["clientes"] = pegarTodosUsuarios();
     exibir("cliente/listar", $dados);
 }
 
+/** ADM */
 function ver($idUsuario) {
     $dados ["cliente"] = pegarUsuarioPorId($idUsuario);
     $dados ["enderecos"] = pegarEnderecosPorUsuario($idUsuario);
     exibir("cliente/visualizar", $dados);
 }
 
+/** ADM */
 function deletar($id) {
     $msg = deletarUsuario($id);
     deletarEnderecoPorCliente($id);
     redirecionar("cliente/listarUsuarios");
 }
 
+/** anon */
 function editar($id) {
     if (ehPost()) {
         $nomeUsuario = $_POST ["nomeUsuario"];

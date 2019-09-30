@@ -3,7 +3,7 @@
 require_once 'modelo/categoriaModelo.php';
 require_once 'servico/validarServico.php';
 
-/** admin */
+/** ADM */
 function descricao() {
     if (ehPost()) {
         $descricao = $_POST ["descricao"];
@@ -26,26 +26,26 @@ function descricao() {
     }
 }
 
-/** admin */
+/** ADM */
 function listarCategoria() {
     $dados = array();
     $dados["categoria"] = pegarTodasCategorias();
     exibir("categoria/listar", $dados);
 }
 
-/** admin */
+/** ADM */
 function ver($idcategoria) {
     $dados ["categoria"] = pegarCategoriaPorId($idcategoria);
     exibir("categoria/visualizar", $dados);
 }
 
-/** admin */
+/** ADM */
 function deletar($id) {
     $msg = deletarCategoria($id);
     redirecionar("categoria/listarCategoria");
 }
 
-/** admin */
+/** ADM */
 function editar($id) {
     if (ehPost()) {
 

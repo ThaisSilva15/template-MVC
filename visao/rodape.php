@@ -20,12 +20,14 @@
             <a class="sub-menu-middle" href="paginas/sobre"><p class="text-footer">Sobre</p></a>
         </div>
         <div class="menu-pages">
+            <?php if (acessoPegarPapelDoUsuario() == "ADM") { ?>
             <a class="sub-menu-middle" href="cliente/listarUsuarios"><p class="text-footer">Clientes</p></a>
             <a class="sub-menu-middle" href="produto/listarProduto"><p class="text-footer">Produtos</p></a>
             <a class="sub-menu-middle" href="categoria/listarCategoria"><p class="text-footer">Categorias</p></a>
             <a class="sub-menu-middle" href="cupom/listarCupom"><p class="text-footer">Cupons</p></a>
             <a class="sub-menu-middle" href="formapagamento/listarFormapagamento"><p class="text-footer">Pagamento</p></a>
             <a class="sub-menu-middle" href="endereco/listarEndereco"><p class="text-footer">Endereços</p></a>
+             <?php } ?>
         </div>
     </div>
     <div class="sub-menus">

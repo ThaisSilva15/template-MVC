@@ -3,6 +3,7 @@
 require_once 'modelo/formapagamentoModelo.php';
 require_once 'servico/validarServico.php';
 
+/** ADM */
 function adicionar() {
     if (ehPost()) {
         $descricao = $_POST["descricao"];
@@ -24,22 +25,26 @@ function adicionar() {
     }
 }
 
+/** ADM */
 function listarFormapagamento() {
     $dados = array();
     $dados["formapagamentos"] = pegarTodasFormapagamento();
     exibir("formapagamento/listar", $dados);
 }
 
+/** ADM */
 function ver($idformapagamento) {
     $dados ["formapagamento"] = pegarFormapagamentoPorId($idformapagamento);
     exibir("formapagamento/visualizar", $dados);
 }
 
+/** ADM */
 function deletar($id) {
     $msg = deletarFormapagamento($id);
     redirecionar("formapagamento/listarFormapagamento");
 }
 
+/** ADM */
 function editar($id) {
     if (ehPost()) {
 

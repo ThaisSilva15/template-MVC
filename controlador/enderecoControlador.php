@@ -3,22 +3,26 @@
 require_once 'servico/validarServico.php';
 require_once 'modelo/enderecoModelo.php';
 
+/** anon */
 function listarEndereco() {
     $dados = array();
     $dados["enderecos"] = pegarTodosEndereco();
     exibir("endereco/listar", $dados);
 }
 
+/** anon */
 function ver($idEndereco) {
     $dados ["endereco"] = pegarEnderecoPorId($idEndereco);
     exibir("endereco/visualizar", $dados);
 }
 
+/** anon */
 function deletar($id, $idUsuario) {
     $msg = deletarEndereco($id);
     redirecionar("cliente/ver/$idUsuario");
 }
 
+/** anon */
 function editar($idendereco, $idUsuario) {
     if (ehPost()) {
         $logradouro = $_POST ["logradouro"];
@@ -35,6 +39,7 @@ function editar($idendereco, $idUsuario) {
     }
 }
 
+/** anon */
 function adicionar($idusuario) {
     if (ehPost()) {
         $logradouro = strip_tags($_POST ["logradouro"]);

@@ -11,7 +11,7 @@ function index() {
 
         if (acessoLogar($usuario)) {
             echo ("Bem vindo" . $login);
-            redirecionar("usuario");
+            redirecionar("produto/listarProduto");
         } else {
             $dados['error'] = "Email ou senha inválidos!";
             exibir("login/index",$dados);
@@ -25,7 +25,7 @@ function index() {
 function logout() {
     acessoDeslogar();
     echo "deslogado com sucesso!";
-    redirecionar("usuario");
+    redirecionar("produto/listarProduto");
 }
 
 ?>

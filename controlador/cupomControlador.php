@@ -3,6 +3,7 @@
 require_once 'servico/validarServico.php';
 require_once 'modelo/cupomModelo.php';
 
+/** ADM */
 function cadastro() {
     if (ehPost()) {
         $nomecupom = $_POST ["nomecupom"];
@@ -45,19 +46,26 @@ function cadastro() {
     //}
 //}
 
+/** ADM */
 function listarCupom() {
     $dados = array();
     $dados["cupoms"] = pegarTodosCupom();
     exibir("cupom/listar", $dados);
 }
+
+/** ADM */
 function ver($idcupom){
     $dados ["cupom"] = pegarCupomPorId($idcupom);
     exibir ("cupom/visualizar", $dados);
 }
+
+/** ADM */
 function deletar($idcupom){
     $msg = deletarCupom($idcupom);
     redirecionar("cupom/listarCupom");
 }
+
+/** ADM */
 function editar($idcupom) {
     if(ehPost()) {
         $nomecupom = $_POST ["nomecupom"];
@@ -69,24 +77,25 @@ function editar($idcupom) {
         exibir ("cupom/formulario", $dados);
     }
 }
-function adicionar($idcupom) {
-    if (ehPost()) {       
-        $nomecupom = strip_tags($_POST ["nomecupom"]);
-        $desconto =  strip_tags($_POST ["desconto"]);
-        $errors = array();
-        if (count($errors) > 0) {
-            $dados = array();
-            $dados["errors"] = $errors;
-            exibir("cupom/formulario", $dados);
-        } else {
-            $msg = adicionarCupom( $idcupom, $nomecupom, $desconto);
-            echo $msg;
-            redirecionar("cupom/listarCupom");
-        } 
-    } else {
-         $dados["cupom"] = pegarCupomPorId($idcupom);
-        exibir ("cupom/formulario", $dados);
-    }
-} 
+
+//function adicionar($idcupom) {
+   // if (ehPost()) {       
+        //$nomecupom = strip_tags($_POST ["nomecupom"]);
+        //$desconto =  strip_tags($_POST ["desconto"]);
+        //$errors = array();
+        //if (count($errors) > 0) {
+          //  $dados = array();
+           // $dados["errors"] = $errors;
+           // exibir("cupom/formulario", $dados);
+      //  } else {
+          //  $msg = adicionarCupom( $idcupom, $nomecupom, $desconto);
+           // echo $msg;
+           // redirecionar("cupom/listarCupom");
+      //  } 
+   // } else {
+        // $dados["cupom"] = pegarCupomPorId($idcupom);
+       // exibir ("cupom/formulario", $dados);
+   // }
+//} 
 
 ?>

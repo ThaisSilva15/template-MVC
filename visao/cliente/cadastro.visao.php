@@ -62,10 +62,10 @@
     <label class="formulario-label">Tipo Usuário</label>
     <div class="tipo-usuario">
         <input type="radio" name="tipoUsuario" value="ADM" id="man" checked="">
-        <label class="selecionar-tipo-usuario" for="ADM">adimistrador</label>
+        <label class="selecionar-tipo-usuario" for="ADM">Adimistrador</label>
 
-        <input type="radio" name="tipoUsuario" value="User" id="woman">
-        <label class="selecionar-tipo-usuario" for="user">Usuario</label>
+        <input type="radio" name="tipoUsuario" value="USER" id="woman">
+        <label class="selecionar-tipo-usuario" for="USER">Usuario</label>
     </div>
 
     <button class="submit-button" type="submit">Cadastrar</button>
