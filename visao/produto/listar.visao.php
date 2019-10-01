@@ -32,8 +32,10 @@
             <td><?= $produto['estoque_maximo'] ?></td>
             <td><?= $produto['quant_estoque'] ?></td>
             <td><a href="produto/ver/<?= $produto['idproduto'] ?>">Ver</a></td>
-            <td><a href="produto/deletar/<?= $produto['idproduto'] ?>">Deletar</a></td>
-            <td><a href="produto/editar/<?= $produto['idproduto'] ?>">Alterar</a></td>
+            <?php if (acessoPegarPapelDoUsuario() == "ADM") { ?>
+              <td><a href="produto/deletar/<?= $produto['idproduto'] ?>">Deletar</a></td>
+              <td><a href="produto/editar/<?= $produto['idproduto'] ?>">Alterar</a></td>
+            <?php } ?>
             <td><a href="sacola/adicionar/<?= $produto['idproduto'] ?>">Comprar</a></td>
         </tr>
         <?php endforeach; ?>
@@ -41,6 +43,9 @@
     
 </div>
 <br>
-<a href="produto/adicionar" class="btn btn-primary"> Novo produto</a>
+<?php if (acessoPegarPapelDoUsuario() == "ADM") { ?>
+	<a href="produto/adicionar" class="btn btn-primary"> Novo produto</a>
+<?php } ?>
+
 </div>
 

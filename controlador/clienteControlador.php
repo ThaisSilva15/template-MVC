@@ -53,7 +53,7 @@ function listarUsuarios() {
     exibir("cliente/listar", $dados);
 }
 
-/** ADM */
+/** anon */
 function ver($idUsuario) {
     $dados ["cliente"] = pegarUsuarioPorId($idUsuario);
     $dados ["enderecos"] = pegarEnderecosPorUsuario($idUsuario);
