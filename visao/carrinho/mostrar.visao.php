@@ -15,6 +15,7 @@
 	<div class="operacoes-carrin">
 		<a href="sacola/limparCarrinho" class="link-carrin" style="margin-right: 50px;">Limpar Carrinho</a>
 		<a href="produto/listarProduto" class="link-carrin">Continuar Comprando</a>
+                <a href="pedido/salvarPedido" class="link-carrin">Finalizar Pedido</a>
 	</div>
 
 	<div class="total-carrin">
