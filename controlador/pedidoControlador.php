@@ -1,25 +1,23 @@
 <?php
+
+require_once 'modelo/enderecoModelo.php';
+require_once 'modelo/formapagamentoModelo.php';
+
 function salvarPedido() {
     if (ehPost()) {
-        $descricao = $_POST ["descricao"];
-
-        $errors = array();
-        if (valida_vazio($descricao, "Descrição") != NULL) {
-            $errors[] = valida_vazio($descricao, "Descrição");
-        }
-        if (count($errors) > 0) {
-            $dados = array();
-            $dados["errors"] = $errors;
-            $dados["categorias"] = pegarTodosPedidos();
-            exibir("produto/formulario", $dados);
-        } else {
-            $msg = adicionarProduto($formapagamento, $endereco, $idUsuario);
+        $idPedido = $_POST ["idPedido"];
+        $idUsuario = $_POST ["idUsuario"];
+        $idendereco = $_POST ["idendereco"];
+        $idformapagamento = $_POST ["idformapagamento"];
+        $produtos = $_SESSION['sacola'];
+            $msg = adicionarPedido($idPedido, $idUsuario, $idendereco, $idformapagamento,$produtos);
             echo $msg;
-            redirecionar("produto/listarProduto");
-        }
+            redirecionar("pedido/listarPedidos");
     } else {
         $dados = [];
-        $dados["categorias"] = pegarTodosPedidos();
+        $dados["endereco"] = pegarEnderecosPorUsuario();
+        $dados["formapagamento"] = pegarFormapagamentoPorId();
         exibir("produto/formulario", $dados);
     }
 }
+        
