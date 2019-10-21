@@ -3,7 +3,6 @@
     <thead>
         <tr>
             <th></th>
-            <th>ID PEDIDO</th>
             <th>ID USUARIO</th>
             <th>ID ENDERECO</th>
             <th>ID FORMA DE PAGAMENTO</th>
@@ -14,7 +13,6 @@
 <div class="catalogo">
     <?php foreach ($pedidos as $pedido): ?>
         <tr>
-            <td><?= $pedido['idPedido'] ?></td>
             <td><?= $pedido['idUsuario'] ?></td>
             <td><?= $pedido['idendereco'] ?></td>
             <td><?= $pedido['idformapagamento'] ?></td>
