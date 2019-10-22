@@ -31,12 +31,19 @@ foreach ($enderecos as $endereco):
  ?>
 </select>
 <div class="pedido">
-		<?php foreach ($produtos as $produto): ?>
+    
+		<?php $total=0; foreach ($produtos as $produto): ?>
 			<div class="produto-lista">
 				<img src="<?=$produto['imagem']?>" class="img-carrin">
 				<a class="link-carrin" href="produto/ver/<?= $produto["idproduto"] ?>"><?= $produto["nomeproduto"] ?></a>
 				<p class="link-carrin">R$ <?= number_format($produto["preco"],2) ?></p>
 				<button> Salvar pedidos </button>
+                                <?php
+                                $total= $produto ["preco"] + $total;
+                                ?>
 			</div>
 		<?php endforeach; ?>
 	</div>
+ <div class="total-carrin">
+		<p>Total</p> <p>R$ <?= number_format($total,2) ?></p>
+    </div>

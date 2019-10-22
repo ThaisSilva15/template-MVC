@@ -7,7 +7,6 @@ function salvarPedido() {
     $idUsuario = acessoPegarUsuarioLogado();
     $produtos = $_SESSION['carrinho'];
     if (ehPost()) {
-        $idUsuario = $_POST ["idUsuario"];
         $idendereco = $_POST ["idendereco"];
         $idformapagamento = $_POST ["idformapagamento"];
         
