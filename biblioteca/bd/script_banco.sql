@@ -61,11 +61,12 @@ CREATE TABLE pedido (
 	idUsuario INT(11) NOT NULL,
 	idendereco INT(11) NOT NULL,
 	idformapagamento BIGINT NOT NULL,
-	datacompra date NOT NULL,
+	datacompra DATE NOT NULL,
 	PRIMARY KEY (idPedido),
 	FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(idformapagamento) REFERENCES formapagamento(idformapagamento) ON DELETE CASCADE ON UPDATE CASCADE
+
 );
 
 CREATE TABLE produtos (

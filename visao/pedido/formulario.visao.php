@@ -1,3 +1,4 @@
+<form action="" method="POST" class="formulario-usuario">
 <?php
 if (ehPost()) {
     foreach ($errors as $erro) {
@@ -6,7 +7,7 @@ if (ehPost()) {
 }
 ?> 
 <h1>Escolha sua forma de pagamento </h1>
-<select name="pedido" id="pedido" class="formulario-select-option">
+<select name="idformapagamento" id="pedido" class="formulario-select-option">
         <?php
         foreach ($formapagamento as $fp):
             if ($fp["idformapagamento"] == $fp["idformapagamento"]):?>
@@ -19,7 +20,7 @@ if (ehPost()) {
         ?>
     </select>
 <h1> Escolha seu endereço </h1>
-<select name="endereco" id="endereco" class="formulario-select-option">
+<select name="idendereco" id="endereco" class="formulario-select-option">
     <?php
 foreach ($enderecos as $endereco):
             if ($endereco["idendereco"] == $endereco["idendereco"]):?>
@@ -37,7 +38,7 @@ foreach ($enderecos as $endereco):
 				<img src="<?=$produto['imagem']?>" class="img-carrin">
 				<a class="link-carrin" href="produto/ver/<?= $produto["idproduto"] ?>"><?= $produto["nomeproduto"] ?></a>
 				<p class="link-carrin">R$ <?= number_format($produto["preco"],2) ?></p>
-				<button> Salvar pedidos </button>
+           
                                 <?php
                                 $total= $produto ["preco"] + $total;
                                 ?>
@@ -47,3 +48,5 @@ foreach ($enderecos as $endereco):
  <div class="total-carrin">
 		<p>Total</p> <p>R$ <?= number_format($total,2) ?></p>
     </div>
+ <button class="submit-button" type="submit">Salvar pedidos</button>
+</form>

@@ -13,10 +13,10 @@
 <div class="catalogo">
     <?php foreach ($pedidos as $pedido): ?>
         <tr>
-            <td><?= $pedido['idUsuario'] ?></td>
-            <td><?= $pedido['idendereco'] ?></td>
-            <td><?= $pedido['idformapagamento'] ?></td>
-            <td><a href="produto/ver/<?= $pedido['idproduto'] ?>">Ver</a></td> 
+            <td>Usuário: <?= $pedido['idUsuario'] ?></td>
+            <td>Endereço: <?= $pedido['idendereco'] ?></td>
+            <td>Pagamento: <?= $pedido['idformapagamento'] ?></td>
+            <td><a href="produto/ver/<?= $pedido['idPedido'] ?>">Ver</a></td> 
         </tr>
         <?php endforeach; ?>
         
@@ -26,4 +26,8 @@
 	<a href="produto/adicionar" class="btn btn-primary"> Novo produto</a>
 <?php } ?>
 
-</div>
+</div
+
+
+
+

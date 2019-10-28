@@ -2,6 +2,7 @@
 
 require_once 'modelo/enderecoModelo.php';
 require_once 'modelo/formapagamentoModelo.php';
+require_once 'modelo/pedidoModelo.php';
 
 function salvarPedido() {
     $idUsuario = acessoPegarUsuarioLogado();
@@ -21,4 +22,9 @@ function salvarPedido() {
         exibir("pedido/formulario", $dados);
     }
 }
-        
+
+function listarPedidos () {
+    $dados = array();
+    $dados["pedidos"] = pegarTodosPedidos();
+    exibir("pedido/listar", $dados);
+}
