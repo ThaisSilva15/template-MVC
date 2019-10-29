@@ -19,6 +19,13 @@
 	</div>
 
 	<div class="total-carrin">
-		<p>Total</p> <p>R$ <?= number_format($total,2) ?></p>
+		<p>Total</p> <p>R$ <?= number_format($_SESSION['total'],2) ?></p>
 	</div>
+</div>
+<div class="cupom">
+	<form action="cupom/desconto/" method="POST">
+		<label for="desconto"><h2>Possui Cupom?</h2></label>
+		<input type="text" name="cupomDesconto" id="desconto">
+		<button type="submit">Verificar</button>
+	</form>
 </div>

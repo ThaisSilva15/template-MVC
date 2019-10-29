@@ -1,26 +1,25 @@
 <h2>Listar Pedidos</h2>
-<table class="table" border="1">
+<table class="table">
     <thead>
         <tr>
-            <th></th>
-            <th>ID USUARIO</th>
-            <th>ID ENDERECO</th>
-            <th>ID FORMA DE PAGAMENTO</th>
-            <th>VER</th>
+            <th>USUARIO</th>
+            <th>ENDEREÇO</th>
+            <th>PAGAMENTO</th>
+            <th>DETALHES</th>
         </tr>
     </thead>
-</table>
-<div class="catalogo">
+    <tbody>
     <?php foreach ($pedidos as $pedido): ?>
         <tr>
-            <td>Usuário: <?= $pedido['idUsuario'] ?></td>
-            <td>Endereço: <?= $pedido['idendereco'] ?></td>
-            <td>Pagamento: <?= $pedido['idformapagamento'] ?></td>
-            <td><a href="produto/ver/<?= $pedido['idPedido'] ?>">Ver</a></td> 
+            <td><?= $pedido['nomeUsuario'] ?></td>
+            <td><?= $pedido['logradouro'] ?></td>
+            <td><?= $pedido['descricao'] ?></td>
+            <td><a href="pedido/ver/<?= $pedido['idPedido'] ?>">Ver</a></td> 
         </tr>
-        <?php endforeach; ?>
-        
-</div>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+
 <br>
 <?php if (acessoPegarPapelDoUsuario() == "ADM") { ?>
 	<a href="produto/adicionar" class="btn btn-primary"> Novo produto</a>

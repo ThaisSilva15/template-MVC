@@ -28,3 +28,10 @@ function listarPedidos () {
     $dados["pedidos"] = pegarTodosPedidos();
     exibir("pedido/listar", $dados);
 }
+
+function ver ($id) {
+    $dados = array();
+    $dados['pedido'] = selecionarPedido($id);
+    $dados['produtos'] = selecionarPedidoProdutos($id);
+    exibir("pedido/ver", $dados);
+}

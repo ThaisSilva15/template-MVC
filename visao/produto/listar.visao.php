@@ -39,8 +39,6 @@
             <td><a href="sacola/adicionar/<?= $produto['idproduto'] ?>">Comprar</a></td>
         </tr>
         <?php endforeach; ?>
-        
-    
 </div>
 <br>
 <?php if (acessoPegarPapelDoUsuario() == "ADM") { ?>

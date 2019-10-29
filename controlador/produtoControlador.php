@@ -75,7 +75,10 @@ function ver($idproduto) {
 
 /** ADM */
 function deletar($id) {
-    $msg = deletarProduto($id);
+    $produto = pegarProdutoPorId($id);
+    unlink($produto['imagem']);
+
+    deletarProduto($id);
     redirecionar("produto/listarProduto");
 }
 

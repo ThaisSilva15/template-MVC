@@ -66,7 +66,6 @@ CREATE TABLE pedido (
 	FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(idformapagamento) REFERENCES formapagamento(idformapagamento) ON DELETE CASCADE ON UPDATE CASCADE
-
 );
 
 CREATE TABLE produtos (
