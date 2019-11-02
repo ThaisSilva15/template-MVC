@@ -35,7 +35,7 @@ function editar($idendereco, $idUsuario) {
         redirecionar("cliente/ver/$idUsuario");
     } else {
         $dados["endereco"] = pegarEnderecoPorId($idendereco);
-        exibir("endereco/formulario", $dados);
+        exibir("endereco/editar", $dados);
     }
 }
 
@@ -54,8 +54,7 @@ function adicionar($idusuario) {
             $dados["errors"] = $errors;
             exibir("endereco/formulario", $dados);
         } else {
-            $msg = adicionarEndereco($idusuario, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
-            echo $msg;
+            adicionarEndereco($idusuario, $logradouro, $numero, $complemento, $bairro, $cidade, $cep);
             redirecionar("cliente/ver/$idusuario");
         }
     } else {

@@ -10,11 +10,10 @@ function index() {
         $usuario = pegarUsuarioPorEmailSenha($email, $senha);
 
         if (acessoLogar($usuario)) {
-            echo ("Bem vindo" . $login);
             redirecionar("produto/listarProduto");
         } else {
             $dados['error'] = "Email ou senha inválidos!";
-            exibir("login/index",$dados);
+            exibir("login/index", $dados);
         }
     } else {
         exibir("login/index");
@@ -24,8 +23,7 @@ function index() {
 /** anon */
 function logout() {
     acessoDeslogar();
-    echo "deslogado com sucesso!";
-    redirecionar("produto/listarProduto");
+    redirecionar("paginas/");
 }
 
 ?>

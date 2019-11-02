@@ -21,7 +21,7 @@ function pegarTodosUsuarios() {
 }
 
 function pegarUsuarioPorId($id) {
-    $sql = "select * from usuario where idUsuario= $id";
+    $sql = "select * from usuario where idUsuario = $id";
     $resultado = mysqli_query(conn(), $sql);
     $clientes = mysqli_fetch_assoc($resultado);
     return $clientes;

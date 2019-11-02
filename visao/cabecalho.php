@@ -12,9 +12,8 @@
                 <button class="button-busca" type="submit" class="botao-busca">Buscar</button>
             </form>
         </div>
-        <?php if (isset($_SESSION['usuario'])): ?>
-            <?php //if (acessoPegarUsuarioLogado()): ?>
-            <a class="link-menu" href="cliente/ver/<?= $usuario['idusuario'] ?>">Usuario</a>
+        <?php if (acessoUsuarioEstaLogado()): ?>
+            <a class="link-menu" href="cliente/ver/<?= acessoPegarUsuarioLogado() ?>">Minha Conta</a>
             <a class="link-menu" href="login/logout">Logout</a>
         <?php else: ?>
             <a class="link-menu" href="login/">Login</a>
