@@ -6,7 +6,7 @@ require_once 'modelo/categoriaModelo.php';
 
 function listaProdutoseQuantidadedoEstoque() {
     $dados = array();
-    $dados["produtos"] = pegarTodosProdutodoEstoque();
+    $dados["produtos"] = pegarTodosProdutoEstoque();
     exibir("produto/listar", $dados);
 }
 function listaProdutosCategoria() {
