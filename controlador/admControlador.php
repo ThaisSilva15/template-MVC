@@ -1,31 +1,31 @@
 <?php
 
+require_once 'modelo/admModelo.php';
 require_once 'modelo/produtoModelo.php';
-require_once 'modelo/categoriaModelo.php';
 
 
 function listaProdutoseQuantidadedoEstoque() {
     $dados = array();
-    $dados["produtos"] = pegarTodosProdutoEstoque();
-    exibir("produto/listar", $dados);
+    $dados["adm"] = pegarTodosProdutoEstoque();
+    exibir("adm/listaProdutoseQuantidadedoEstoque", $dados);
 }
 function listaProdutosCategoria() {
     $dados = array();
-    $dados["produtos"] = pegarTodosProdutodoEstoque();
-    exibir("produto/listar", $dados);
+    $dados["adm"] = pegarTodosProdutoeCategoria();
+    exibir("adm/listaProdutosCategoria", $dados);
 }
 function listaPedidosRealizadosDatas() {
     $dados = array();
-    $dados["produtos"] = pegarTodosProdutodoEstoque();
-    exibir("produto/listar", $dados);
+    $dados["adm"] = pegarTodosPedidosDatas();
+    exibir("adm/listaPedidosRealizadosDatas", $dados);
 }
 function listaPedidosMunicipioEstado() {
     $dados = array();
-    $dados["produtos"] = pegarTodosProdutodoEstoque();
-    exibir("produto/listar", $dados);
+    $dados["adm"] = pegarTodosPedidosMunicipioEstado();
+    exibir("adm/listaPedidosMunicipioEstado", $dados);
 }
 function totalFaturamentoPeriodo() {
     $dados = array();
-    $dados["produtos"] = pegarTodosProdutodoEstoque();
-    exibir("produto/listar", $dados);
+    $dados["adm"] = pegarTodosTotalFaturamamento();
+    exibir("adm/totalFaturamentoPeriodo", $dados);
 }
