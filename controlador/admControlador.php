@@ -15,9 +15,15 @@ function listaProdutosCategoria() {
     exibir("adm/listaProdutosCategoria", $dados);
 }
 function listaPedidosRealizadosDatas() {
+    if (ehPost()){
+    $datad1 = $_POST ['datad1'];
+    $datad2= $_POST ['datad2'];
     $dados = array();
-    $dados["adm"] = pegarTodosPedidosDatas();
+    $dados["adm"] = pegarTodosPedidosDatas($datad1,$datad2); 
     exibir("adm/listaPedidosRealizadosDatas", $dados);
+}else{
+    exibir("adm/data");
+} 
 }
 function listaPedidosMunicipioEstado() {
     $dados = array();

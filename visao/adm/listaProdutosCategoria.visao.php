@@ -3,13 +3,13 @@
 	<thead>
 		<tr>
 			<th>Nome</th>
-			<th>Estoque</th>
+			<th>Categoria</th>
 		</tr>
 	</thead>
 		<?php foreach ($adm as $produto): ?>
 			<tr>
                             <td><?=$produto['nomeproduto']?></td><br>
-                            <td><?=$produto['quant_estoque']?></td>
+                            <td><?=$produto['categ']?></td>
 			</tr>
 		<?php endforeach; ?>
 </table>

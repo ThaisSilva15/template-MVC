@@ -62,6 +62,7 @@ CREATE TABLE pedido (
 	idendereco INT(11) NOT NULL,
 	idformapagamento BIGINT NOT NULL,
 	datacompra DATE NOT NULL,
+        total DOUBLE,
 	PRIMARY KEY (idPedido),
 	FOREIGN KEY(idusuario) REFERENCES usuario(idusuario) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(idendereco) REFERENCES endereco(idendereco) ON DELETE CASCADE ON UPDATE CASCADE,

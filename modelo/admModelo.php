@@ -10,7 +10,7 @@ function pegarTodosProdutoEstoque() {
     return $produto;
 }
 function pegarTodosProdutoeCategoria() {
-    $sql = "select produtos.nomeproduto, categoria.descricao from produtos inner join categoria on categoria.idcategoria = produtos.idcategoria order by categoria.descricao;";
+    $sql = "select produtos.nomeproduto, categoria.descricao as categ from produtos inner join categoria on categoria.idcategoria = produtos.idcategoria order by categoria.descricao;";
     $resultado = mysqli_query(conn(), $sql);
     $produto = array();
     while ($linha = mysqli_fetch_assoc($resultado)) {
@@ -18,8 +18,9 @@ function pegarTodosProdutoeCategoria() {
     }
     return $produto;
 }
-function pegarTodosPedidosDatas() {
-    $sql = "select * from produtos";
+function pegarTodosPedidosDatas($datad1, $datad2) {
+    $sql = "select * from pedido where datacompra between '$datad1' and '$datad2'";
+    echo $sql;
     $resultado = mysqli_query(conn(), $sql);
     $produto = array();
     while ($linha = mysqli_fetch_assoc($resultado)) {

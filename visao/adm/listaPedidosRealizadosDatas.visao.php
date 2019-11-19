@@ -2,14 +2,14 @@
 <table class="table" border="1">
 	<thead>
 		<tr>
-			<th>Nome</th>
-			<th>Estoque</th>
+			<th>Data da Compra</th>
+			<th>Total</th>
 		</tr>
 	</thead>
-		<?php foreach ($adm as $produto): ?>
+		<?php foreach ($adm as $data): ?>
 			<tr>
-                            <td><?=$produto['nomeproduto']?></td><br>
-                            <td><?=$produto['quant_estoque']?></td>
+                            <td><?=$data['datacompra']?></td><br>
+                            <td><?=$data['total']?></td>
 			</tr>
 		<?php endforeach; ?>
 </table></h2>
