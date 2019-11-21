@@ -33,9 +33,13 @@ function selecionarPedido ($id){
 }
 
 function selecionarPedidoProdutos ($id){
-	$sql = "SELECT *
-			FROM pedido_produto
-			WHERE idpedido = '$id'";
+	$sql = "SELECT pr.*, pp.quantidade
+			FROM produtos pr
+			INNER JOIN pedido_produto pp
+			ON pr.idproduto = pp.idproduto
+			INNER JOIN pedido p 
+			ON pp.idPedido = p.idPedido
+			WHERE p.idPedido = '$id'";
 	$resultado = mysqli_query(conn(), $sql);
 	$pedido = array();
 	while ($linha = mysqli_fetch_assoc($resultado)){

@@ -2,14 +2,18 @@
 <table class="table" border="1">
 	<thead>
 		<tr>
-			<th>Nome</th>
-			<th>Estoque</th>
+			<th>Cidade</th>
+			<th>Quantidade de Pedidos</th>
+			<th>Detalhes</th>
 		</tr>
 	</thead>
-		<?php foreach ($adm as $produto): ?>
+	<tbody>
+		<?php foreach ($adm as $pedido): ?>
 			<tr>
-                            <td><?=$produto['nomeproduto']?></td><br>
-                            <td><?=$produto['quant_estoque']?></td>
+	            <td><?=$pedido['cidade']?></td><br>
+                <td><?=$pedido['quant']?></td>
+                <td><a href="adm/visualizarPedidosPorCidade/<?=$pedido['idendereco']?>">Ver mais</a></td>
 			</tr>
 		<?php endforeach; ?>
+	</tbody>
 </table>

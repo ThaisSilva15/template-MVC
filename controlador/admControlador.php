@@ -5,33 +5,37 @@ require_once 'modelo/produtoModelo.php';
 
 
 function listaProdutoseQuantidadedoEstoque() {
-    $dados = array();
-    $dados["adm"] = pegarTodosProdutoEstoque();
-    exibir("adm/listaProdutoseQuantidadedoEstoque", $dados);
+	$dados = array();
+	$dados["adm"] = pegarTodosProdutoEstoque();
+	exibir("adm/listaProdutoseQuantidadedoEstoque", $dados);
 }
+
 function listaProdutosCategoria() {
-    $dados = array();
-    $dados["adm"] = pegarTodosProdutoeCategoria();
-    exibir("adm/listaProdutosCategoria", $dados);
+	$dados = array();
+	$dados["adm"] = pegarTodosProdutoeCategoria();
+	exibir("adm/listaProdutosCategoria", $dados);
 }
+
 function listaPedidosRealizadosDatas() {
-    if (ehPost()){
-    $datad1 = $_POST ['datad1'];
-    $datad2= $_POST ['datad2'];
-    $dados = array();
-    $dados["adm"] = pegarTodosPedidosDatas($datad1,$datad2); 
-    exibir("adm/listaPedidosRealizadosDatas", $dados);
-}else{
-    exibir("adm/data");
-} 
+	if (ehPost()){
+		$datad1 = $_POST ['datad1'];
+		$datad2= $_POST ['datad2'];
+		$dados = array();
+		$dados["adm"] = pegarTodosPedidosDatas($datad1, $datad2); 
+		exibir("adm/listaPedidosRealizadosDatas", $dados);
+	}else{
+		exibir("adm/data");
+	} 
 }
+
 function listaPedidosMunicipioEstado() {
-    $dados = array();
-    $dados["adm"] = pegarTodosPedidosMunicipioEstado();
-    exibir("adm/listaPedidosMunicipioEstado", $dados);
+	$dados = array();
+	$dados["adm"] = pegarTodosPedidosMunicipioEstado();
+	exibir("adm/listaPedidosMunicipioEstado", $dados);	
 }
+
 function totalFaturamentoPeriodo() {
-    $dados = array();
-    $dados["adm"] = pegarTodosTotalFaturamamento();
-    exibir("adm/totalFaturamentoPeriodo", $dados);
+	$dados = array();
+	$dados["adm"] = pegarTodosTotalFaturamamento();
+	exibir("adm/totalFaturamentoPeriodo", $dados);
 }

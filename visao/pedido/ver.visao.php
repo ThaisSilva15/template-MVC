@@ -6,9 +6,18 @@ Pagamento: <?= $pedido['descricao']?>
 
 <?php foreach($produtos as $produto):?>
 	<div>
-		IdProduto: <?=$produto['idproduto']?><br>
+		Nome: <?=$produto['nomeproduto']?><br>
+		R$ <?=$produto['preco']?><br>
 		Quantidade: <?=$produto['quantidade']?>
 	</div>
 
 	<br>
 <?php endforeach;?>
+
+
+
+<!-- Verificação de amdinistrador -->
+<?php if((acessoUsuarioEstaLogado()) && (acessoPegarPapelDoUsuario() == 'admin')):?> 
+	<a href="produto/listarProdtuos"></a>
+	<a href="usuario/listarUsuarios"></a>
+<?php endif;?>
