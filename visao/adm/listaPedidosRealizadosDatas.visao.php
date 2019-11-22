@@ -12,4 +12,5 @@
                             <td><?=$data['total']?></td>
 			</tr>
 		<?php endforeach; ?>
+	</div>
 </table></h2>

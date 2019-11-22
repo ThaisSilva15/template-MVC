@@ -28,6 +28,11 @@
             <a class="sub-menu-middle" href="cupom/listarCupom"><p class="text-footer">Cupons</p></a>
             <a class="sub-menu-middle" href="formapagamento/listarFormapagamento"><p class="text-footer">Pagamento</p></a>
             <a class="sub-menu-middle" href="endereco/listarEndereco"><p class="text-footer">Endereços</p></a>
+            <a class="sub-menu-middle" href="adm/listaProdutoseQuantidadedoEstoque"><p class="text-footer">Produtos em Quantidade Estoque</p></a>
+            <a class="sub-menu-middle" href="adm/listaProdutosCategoria"><p class="text-footer">Produtos por Categoria</p></a>
+            <a class="sub-menu-middle" href="adm/listaPedidosRealizadosDatas"><p class="text-footer">Pedidos Realizados por Datas</p></a>
+            <a class="sub-menu-middle" href="adm/listaPedidosMunicipioEstado"><p class="text-footer">Pedidos por Mun/Estado</p></a>
+            <a class="sub-menu-middle" href="adm/totalFaturamentoPeriodo"><p class="text-footer">Total de Faturamento Período</p></a>
              <?php }else{ ?>
                   <a class="sub-menu-middle" href="cliente/ver/<?=acessoPegarUsuarioLogado();?>"><p class="text-footer">Minha Conta</p></a>
             <?php } ?>

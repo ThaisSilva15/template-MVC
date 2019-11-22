@@ -6,7 +6,7 @@ Pagamento: <?= $pedido['descricao']?>
 
 <?php foreach($produtos as $produto):?>
 	<div>
-		Nome: <?=$produto['nomeproduto']?><br>
+		Produto: <?=$produto['nomeproduto']?><br>
 		R$ <?=$produto['preco']?><br>
 		Quantidade: <?=$produto['quantidade']?>
 	</div>

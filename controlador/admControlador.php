@@ -39,3 +39,7 @@ function totalFaturamentoPeriodo() {
 	$dados["adm"] = pegarTodosTotalFaturamamento();
 	exibir("adm/totalFaturamentoPeriodo", $dados);
 }
+
+function visualizarPedidosPorCidade($nome){
+    $dados["adm"] = buscarPorCidade($nome);
+}

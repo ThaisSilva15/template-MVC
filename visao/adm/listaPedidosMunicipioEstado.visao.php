@@ -11,8 +11,8 @@
 		<?php foreach ($adm as $pedido): ?>
 			<tr>
 	            <td><?=$pedido['cidade']?></td><br>
-                <td><?=$pedido['quant']?></td>
-                <td><a href="adm/visualizarPedidosPorCidade/<?=$pedido['idendereco']?>">Ver mais</a></td>
+                    <td><?=$pedido['quant']?></td>
+                <td><a href="adm/visualizarPedidosPorCidade/<?=$pedido['cidade']?>">Ver mais</a></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>

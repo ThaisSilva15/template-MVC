@@ -28,7 +28,6 @@ function pegarTodosPedidosDatas($datad1, $datad2) {
 	$sql = "SELECT * 
 			FROM pedido 
 			WHERE datacompra BETWEEN '$datad1' AND '$datad2'";
-	echo $sql;
 	$resultado = mysqli_query(conn(), $sql);
 	$produto = array();
 	while ($linha = mysqli_fetch_assoc($resultado)) {
@@ -38,11 +37,13 @@ function pegarTodosPedidosDatas($datad1, $datad2) {
 }
 
 function pegarTodosPedidosMunicipioEstado() {
-	$sql = "SELECT COUNT(p.idPedido) AS quant, e.cidade, e.idendereco 
-			FROM pedido p
-			INNER JOIN endereco e
-			ON p.idendereco = e.idendereco
-			GROUP BY e.cidade";
+	$sql = "SELECT e.cidade, COUNT(p.idPedido) AS quant			
+                FROM pedido p
+                INNER JOIN usuario u
+                ON u.idUsuario = p.idUsuario
+                INNER JOIN endereco e
+                ON u.idUsuario = e.idusuario
+                group by e.cidade";
 	$resultado = mysqli_query(conn(), $sql);
 	$produto = array();
 	while ($linha = mysqli_fetch_assoc($resultado)) {
@@ -87,4 +88,16 @@ function pegarTodosTotalFaturamamento($tipoFaturamento) {
 		$produto[] = $linha;
 	}
 	return $produto;
+}
+
+function buscarPorCidade($cidade)
+{
+    $sql = "SELECT e.idendereco, e.cidade, p.idPedido
+            FROM pedido p";
+	$resultado = mysqli_query(conn(), $sql);
+	$pedido = array();
+	while ($linha = mysqli_fetch_assoc($resultado)) {
+		$pedido[] = $linha;
+	}
+	return $pedido;
 }
