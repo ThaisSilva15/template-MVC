@@ -36,10 +36,7 @@ function listaPedidosMunicipioEstado() {
 
 function totalFaturamentoPeriodo() {
 	$dados = array();
-	$dados["adm"] = pegarTodosTotalFaturamamento();
+	$dados["adm"] = pegarTodosTotalFaturamamento($tipoFaturamento);
 	exibir("adm/totalFaturamentoPeriodo", $dados);
 }
 
-function visualizarPedidosPorCidade($nome){
-    $dados["adm"] = buscarPorCidade($nome);
-}

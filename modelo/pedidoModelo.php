@@ -48,9 +48,9 @@ function selecionarPedidoProdutos ($id){
 	return $pedido;
 }
 
-function adicionarPedido( $idUsuario, $idedereco, $idformapagamento, $produtos) {
+function adicionarPedido( $idUsuario, $idedereco, $idformapagamento, $produtos, $total) {
 	$data = date("Y-m-d");
-	$sql = "INSERT INTO pedido ( idUsuario, idendereco, idformapagamento, datacompra) VALUES ('$idUsuario', '$idedereco', '$idformapagamento', '$data')";
+	$sql = "INSERT INTO pedido ( idUsuario, idendereco, idformapagamento, datacompra, total) VALUES ('$idUsuario', '$idedereco', '$idformapagamento', '$data', '$total')";
 	$resultado = mysqli_query($cnx = conn(), $sql);
 	if (!$resultado) {
 		die('Erro ao cadastrar o pedido' . mysqli_error($cnx));

@@ -37,19 +37,16 @@ function pegarTodosPedidosDatas($datad1, $datad2) {
 }
 
 function pegarTodosPedidosMunicipioEstado() {
-	$sql = "SELECT e.cidade, COUNT(p.idPedido) AS quant			
-                FROM pedido p
-                INNER JOIN usuario u
-                ON u.idUsuario = p.idUsuario
-                INNER JOIN endereco e
-                ON u.idUsuario = e.idusuario
-                group by e.cidade";
+	$sql = "SELECT pedido.datacompra, pedido.total, endereco.cidade from pedido 		
+                inner join endereco
+		on endereco.idEndereco = pedido.idEndereco
+		order by endereco.cidade;";
 	$resultado = mysqli_query(conn(), $sql);
-	$produto = array();
+	$pedido = array();
 	while ($linha = mysqli_fetch_assoc($resultado)) {
-		$produto[] = $linha;
+		$pedido[] = $linha;
 	}
-	return $produto;
+	return $pedido;
 }
 
 function pegarTodosTotalFaturamamento($tipoFaturamento) {
@@ -88,16 +85,4 @@ function pegarTodosTotalFaturamamento($tipoFaturamento) {
 		$produto[] = $linha;
 	}
 	return $produto;
-}
-
-function buscarPorCidade($cidade)
-{
-    $sql = "SELECT e.idendereco, e.cidade, p.idPedido
-            FROM pedido p";
-	$resultado = mysqli_query(conn(), $sql);
-	$pedido = array();
-	while ($linha = mysqli_fetch_assoc($resultado)) {
-		$pedido[] = $linha;
-	}
-	return $pedido;
 }

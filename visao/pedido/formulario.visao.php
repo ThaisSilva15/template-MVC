@@ -46,7 +46,7 @@ if (ehPost()) {
 		<?php endforeach; ?>
 	</div>
  <div class="total-carrin">
-		<p>Total</p> <p>R$ <?= number_format($_SESSION['total'],2) ?></p>
+		<p>Total</p> <p>R$ <?= number_format($total,2) ?></p>
 	</div>
  <button class="submit-button" type="submit">Salvar pedidos</button>
 </form>
