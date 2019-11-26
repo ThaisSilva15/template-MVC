@@ -3,19 +3,19 @@
 require_once 'modelo/admModelo.php';
 require_once 'modelo/produtoModelo.php';
 
-
+/** ADM */
 function listaProdutoseQuantidadedoEstoque() {
 	$dados = array();
 	$dados["adm"] = pegarTodosProdutoEstoque();
 	exibir("adm/listaProdutoseQuantidadedoEstoque", $dados);
 }
-
+/** ADM */
 function listaProdutosCategoria() {
 	$dados = array();
 	$dados["adm"] = pegarTodosProdutoeCategoria();
 	exibir("adm/listaProdutosCategoria", $dados);
 }
-
+/** ADM */
 function listaPedidosRealizadosDatas() {
 	if (ehPost()){
 		$datad1 = $_POST ['datad1'];
@@ -27,13 +27,13 @@ function listaPedidosRealizadosDatas() {
 		exibir("adm/data");
 	} 
 }
-
+/** ADM */
 function listaPedidosMunicipioEstado() {
 	$dados = array();
 	$dados["adm"] = pegarTodosPedidosMunicipioEstado();
 	exibir("adm/listaPedidosMunicipioEstado", $dados);	
 }
-
+/** ADM */
 function totalFaturamentoPeriodo() {
     if (ehPost()){
 		$fatu = $_POST ['tipo'];
