@@ -51,8 +51,8 @@ function pegarTodosPedidosMunicipioEstado() {
 
 function pegarTodosTotalFaturamamento($tipoFaturamento) {
 	switch ($tipoFaturamento) {
-		case 'semanal':
-			$sql = "SELECT WEEK(p.datacompra) AS semana, SUM(pr.preco * pp.quantidade) AS fatura
+		case 'S':
+			$sql = "SELECT WEEK(p.datacompra) AS data, SUM(pr.preco * pp.quantidade) AS fatura
 					FROM produtos pr 
 					INNER JOIN pedido_produto pp 
 					ON pr.idproduto = pp.idproduto
@@ -60,8 +60,8 @@ function pegarTodosTotalFaturamamento($tipoFaturamento) {
 					ON pp.idpedido = p.idpedido
 					GROUP BY WEEK(p.dataCompra, 0)";
 			break;
-		case 'mensal':
-			$sql = "SELECT MONTH(p.datacompra) AS mes, SUM(pr.preco * pp.quantidade) AS fatura
+		case 'M':
+			$sql = "SELECT MONTH(p.datacompra) AS data, SUM(pr.preco * pp.quantidade) AS fatura
 					FROM produtos pr 
 					INNER JOIN pedido_produto pp 
 					ON pr.idproduto = pp.idproduto
@@ -69,8 +69,8 @@ function pegarTodosTotalFaturamamento($tipoFaturamento) {
 					ON pp.idpedido = p.idpedido
 					GROUP BY MONTH(p.datacompra)";
 			break;
-		case 'anual':
-			$sql = "SELECT YEAR(p.datacompra) AS ano, SUM(pr.preco * pp.quantidade) AS fatura
+		case 'A':
+			$sql = "SELECT YEAR(p.datacompra) AS data, SUM(pr.preco * pp.quantidade) AS fatura
 					FROM produtos pr 
 					INNER JOIN pedido_produto pp 
 					ON pr.idproduto = pp.idproduto

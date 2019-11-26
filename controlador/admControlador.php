@@ -35,8 +35,13 @@ function listaPedidosMunicipioEstado() {
 }
 
 function totalFaturamentoPeriodo() {
-	$dados = array();
-	$dados["adm"] = pegarTodosTotalFaturamamento($tipoFaturamento);
-	exibir("adm/totalFaturamentoPeriodo", $dados);
+    if (ehPost()){
+		$fatu = $_POST ['tipo'];
+		$dados = array();
+                $dados["adm"] = pegarTodosTotalFaturamamento($fatu);
+                exibir("adm/totalFaturamentoPeriodo", $dados);
+	}else{
+		exibir("adm/faturamento");
+	} 
 }
 
