@@ -2,11 +2,11 @@
 <table class="table" border="1">
 	<thead>
 		<tr>
-			<th>ID</th>
-			<th>DESCRICAO</th>
-			<th>VER</th>
-			<th>DELETAR</th>
-			<th>ALTERAR</th>
+			<th class="th-produto">ID</th>
+			<th class="th-produto">DESCRICAO</th>
+			<th class="th-produto">VER</th>
+			<th class="th-produto">DELETAR</th>
+			<th class="th-produto">ALTERAR</th>
 		</tr>
 	</thead>
 	<?php foreach ($formapagamentos as $formapagamento): ?>

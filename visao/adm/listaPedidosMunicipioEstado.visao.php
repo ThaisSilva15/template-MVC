@@ -2,17 +2,17 @@
 <table class="table" border="1">
 	<thead>
 		<tr>
-			<th>Data Compra</th>
-			<th>Total</th>
-			<th>Cidade</th>
+			<th class="th-produto">Data Compra</th>
+			<th class="th-produto">Total</th>
+			<th class="th-produto">Cidade</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php foreach ($adm as $pedido): ?>
 			<tr>
-	            <td><?=$pedido['datacompra']?></td>
-                    <br><td><?=$pedido['total']?></td>
-                    <td><?=$pedido['cidade']?></td>
+	            <td class="th-produto"><?=$pedido['datacompra']?></td>
+                    <td class="th-produto"><?=$pedido['total']?></td>
+                    <td class="th-produto"><?=$pedido['cidade']?></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>

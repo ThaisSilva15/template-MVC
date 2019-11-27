@@ -2,12 +2,14 @@
 
 require 'modelo/produtoModelo.php';
 
+/** anon */
 function index() {
     $dados = [];
     $dados['produtos'] = pegarTodosProduto();
     exibir("paginas/inicial", $dados);
 }
 
+/** anon */
 function contato() {
     if (ehPost()) {
         $nome = $_POST ["nomeCliente"];
@@ -26,6 +28,7 @@ function contato() {
     }
 }
 
+/** anon */
 function sobre(){
     exibir("paginas/sobre");
 }

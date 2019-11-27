@@ -2,22 +2,22 @@
 <table class="table" border="1">
 	<thead>
 		<tr>
-			<th>ID</th>
-			<th>NOME CUPOM</th>
-			<th>DESCONTO</th>
-			<th>VER</th>
-			<th>DELETAR</th>
-			<th>ALTERAR</th>
+			<th class="th-produto">ID</th>
+			<th class="th-produto">NOME CUPOM</th>
+			<th class="th-produto">DESCONTO</th>
+			<th class="th-produto">VER</th>
+			<th class="th-produto">DELETAR</th>
+			<th class="th-produto">ALTERAR</th>
 		</tr>
 	</thead>
 		<?php foreach ($cupoms as $cupom): ?>
 			<tr>
-				<td><?=$cupom['idcupom']?></td>
-				<td><?=$cupom['nomecupom']?></td>
-				<td><?=$cupom['desconto']?></td>
-				<td><a href="./cupom/ver/<?=$cupom['idcupom']?>">Ver</a></td>
-				<td><a href="./cupom/deletar/<?=$cupom['idcupom']?>">Deletar</a></td>
-                                <td><a href="./cupom/editar/<?=$cupom['idcupom']?>">Alterar</a></td>
+				<td class="th-produto"><?=$cupom['idcupom']?></td>
+				<td class="th-produto"><?=$cupom['nomecupom']?></td>
+				<td class="th-produto"><?=$cupom['desconto']?></td>
+				<td class="th-produto"><a href="./cupom/ver/<?=$cupom['idcupom']?>">Ver</a></td>
+				<td class="th-produto"><a href="./cupom/deletar/<?=$cupom['idcupom']?>">Deletar</a></td>
+                                <td class="th-produto"><a href="./cupom/editar/<?=$cupom['idcupom']?>">Alterar</a></td>
 			</tr>
 		<?php endforeach; ?>
 </table>

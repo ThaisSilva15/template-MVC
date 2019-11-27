@@ -1,15 +1,11 @@
+<form method="POST" action="" class="formulario-usuario">
+    <h2>Buscar Pedidos Por Intervalo</h2>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-      <form method="POST" action="">
-          Data 1: <input type="date" name="datad1" >
-          Data 2: <input type="date" name="datad2">
-    <button type="submit"> Enviar </button><br>
+    <label class="formulario-label">Data Inicial:</label>
+    <input class="formulario-input" type="date" name="datad1" >
+
+    <label class="formulario-label">Data Final:</label>
+    <input class="formulario-input" type="date" name="datad2">
+
+    <button class="submit-button" type="submit"> Enviar </button><br>
 </form>
-
-    </body>
-</html>

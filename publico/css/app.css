@@ -31,7 +31,7 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /*position: fixed;*/
+    position: fixed;
     box-shadow: 0px 0px 8px grey;
 }
 .logotype{
@@ -242,6 +242,12 @@ a{
     height: 200px;
 }
 
+.th-produto{
+    border-left: 1px solid #ffd4d1;
+    margin: auto;
+    text-align: center;
+}
+
 /* :--:--:--:--:    FORMULARIOS    :--:--:--:--: */
 .formulario-usuario{
     width: 50%;
@@ -389,4 +395,88 @@ input[type="file"]{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #AAAAAA;
+}
+
+/* :--:--:--:--:    PRODUTO         :--:--:--:--: */
+.visualizar-produto{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.imagem-produto{
+    width: 50%;
+    height: auto;
+    margin: auto;
+}
+.descricao-produto{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.title-produto{
+    margin: 0px 0px 30px 0px;
+}
+.detalhes-produto{
+    margin: 0px 0px 20px 0px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.botao-produto{
+    width: 50%;
+}
+.botao-produto-voltar{
+    width: 200px;
+}
+.botao-produto, .botao-produto-voltar{
+    display: flex;
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 20px 0;
+    height: 40px;
+    background-color: #ff8c8c;
+    border: none;
+    border-radius: 3px;
+}
+.botao-produto:hover, .botao-produto-voltar:hover{
+    background-color: #db7474;
+}
+.form-cupom{
+    margin: 40px 0px 0px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cupom{
+    margin: auto;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.inp-cupom{
+    margin: 10px 0px;
+    width: 400px;
+    height: 35px;
+    border: 1px solid #ffb8b8;
+    border-radius: 3px;
+    font-size: 1.2em;
+    padding: 0px 0px 0px 10px;
+}
+.btn-cupom{
+    height: 35px;
+    width: 200px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+}
+.button-fatura{
+    height: 35px;
+    width: 200px;
+    border-radius: 3px;
+    font-size: 1.2em;
+    margin: auto;
 }

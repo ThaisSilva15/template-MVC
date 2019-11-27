@@ -2,30 +2,30 @@
 <table class="table" border="1">
 	<thead>
 		<tr>
-			<th>ID</th>
-			<th>LOGRADOURO</th>
-			<th>NUMERO</th>
-			<th>COMPLEMENTO</th>
-			<th>BAIRRO</th>
-			<th>CIDADE</th>
-                        <th>CEP</th>
-			<th>VER</th>
-			<th>DELETAR</th>
-			<th>ALTERAR</th>
+			<th class="th-produto">ID</th>
+			<th class="th-produto">LOGRADOURO</th>
+			<th class="th-produto">NUMERO</th>
+			<th class="th-produto">COMPLEMENTO</th>
+			<th class="th-produto">BAIRRO</th>
+			<th class="th-produto">CIDADE</th>
+                        <th class="th-produto">CEP</th>
+			<th class="th-produto">VER</th>
+			<th class="th-produto">DELETAR</th>
+			<th class="th-produto">ALTERAR</th>
 		</tr>
 	</thead>
 		<?php foreach ($enderecos as $endereco): ?>
 			<tr>
-				<td><?=$endereco['idendereco']?></td>
-				<td><?=$endereco['logradouro']?></td>
-				<td><?=$endereco['numero']?></td>
-				<td><?=$endereco['complemento']?></td>
-				<td><?=$endereco['bairro']?></td>
-				<td><?=$endereco['cidade']?></td>
-				<td><?=$endereco['cep']?></td>
-				<td><a href="./endereco/ver/<?=$endereco['idendereco']?>">Ver</a></td>
-				<td><a href="./endereco/deletar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Deletar</a></td>
-                                <td><a href="./endereco/editar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Alterar</a></td>
+				<td class="th-produto"><?=$endereco['idendereco']?></td>
+				<td class="th-produto"><?=$endereco['logradouro']?></td>
+				<td class="th-produto"><?=$endereco['numero']?></td>
+				<td class="th-produto"><?=$endereco['complemento']?></td>
+				<td class="th-produto"><?=$endereco['bairro']?></td>
+				<td class="th-produto"><?=$endereco['cidade']?></td>
+				<td class="th-produto"><?=$endereco['cep']?></td>
+				<td class="th-produto"><a href="./endereco/ver/<?=$endereco['idendereco']?>">Ver</a></td>
+				<td class="th-produto"><a href="./endereco/deletar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Deletar</a></td>
+                                <td class="th-produto"><a href="./endereco/editar/<?=$endereco['idendereco']?>/<?=$endereco['idusuario']?>">Alterar</a></td>
 			</tr>
 		<?php endforeach; ?>
 </table>
